@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.rd.hnlf"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 获取GSM网络信息状态，如当前的网络连接是否有效 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许访问Wi-Fi网络状态信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许获取Wi-Fi网络状态改变信息 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 允许拨号 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 允许访问网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 手机读取权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 从sdcard中读取数据的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 在sdcard中创建/删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 读取程序信息  IMEI -->
+    <uses-permission android:name="android.permission.READ0_PHONE_STATE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup,android:icon,android:label,android:theme">
+
+        <!-- 启动页 -->
+        <activity
+            android:name=".module.common.ui.SplashAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 主页 -->
+        <activity
+            android:name=".MainAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- WebView 显示 -->
+        <activity
+            android:name=".module.common.ui.WebViewAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- PDF 预览 -->
+        <activity
+            android:name=".module.common.ui.PDFViewerAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 内容预览 -->
+        <activity
+            android:name=".module.common.ui.ContentPreviewAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- ******************************* 用户 ********************************* -->
+        <!-- 登录 -->
+        <activity
+            android:name=".module.user.ui.activity.LoginAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 注册 -->
+        <activity
+            android:name=".module.user.ui.activity.RegisterAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 注册成功 -->
+        <activity
+            android:name=".module.user.ui.activity.RegisterSucceedAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 个人中心 -->
+        <activity
+            android:name=".module.user.ui.activity.PersonalCenterAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 账户信息 -->
+        <activity
+            android:name=".module.user.ui.activity.AccountInfoAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 账户信息 - 会员用户 -->
+        <activity
+            android:name=".module.user.ui.activity.AccountInfoVIPAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 安全中心 -->
+        <activity
+            android:name=".module.user.ui.activity.SecurityCenterAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 手机绑定 -->
+        <activity
+            android:name=".module.user.ui.activity.ModifyPhoneAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 修改密码 -->
+        <activity
+            android:name=".module.user.ui.activity.ModifyPasswordAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 忘记密码 -->
+        <activity
+            android:name=".module.user.ui.activity.ForgotPasswordAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 重设密码 -->
+        <activity
+            android:name=".module.user.ui.activity.ResetPasswordAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 银行卡列表 -->
+        <activity
+            android:name=".module.user.ui.activity.BankcardListAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 新增银行卡 -->
+        <activity
+            android:name=".module.user.ui.activity.BankcardEditAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 银行选择界面 -->
+        <activity
+            android:name=".module.user.ui.activity.BankChooseAct"
+            android:screenOrientation="portrait" />
+
+        <!-- ******************************* 交易订单 ********************************* -->
+        <!-- 票据交易 - 票面信息 -->
+        <activity
+            android:name=".module.trade.ui.activity.NoteInfoAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据交易 - 添加票据 -->
+        <activity
+            android:name=".module.trade.ui.activity.AddNoteAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据交易 - 收票方/持票方信息 -->
+        <activity
+            android:name=".module.trade.ui.activity.NoteAccountAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据交易 - 报价信息 -->
+        <activity
+            android:name=".module.trade.ui.activity.NoteQuotationAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 会员用户 - 我是买家 -->
+        <activity
+            android:name=".module.trade.ui.activity.BuyerVIPAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 普通用户/会员用户 - 我是卖家 -->
+        <activity
+            android:name=".module.trade.ui.activity.SellerAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 代理商 - 票据交易 -->
+        <activity
+            android:name=".module.trade.ui.activity.NoteTransactionAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 交易订单详情 -->
+        <activity
+            android:name=".module.trade.ui.activity.TradeDetailAct"
+            android:screenOrientation="portrait" />
+
+        <!-- ******************************* 电商订单 ********************************* -->
+        <!-- 票据商城 -->
+        <activity
+            android:name=".module.eCommerce.ui.activity.NoteMallAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据商城 - 票据详情 -->
+        <activity
+            android:name=".module.eCommerce.ui.activity.NoteDetailAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据商城 - 票据购买 -->
+        <activity
+            android:name=".module.eCommerce.ui.activity.NotePurchaseAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 普通用户 - 我是买家 -->
+        <activity
+            android:name=".module.eCommerce.ui.activity.BuyerNormalAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 电商订单 -->
+        <activity
+            android:name=".module.eCommerce.ui.activity.ECommerceOrderAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 电商订单详情  -->
+        <activity
+            android:name=".module.eCommerce.ui.activity.ECommerceDetailAct"
+            android:screenOrientation="portrait" />
+
+        <!-- ******************************* 纯票订单 ********************************* -->
+        <!-- 纯票订单详情 -->
+        <activity
+            android:name=".module.pure.ui.activity.PureDetailAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 纯票订单 -->
+        <activity
+            android:name=".module.pure.ui.activity.PureOrderAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的票据 -->
+        <activity
+            android:name=".module.pure.ui.activity.MyNoteAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 历史票据 -->
+        <activity
+            android:name=".module.pure.ui.activity.HistoryNoteListAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据详情 -->
+        <activity
+            android:name=".module.pure.ui.activity.MyNoteDetailAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 纯票交易 -->
+        <activity
+            android:name=".module.pure.ui.activity.PureTransactionAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据上架 -->
+        <activity
+            android:name=".module.pure.ui.activity.NotePutOnAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 票据修改 -->
+        <activity
+            android:name=".module.pure.ui.activity.ModifyNoteAct"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

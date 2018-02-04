@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.RegisterSucceedCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/register_succeed_title">
+
+        <TextView
+            style="@style/BasicTheme.TextView.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x100"
+            android:drawablePadding="@dimen/x30"
+            android:drawableTop="@drawable/register_succeed"
+            android:gravity="center"
+            android:text="@string/register_succeed_prompt"
+            android:textSize="@dimen/text_size_h1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x50"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_marginLeft="@dimen/x60"
+                android:layout_marginRight="@dimen/x30"
+                android:layout_marginStart="@dimen/x60"
+                android:layout_weight="1"
+                android:background="@drawable/fillet_purple_white"
+                android:gravity="center"
+                android:onClick="@{(View) -> viewCtrl.toShoppingClick(View)}"
+                android:padding="@dimen/x20"
+                android:text="@string/home_mall"
+                android:textColor="@color/text_purple"
+                android:textSize="@dimen/text_size_h2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x60"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_marginStart="@dimen/x30"
+                android:layout_weight="1"
+                android:background="@drawable/fillet_purple_white"
+                android:gravity="center"
+                android:onClick="@{(View) -> viewCtrl.toPersonalClick(View)}"
+                android:padding="@dimen/x20"
+                android:text="@string/home_personal"
+                android:textColor="@color/text_purple"
+                android:textSize="@dimen/text_size_h2" />
+        </LinearLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

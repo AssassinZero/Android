@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.rd.hnlf.module.eCommerce.viewModel.bean.PaymentInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x20"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/x20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_left"
+            android:padding="@dimen/x20"
+            android:text="@string/buyer_detail_payment_info_tip"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_h1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x20">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/account_info_company_name"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="2"
+                android:text="@{item.companyName}"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x20">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/bankcard_bankcard"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="2"
+                android:text="@{item.bankcard}"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x20">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/bankcard_account_name"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="2"
+                android:text="@{item.accountName}"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x20">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/bankcard_branch_name"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="2"
+                android:text="@{item.branchName}"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x20">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/bankcard_branch_no"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="2"
+                android:text="@{item.branchNo}"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/quotation_info_fee"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h3" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="2"
+                android:background="@color/white"
+                android:hint="@string/quotation_info_edit_fee_hint"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:text="@={item.fee}"
+                android:textSize="@dimen/text_size_h3" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

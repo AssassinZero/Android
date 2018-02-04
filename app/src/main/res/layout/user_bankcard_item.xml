@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.rd.hnlf.module.user.viewModel.BankcardVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x20"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_left"
+            android:orientation="horizontal"
+            android:padding="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:singleLine="true"
+                android:text="@{item.accountName}" />
+
+            <TextView
+                android:id="@+id/deleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/stroke_fillet_white_grey"
+                android:paddingBottom="@dimen/x10"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/x10"
+                android:text="@string/operate_delete"
+                android:visibility="@{item.normal ? android.view.View.VISIBLE : android.view.View.GONE}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="@dimen/x20"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/x90"
+                    android:layout_height="@dimen/x90"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/x20"
+                    android:contentDescription="@string/empty"
+                    android:scaleType="fitXY"
+                    app:defaultImage="@{@drawable/icon_default}"
+                    app:errorImage="@{@drawable/icon_default}"
+                    app:src="@{item.icon}" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/empty"
+                    android:src="@{item.normal ? @drawable/icon_vip_card : @drawable/icon_normal_card}" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/x20">
+
+                <TextView
+                    style="@style/BasicTheme.TextView.Black"
+                    android:layout_width="match_parent"
+                    android:drawableEnd="@{item.normal ? @drawable/icon_normal_card : @drawable/icon_vip_card}"
+                    android:drawableRight="@{item.normal ? @drawable/icon_normal_card : @drawable/icon_vip_card}"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="@{item.branchName}"
+                    android:textSize="@dimen/text_size_h1" />
+
+                <TextView
+                    style="@style/BasicTheme.TextView.Black"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="@dimen/x10"
+                    android:layout_marginTop="@dimen/x10"
+                    android:padding="0dp"
+                    android:text="@{item.branchNoStr}"
+                    android:textSize="@dimen/text_size_h4" />
+
+                <TextView
+                    style="@style/BasicTheme.TextView.Black"
+                    android:layout_width="match_parent"
+                    android:padding="0dp"
+                    android:text="@{item.bankcardHidden}"
+                    android:textSize="@dimen/text_size_t2" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

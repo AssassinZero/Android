@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.pure.viewControl.PureDetailCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/order_detail_title">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/x110"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/underline_left"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_info_tip"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:ultraData="@{viewCtrl.viewModel.noteInfo}"
+                        app:ultraLayout="@{@layout/basic_note_info_layout}" />
+
+                    <include
+                        layout="@layout/basic_quotation_info_layout"
+                        app:item="@{viewCtrl.viewModel.quotationInfo}" />
+
+                    <include
+                        layout="@layout/basic_bill_to_party_info_layout"
+                        app:item="@{viewCtrl.viewModel.billToPartyInfo}" />
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x100"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingRight="@dimen/x20"
+                    android:text="@{viewCtrl.viewModel.settlementAmount}"
+                    android:textSize="@dimen/text_size_h2" />
+
+                <View
+                    android:layout_width="@dimen/x1"
+                    android:layout_height="match_parent"
+                    android:background="@color/line_grey" />
+
+                <Button
+                    style="@style/Button.Rectangle"
+                    android:layout_weight="3"
+                    android:background="@color/white"
+                    android:onClick="@{(View) -> viewCtrl.button2Click(View)}"
+                    android:text="@{viewCtrl.viewModel.button2}"
+                    android:textColor="@color/text_purple"
+                    android:textSize="@dimen/text_size_h2"
+                    android:visibility="@{!android.text.TextUtils.isEmpty(viewCtrl.viewModel.button2) ? android.view.View.VISIBLE : android.view.View.GONE}" />
+
+                <Button
+                    style="@style/Button.Rectangle"
+                    android:layout_weight="3"
+                    android:onClick="@{(View) -> viewCtrl.button1Click(View)}"
+                    android:text="@{viewCtrl.viewModel.button1}"
+                    android:textSize="@dimen/text_size_h2"
+                    android:visibility="@{!android.text.TextUtils.isEmpty(viewCtrl.viewModel.button1) ? android.view.View.VISIBLE : android.view.View.GONE}" />
+            </LinearLayout>
+        </RelativeLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

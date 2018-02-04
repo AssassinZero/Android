@@ -1,0 +1,101 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 分割线样式 -->
+        <item name="android:listDivider">@drawable/divider_list</item>
+        <item name="android:dividerHorizontal">@drawable/divider_horizontal</item>
+        <item name="android:dividerVertical">@drawable/divider_vertical</item>
+    </style>
+
+    <!-- 防止欢迎页白屏或者黑屏，设置图片 -->
+    <style name="SplashTheme" parent="AppTheme">
+        <!--<item name="android:windowBackground">@drawable/splash_shape</item>-->
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:windowIsTranslucent">false</item>-->
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <!-- 按钮的基础样式 -->
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">@dimen/text_size_h1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 圆角按钮的样式 -->
+    <style name="Button.Fillet" parent="Button">
+        <item name="android:background">@drawable/solid_fillet_button</item>
+        <item name="android:layout_marginLeft">@dimen/x20</item>
+        <item name="android:layout_marginRight">@dimen/x20</item>
+        <item name="android:layout_marginTop">@dimen/x50</item>
+    </style>
+
+    <!-- 直角按钮的样式 -->
+    <style name="Button.Rectangle" parent="Button">
+        <item name="android:background">@drawable/solid_rectangle_button</item>
+    </style>
+
+    <!-- 左右布局 样式 -->
+    <style name="LeftRight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingLeft">@dimen/x20</item>
+        <item name="android:paddingRight">@dimen/x20</item>
+        <item name="leftTxtColor">@color/text_black</item>
+        <item name="leftTxtSize">@dimen/text_size_h2</item>
+        <item name="rightTxtColor">@color/text_grey</item>
+        <item name="rightTxtSize">@dimen/text_size_h2</item>
+    </style>
+
+    <style name="LeftRight.Arrow" parent="LeftRight">
+        <item name="arrow">@drawable/icon_arrow_right</item>
+        <item name="android:padding">@dimen/x20</item>
+    </style>
+
+    <!-- TextView 向右箭头 -->
+    <style name="ArrowRight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/x0</item>
+        <item name="android:paddingTop">@dimen/x20</item>
+        <item name="android:paddingRight">@dimen/x20</item>
+        <item name="android:paddingBottom">@dimen/x20</item>
+        <item name="android:drawableRight">@drawable/icon_arrow_right</item>
+        <item name="android:drawableEnd">@drawable/icon_arrow_right</item>
+        <item name="android:drawablePadding">@dimen/x20</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColorHint">@color/hint_grey</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- 分割线 -->
+    <style name="DivideLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.1px</item>
+        <item name="android:background">@color/line_grey</item>
+    </style>
+
+    <!-- 个人中心 - 子项 -->
+    <style name="PersonalItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/underline_left_padding</item>
+        <item name="android:drawableEnd">@drawable/icon_arrow_right</item>
+        <item name="android:drawableRight">@drawable/icon_arrow_right</item>
+        <item name="android:drawablePadding">@dimen/x20</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/x20</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">@dimen/text_size_h2</item>
+    </style>
+</resources>

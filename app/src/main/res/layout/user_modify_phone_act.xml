@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.ModifyPhoneCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/security_modify_phone">
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:layout_marginTop="@dimen/x20"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="@dimen/x20"
+            app:leftTxt="@string/modify_phone_old"
+            app:rightTxt="@{viewCtrl.viewModel.oldPhone}"
+            app:rightTxtColor="@color/text_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/modify_phone_password"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.editText.PasswordEditText
+                style="@style/BasicTheme.EditText.Padding"
+                android:gravity="end"
+                android:hint="@string/modify_phone_password_hint"
+                android:imeOptions="actionNext"
+                android:maxLength="16"
+                android:text="@={viewCtrl.viewModel.password}"
+                android:textColor="@color/text_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/modify_phone_new"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText.Padding"
+                android:gravity="end"
+                android:hint="@string/modify_phone_new_hint"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:text="@={viewCtrl.viewModel.newPhone}"
+                android:textColor="@color/text_black" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/common_time_button_layout"
+            app:viewModel="@{viewCtrl.viewModel}" />
+
+        <Button
+            style="@style/Button.Fillet"
+            android:layout_margin="@dimen/x30"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:text="@string/operate_save" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

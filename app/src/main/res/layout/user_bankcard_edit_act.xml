@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.BankcardEditCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:leftColor="@color/text_white"
+        app:rightColor="@color/text_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/x20"
+            android:paddingLeft="@dimen/x0"
+            android:paddingRight="@dimen/x20"
+            android:paddingStart="@dimen/x0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/bankcard_bankcard"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/bankcard_bankcard_hint"
+                android:inputType="number"
+                android:maxLength="35"
+                android:onFocusChange="@{(View, hasFocus) -> viewCtrl.onFocusChange(View, hasFocus)}"
+                android:text="@={viewCtrl.viewModel.bankcard}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/x20"
+            android:paddingLeft="@dimen/x0"
+            android:paddingRight="@dimen/x20"
+            android:paddingStart="@dimen/x0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/bankcard_account_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/bankcard_account_name_hint"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.accountName}"
+                android:textColor="@color/text_dark"
+                app:editable="@{viewCtrl.editable}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/x20"
+            android:paddingLeft="@dimen/x0"
+            android:paddingRight="@dimen/x20"
+            android:paddingStart="@dimen/x0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/bankcard_bank_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/ArrowRight"
+                android:gravity="end"
+                android:hint="@string/operate_choose"
+                android:onClick="@{(View) -> viewCtrl.chooseBankClick(View)}"
+                android:text="@{viewCtrl.viewModel.bankName}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/hint_grey"
+                android:textSize="@dimen/text_size_h2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/x20"
+            android:paddingLeft="@dimen/x0"
+            android:paddingRight="@dimen/x20"
+            android:paddingStart="@dimen/x0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/bankcard_branch_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <TextView
+                style="@style/ArrowRight"
+                android:gravity="end"
+                android:hint="@string/operate_choose"
+                android:onClick="@{(View) -> viewCtrl.chooseBranchBankClick(View)}"
+                android:text="@{viewCtrl.viewModel.branchName}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/hint_grey"
+                android:textSize="@dimen/text_size_h2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/x20"
+            android:paddingLeft="@dimen/x0"
+            android:paddingRight="@dimen/x20"
+            android:paddingStart="@dimen/x0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/bankcard_branch_no"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|end"
+                android:paddingEnd="@dimen/x60"
+                android:paddingLeft="@dimen/x0"
+                android:paddingRight="@dimen/x60"
+                android:paddingStart="@dimen/x0"
+                android:text="@{viewCtrl.viewModel.branchNo}"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_h2" />
+        </LinearLayout>
+
+        <Button
+            style="@style/Button.Fillet"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:text="@string/operate_save" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.rd.hnlf.module.common.viewModel.bean.QuotationInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="@{!item.discuss ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Grey"
+                android:layout_width="wrap_content"
+                android:text="@string/quotation_info_mode" />
+
+            <com.rd.views.textView.SingleSelectorView
+                android:id="@+id/singleSelectorView"
+                style="@style/BasicTheme.Arrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/text_dark"
+                app:arrayList="@{@stringArray/quotation_info_mode_array}"
+                app:key="@={item.quotationMethod}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="@{item.aprMode ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/quotation_info_edit_apr"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText.Padding"
+                android:gravity="end"
+                android:hint="@string/quotation_info_edit_apr_hint"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/x20"
+                android:text="@={item.originApr}"
+                android:textColor="@color/text_dark"
+                app:filterType="@{5}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="@{item.discountMode ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/quotation_info_edit_discount"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText.Padding"
+                android:gravity="end"
+                android:hint="@string/quotation_info_edit_discount_hint"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/x20"
+                android:text="@={item.originDiscount}"
+                android:textColor="@color/text_dark"
+                app:filterType="@{0}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

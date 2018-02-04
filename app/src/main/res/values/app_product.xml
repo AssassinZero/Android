@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_transaction_amount">累计交易金额(元)</string>
+    <string name="home_transaction_time">累计交易笔数(笔)</string>
+    <string name="home_mall">票据商城</string>
+    <string name="home_personal">个人中心</string>
+    <string name="home_popup_title">霍尼莱夫科技</string>
+    <string name="home_popup_tips">全方位风控 保票金安全</string>
+    <string name="home_note_buy">我要买票</string>
+    <string name="home_note_sell">我要卖票</string>
+
+    <string name="order_detail_title">订单详情</string>
+
+    <string name="note_date">出票日期</string>
+    <string name="draft_due_date">汇票到期日</string>
+
+    <string name="note_positive_info">票据正面信息</string>
+    <string name="note_negative_info">票据背面信息</string>
+
+    <string name="basic_info_tip">基本信息</string>
+    <string name="drawer_info_tip">出票人信息</string>
+    <string name="payee_info_tip">收款人信息</string>
+    <string name="acceptor_info_tip">承兑人信息</string>
+
+    <string name="trader_full_name">全&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;称</string>
+    <string name="trader_account_name">帐&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;号</string>
+
+    <string name="negative_info_endorser">背&#160;&#160;书&#160;&#160;人</string>
+    <string name="negative_info_endorsee">被背书人</string>
+    <string name="negative_info_endorser_date">背书日期</string>
+    <string name="negative_info_transferable">可转让标记</string>
+
+    <string-array name="seller_tabs">
+        <item>全部</item>
+        <item>待确认</item>
+        <item>待修改</item>
+    </string-array>
+    <string name="seller_total_amount">票面总金额</string>
+    <string name="seller_settlement_amount">结算金额</string>
+    <string name="seller_note_count">票据张数</string>
+    <string name="seller_order_time">下单时间</string>
+    <string name="seller_order_no">订单号 %1$s</string>
+    <string name="seller_transaction_no">交易号 %1$s</string>
+
+    <string name="note_info_tip">票面信息</string>
+    <string name="note_info_note_no">票据票号</string>
+    <string name="note_info_amount">票面金额</string>
+    <string name="note_info_amount_unit">票面金额(万)</string>
+    <string name="note_info_days">调整天数</string>
+    <string name="note_info_due_date">到&#160;&#160;期&#160;&#160;日</string>
+    <string name="note_info_amount_payable">应付金额</string>
+    <string name="note_info_discuss">面议</string>
+
+    <string name="quotation_info_tip">报价信息</string>
+    <string name="quotation_info_type">票据类型</string>
+    <string name="quotation_info_property">票据属性</string>
+    <string name="quotation_info_mode">报价方式</string>
+    <string-array name="quotation_info_mode_array">
+        <item>年利率</item>
+        <item>每十万</item>
+    </string-array>
+    <string name="quotation_info_discount">每&#160;&#160;十&#160;&#160;万</string>
+    <string name="quotation_info_apr">年&#160;&#160;利&#160;&#160;率</string>
+    <string name="quotation_info_fee">手&#160;&#160;续&#160;&#160;费</string>
+
+    <string name="quotation_info_edit_discuss">是否显示面议</string>
+    <string-array name="yes_or_no_array">
+        <item>是</item>
+        <item>否</item>
+    </string-array>
+
+    <string name="quotation_info_edit_discount">每十万贴现(元)</string>
+    <string name="quotation_info_edit_discount_hint">请输入金额</string>
+    <string name="quotation_info_edit_apr">年利率(%)</string>
+    <string name="quotation_info_edit_apr_hint">请输入年利率</string>
+    <string name="quotation_info_edit_fee">手续费(元)</string>
+    <string name="quotation_info_edit_fee_hint">请输入手续费</string>
+
+    <string name="bill_to_party_info_tip">收票方信息</string>
+    <string name="bearer_info_tip">持票方信息</string>
+    <string name="bearer_info_bearer_account">持票方帐号</string>
+    <string name="bearer_info_agent_account">代理商帐号</string>
+
+    <string name="order_info_tip">订单信息</string>
+    <string name="order_info_id">订&#160;&#160;单&#160;&#160;号</string>
+    <string name="order_info_time">下单时间</string>
+    <string name="order_info_complete_time">订单完成时间</string>
+    <string name="order_info_status">订单状态</string>
+
+    <string name="settlement_amount1">结算金额 %1$s元</string>
+    <string name="settlement_amount2">结算金额\n%1$s元</string>
+    <string name="settlement_amount3">结算金额 暂无</string>
+
+    <string-array name="buyer_tabs">
+        <item>全部</item>
+        <item>待经办</item>
+        <item>待复核</item>
+        <item>待支付</item>
+    </string-array>
+
+    <string name="buyer_detail_endorsee_info_tip">被背书账户信息</string>
+    <string name="buyer_detail_payment_info_tip">支付信息</string>
+    <string name="buyer_detail_warm_prompt">温馨提示:\n订单提交后，请在网银备注栏中输入订单号信息，以便快速完成交易</string>
+
+    <string-array name="e_commerce_order_tabs">
+        <item>买入票据</item>
+        <item>卖出票据</item>
+    </string-array>
+
+    <string name="pure_sell">卖出票据</string>
+
+    <string-array name="note_tabs">
+        <item>持有中</item>
+        <item>已上架</item>
+        <item>历史票据</item>
+    </string-array>
+
+    <string name="note_overdue">票据已到期</string>
+    <string name="note_list_transaction">纯票交易</string>
+
+    <string name="note_put_on">票据上架</string>
+    <string name="note_modify">票据修改</string>
+
+    <string name="note_modify_settlement_amount">原结算总金额（元）</string>
+
+    <string name="operate_toast_confirm_order">确认交易后，订单信息无法修改，是否确认？</string>
+    <string name="operate_toast_reject">拒绝交易</string>
+    <string name="operate_toast_confirm">确认交易</string>
+    <string name="operate_toast_return_order">确认后，订单将退回至发起方修改，是否继续？</string>
+    <string name="operate_toast_recall_order">撤回后对手方无法查看此订单，是否撤回？</string>
+    <string name="operate_toast_close_order">订单关闭后，需重新下单，确定关闭？</string>
+    <string name="operate_toast_payment_order">请仔细核对订单信息，确认后无法撤销，是否继续？</string>
+    <string name="operate_toast_review_order">请仔细核对订单信息，确认复核？</string>
+    <string name="operate_toast_pull_off">票据下架后若需要重新上架，请至未上架页面操作，是否继续？</string>
+    <string name="operate_toast_cancel_order">订单取消后，需重新下单，确定取消？</string>
+    <string name="operate_toast_recite_order">请仔细核对票面信息，确认发起背书？</string>
+
+    <string name="condition_type">票据类别</string>
+    <string name="condition_release_date">发布日期</string>
+    <string name="condition_due_date">到期期限</string>
+    <string name="condition_amount">票面金额</string>
+    <string name="condition_enterprise">所属企业</string>
+    <string name="condition_filtrate">筛选</string>
+
+    <string name="mall_accept_name">承兑方：%1$s</string>
+    <string name="mall_amount"><Data><![CDATA[<font color="#9786EA"><big><big>%1$s</big></big>万</font>]]></Data></string>
+    <string name="mall_apr"><Data><![CDATA[年利率<font color="#333333"> <big><big>%1$s</big></big>%%</font>]]></Data></string>
+    <string name="mall_discount"><Data><![CDATA[每十万<font color="#333333"> <big><big>%1$s</big></big>元</font>]]></Data></string>
+    <string name="mall_discuss"><Data><![CDATA[报价<font color="#333333">&nbsp;&nbsp;&nbsp;&nbsp; <big>面议</big>]]></Data></string>
+    <string name="mall_due_date">%1$s到期</string>
+    <string name="mall_batch_order">批量下单</string>
+    <string name="mall_confirm_order">确认下单</string>
+    <string name="mall_transfer_error">转让中不可交易</string>
+    <string name="mall_discuss_error">面议票据请询价</string>
+
+    <string name="note_detail_title">票据详情</string>
+    <string name="note_detail_contact_way">查看联系方式</string>
+    <string name="note_detail_buy_now">立即购买</string>
+    <string name="note_detail_enquiry">请询价</string>
+    <string name="note_detail_amount_spanned"><Data><![CDATA[<font color="#FFFFFF"><big><big>%1$s</big></big>万</font>]]></Data></string>
+    <string name="note_detail_apr_spanned"><Data><![CDATA[<font color="#FFFFFF"> <big><big>%1$s</big></big>%%</font>]]></Data></string>
+    <string name="note_detail_discount_spanned"><Data><![CDATA[<font color="#FFFFFF"> <big><big>%1$s</big></big>元</font>]]></Data></string>
+    <string name="note_detail_apr">年利率</string>
+    <string name="note_detail_discount">每十万</string>
+    <string name="note_detail_holder_enterprise">持票企业</string>
+    <string name="note_detail_accept_name">承&#160;&#160;兑&#160;&#160;方</string>
+    <string name="note_detail_phone">联系电话</string>
+    <string name="note_detail_put_on_time">上架时间</string>
+    <string name="note_detail_note">票据正反面</string>
+    <string name="note_detail_prompt">交易须知</string>
+
+    <string name="note_purchase_title">票据购买</string>
+    <string name="note_endorsee_error">请完善被背书账户信息</string>
+    <string name="note_purchase_submit">提交订单</string>
+
+    <string name="note_dealing_title">票据交易</string>
+    <string name="note_add">添加票据</string>
+    <string name="note_add_error">请先添加票据</string>
+    <string name="note_delete">确定要删除尾号为 %1$s 的票据？</string>
+
+    <string name="note_no_hint">请输入票据票号</string>
+    <string name="note_no_error">票据票号长度为6位或者30位</string>
+    <string name="note_amount_hint">请输入票面金额</string>
+    <string name="note_due_date">到&#160;&#160;期&#160;&#160;日</string>
+    <string name="note_due_date_hint">请选择到期日</string>
+    <string name="note_days_hint">请输入调整天数</string>
+
+    <string name="note_receiver_info">收票方信息</string>
+    <string name="note_receiver_account">收票方账号</string>
+    <string name="note_receiver_account_hint">请输入收票方账号</string>
+    <string name="note_receiver_account_error">收票方账号不正确</string>
+    <string name="note_receiver_bankcard_error">收票方银行账户不正确</string>
+
+    <string name="note_holder_info">持票方信息</string>
+    <string name="note_holder_account">持票方账号</string>
+    <string name="note_holder_account_hint">请输入持票方账号</string>
+    <string name="note_holder_account_error">持票方账号不正确</string>
+    <string name="note_holder_same">收款账户是否和背书账户一致</string>
+
+    <string name="note_receiver_account_info">请获取收票方开户信息</string>
+    <string name="note_holder_account_info">请获取持票方开户信息</string>
+
+    <string-array name="note_holder_same_array">
+        <item> 是 </item>
+        <item> 否 </item>
+    </string-array>
+
+    <string name="note_account_add">新增账户</string>
+    <string name="current_transaction_settlement_amount">当前交易结算金额：%1$s元</string>
+</resources>

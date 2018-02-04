@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.trade.viewControl.NoteAccountCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/note_dealing_title">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BasicTheme.Tips"
+                    android:padding="@dimen/x20"
+                    android:text="@string/note_receiver_info"
+                    android:textSize="@dimen/text_size_h3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_receiver_account"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <EditText
+                        style="@style/BasicTheme.EditText"
+                        android:gravity="end"
+                        android:hint="@string/note_receiver_account_hint"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:padding="@dimen/x20"
+                        android:text="@={viewCtrl.viewModel.receiverInfo.account}"
+                        android:textColor="@color/text_dark"
+                        app:editable="@{!`0`.equals(viewCtrl.type)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_bankcard"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <com.rd.views.textView.SingleSelectorView
+                        style="@style/BasicTheme.EditText"
+                        android:drawableEnd="@{`0`.equals(viewCtrl.type) ? @drawable/icon_arrow_right : null}"
+                        android:drawablePadding="@dimen/x20"
+                        android:drawableRight="@{`0`.equals(viewCtrl.type) ? @drawable/icon_arrow_right : null}"
+                        android:gravity="end"
+                        android:hint="@string/bankcard_bankcard_hint"
+                        android:imeOptions="actionSearch"
+                        android:inputType="number"
+                        android:maxLength="35"
+                        android:onEditorAction="@{(view, actionId, event) -> viewCtrl.searchHolderAction(view, actionId, event)}"
+                        android:padding="@dimen/x20"
+                        android:text="@={viewCtrl.viewModel.receiverInfo.bankcard}"
+                        android:textColor="@color/text_dark"
+                        app:KVPlist="@{viewCtrl.viewModel.receiverInfo.bankcardList}"
+                        app:editable="@{!`0`.equals(viewCtrl.type)}"
+                        app:key="@={viewCtrl.viewModel.receiverInfo.bankcard}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_account_name"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Dark"
+                        android:gravity="end"
+                        android:padding="@dimen/x20"
+                        android:text="@{viewCtrl.viewModel.receiverInfo.accountName}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_branch_name"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Dark"
+                        android:gravity="end"
+                        android:padding="@dimen/x20"
+                        android:text="@{viewCtrl.viewModel.receiverInfo.branchName}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingRight="@dimen/x20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bankcard_branch_no"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Dark"
+                        android:gravity="end"
+                        android:padding="@dimen/x20"
+                        android:text="@{viewCtrl.viewModel.receiverInfo.branchNo}" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/BasicTheme.Tips"
+                    android:padding="@dimen/x20"
+                    android:text="@string/note_holder_info"
+                    android:textSize="@dimen/text_size_h3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_holder_account"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <EditText
+                        style="@style/BasicTheme.EditText"
+                        android:gravity="end"
+                        android:hint="@string/note_holder_account_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:padding="@dimen/x20"
+                        android:text="@={viewCtrl.viewModel.holderInfo.account}"
+                        android:textColor="@color/text_dark"
+                        app:editable="@{!`1`.equals(viewCtrl.type)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_holder_same"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <com.rd.views.textView.SingleSelectorView
+                        style="@style/BasicTheme.Arrow"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/x20"
+                        android:textColor="@color/text_dark"
+                        app:arrayList="@{@stringArray/note_holder_same_array}"
+                        app:key="@={viewCtrl.same}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/x1"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingRight="@dimen/x20"
+                    android:visibility="@{viewCtrl.visible ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Black"
+                        android:layout_width="wrap_content"
+                        android:text="@string/bankcard_bankcard" />
+
+                    <com.rd.views.textView.SingleSelectorView
+                        style="@style/BasicTheme.Arrow"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/bankcard_bankcard_add_hint"
+                        android:padding="@dimen/x20"
+                        android:text="@{viewCtrl.viewModel.holderInfo.bankcard}"
+                        android:textColor="@color/text_dark"
+                        app:KVPlist="@{viewCtrl.viewModel.holderInfo.bankcardList}"
+                        app:key="@={viewCtrl.viewModel.holderInfo.bankcard}" />
+
+                    <ImageView
+                        android:layout_width="@dimen/x50"
+                        android:layout_height="@dimen/x50"
+                        android:contentDescription="@string/empty"
+                        android:onClick="@{(View) -> viewCtrl.addNoteClick(View)}"
+                        android:src="@drawable/add_note" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewCtrl.visible ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_account_name"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Dark"
+                        android:gravity="end"
+                        android:padding="@dimen/x20"
+                        android:text="@={viewCtrl.viewModel.holderInfo.accountName}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewCtrl.visible ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_branch_name"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Dark"
+                        android:gravity="end"
+                        android:padding="@dimen/x20"
+                        android:text="@{viewCtrl.viewModel.holderInfo.branchName}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewCtrl.visible ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_branch_no"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Dark"
+                        android:gravity="end"
+                        android:padding="@dimen/x20"
+                        android:text="@{viewCtrl.viewModel.holderInfo.branchNo}" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            style="@style/Button.Rectangle"
+            android:onClick="@{(View) -> viewCtrl.nextClick(View)}"
+            android:text="@string/operate_next" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

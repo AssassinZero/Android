@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.SecurityCenterCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/personal_security_center">
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight.Arrow"
+            android:layout_marginTop="@dimen/x20"
+            android:background="@drawable/underline"
+            android:onClick="@{(View) -> viewCtrl.bindPhoneClick(View)}"
+            app:leftTxt="@string/security_modify_phone"
+            app:rightTxt="@{viewCtrl.viewModel.phone}" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight.Arrow"
+            android:background="@drawable/underline"
+            android:onClick="@{(View) -> viewCtrl.modifyPasswordClick(View)}"
+            app:leftTxt="@string/security_modify_password" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight.Arrow"
+            android:background="@color/white"
+            android:onClick="@{(View) -> viewCtrl.myBankAccountClick(View)}"
+            android:visibility="@{viewCtrl.viewModel.bankAccountVisible ? android.view.View.GONE : android.view.View.VISIBLE}"
+            app:leftTxt="@string/security_my_bank_account"
+            app:rightTxt="@{viewCtrl.viewModel.bankcardCount}" />
+
+        <Button
+            style="@style/Button.Fillet"
+            android:onClick="@{(View) -> viewCtrl.loginOutClick(View)}"
+            android:text="@string/security_login_out" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

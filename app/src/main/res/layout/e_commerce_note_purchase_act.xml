@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.eCommerce.viewControl.NotePurchaseCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/note_purchase_title">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/x110"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/underline_left"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_info_tip"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:ultraData="@{viewCtrl.viewModel.noteInfo}"
+                        app:ultraLayout="@{@layout/basic_note_info_layout}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x20"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/x20">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/underline_left"
+                            android:padding="@dimen/x20"
+                            android:text="@string/buyer_detail_endorsee_info_tip"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_h1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/x20">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="@string/account_info_company_name"
+                                android:textColor="@color/text_grey"
+                                android:textSize="@dimen/text_size_h3" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/x20"
+                                android:layout_marginStart="@dimen/x20"
+                                android:layout_weight="2"
+                                android:text="@{viewCtrl.viewModel.endorseeInfo.companyName}"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_h3" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/x20">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="7"
+                                android:text="@string/bankcard_bankcard"
+                                android:textColor="@color/text_grey"
+                                android:textSize="@dimen/text_size_h3" />
+
+                            <com.rd.views.textView.SingleSelectorView
+                                style="@style/BasicTheme.Arrow"
+                                android:layout_marginEnd="@dimen/x10"
+                                android:layout_marginRight="@dimen/x10"
+                                android:layout_weight="4"
+                                android:gravity="start"
+                                android:paddingBottom="@dimen/x0"
+                                android:paddingTop="@dimen/x0"
+                                app:KVPlist="@{viewCtrl.viewModel.endorseeInfo.bankcardList}"
+                                app:key="@={viewCtrl.viewModel.endorseeInfo.bankcard}" />
+
+                            <ImageView
+                                android:layout_width="@dimen/x50"
+                                android:layout_height="@dimen/x50"
+                                android:contentDescription="@string/empty"
+                                android:onClick="@{(View) -> viewCtrl.addNoteClick(View)}"
+                                android:src="@drawable/add_note" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/x20">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="@string/bankcard_account_name"
+                                android:textColor="@color/text_grey"
+                                android:textSize="@dimen/text_size_h3" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/x20"
+                                android:layout_marginStart="@dimen/x20"
+                                android:layout_weight="2"
+                                android:text="@{viewCtrl.viewModel.endorseeInfo.accountName}"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_h3" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/x20">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="@string/bankcard_branch_name"
+                                android:textColor="@color/text_grey"
+                                android:textSize="@dimen/text_size_h3" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/x20"
+                                android:layout_marginStart="@dimen/x20"
+                                android:layout_weight="2"
+                                android:text="@{viewCtrl.viewModel.endorseeInfo.branchName}"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_h3" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingTop="@dimen/x20">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="@string/bankcard_branch_no"
+                                android:textColor="@color/text_grey"
+                                android:textSize="@dimen/text_size_h3" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/x20"
+                                android:layout_marginStart="@dimen/x20"
+                                android:layout_weight="2"
+                                android:text="@{viewCtrl.viewModel.endorseeInfo.branchNo}"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_h3" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <include
+                        layout="@layout/e_commerce_payment_info_edit_layout"
+                        app:item="@{viewCtrl.viewModel.paymentInfo}" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/buyer_detail_warm_prompt"
+                        android:textColor="@color/text_grey" />
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x100"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="@dimen/x20"
+                    android:text="@{viewCtrl.viewModel.settlementAmountStr}"
+                    android:textSize="@dimen/text_size_h2" />
+
+                <Button
+                    style="@style/Button.Rectangle"
+                    android:layout_weight="3"
+                    android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+                    android:text="@string/note_purchase_submit"
+                    android:textSize="@dimen/text_size_h2" />
+            </LinearLayout>
+        </RelativeLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

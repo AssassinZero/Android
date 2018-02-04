@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.trade.viewControl.AddNoteCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/note_add">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_weight="2"
+                android:text="@string/note_info_note_no" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="@string/note_no_hint"
+                android:inputType="number"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.id}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_weight="2"
+                android:text="@string/note_info_amount_unit" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="@string/note_amount_hint"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.amount}"
+                app:filterType="@{-1}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_weight="2"
+                android:text="@string/note_due_date" />
+
+            <TextView
+                style="@style/ArrowRight"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="@string/note_due_date_hint"
+                android:onClick="@{(View) -> viewCtrl.dueDateClick(View)}"
+                android:text="@{viewCtrl.viewModel.dueDateStr}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_weight="2"
+                android:text="@string/note_info_days" />
+
+            <com.rd.views.editText.ClearEditText
+                android:id="@+id/clearEditText"
+                style="@style/BasicTheme.EditText"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="@string/note_days_hint"
+                android:imeOptions="actionDone"
+                android:inputType="numberSigned"
+                android:maxLength="3"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.days}" />
+        </LinearLayout>
+
+        <Button
+            style="@style/Button.Fillet"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:text="@string/operate_save" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

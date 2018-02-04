@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.AccountInfoVIPCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/personal_account_info">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:background="@drawable/underline_both"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_company_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:enabled="@{viewCtrl.viewModel.editable}"
+                android:gravity="end"
+                android:hint="@string/account_info_company_name_hint"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.companyName}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_id_no"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:enabled="@{viewCtrl.viewModel.editable}"
+                android:gravity="end"
+                android:hint="@string/account_info_id_no_hint"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.socialCreditCode}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/white"
+                app:filterType="@{8}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_company_address"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:enabled="@{viewCtrl.viewModel.editable}"
+                android:gravity="end"
+                android:hint="@string/account_info_company_address_hint"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.companyAddress}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_office_phone"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:enabled="@{viewCtrl.viewModel.editable}"
+                android:gravity="end"
+                android:hint="@string/account_info_office_phone_hint"
+                android:inputType="phone"
+                android:maxLength="15"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.phone}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_legal_person_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:enabled="@{viewCtrl.viewModel.editable}"
+                android:gravity="end"
+                android:hint="@string/account_info_legal_person_name_hint"
+                android:maxLength="15"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.name}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_id_card"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:enabled="@{viewCtrl.viewModel.editable}"
+                android:gravity="end"
+                android:hint="@string/account_info_id_card_hint"
+                android:imeOptions="actionDone"
+                android:maxLength="18"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.IDCard}"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/white"
+                app:filterType="@{6}" />
+        </LinearLayout>
+
+        <Button
+            style="@style/Button.Fillet"
+            android:layout_margin="@dimen/x30"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:text="@string/operate_save"
+            android:visibility="@{viewCtrl.viewModel.editable ? android.view.View.VISIBLE : android.view.View.GONE}" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

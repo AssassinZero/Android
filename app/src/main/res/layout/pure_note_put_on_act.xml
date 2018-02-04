@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.pure.viewControl.NotePutOnCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/note_put_on">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrey"
+                    android:padding="@dimen/x20"
+                    android:text="@string/note_info_tip"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:ultraData="@{viewCtrl.viewModel.noteInfo}"
+                    app:ultraLayout="@{@layout/pure_note_info_edit_layout}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrey"
+                    android:padding="@dimen/x20"
+                    android:text="@string/quotation_info_tip"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/x1"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingRight="@dimen/x20">
+
+                    <TextView
+                        style="@style/BasicTheme.TextView.Grey"
+                        android:layout_width="wrap_content"
+                        android:text="@string/quotation_info_edit_discuss" />
+
+                    <com.rd.views.textView.SingleSelectorView
+                        style="@style/BasicTheme.Arrow"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/text_dark"
+                        app:arrayList="@{@stringArray/yes_or_no_array}"
+                        app:key="@={viewCtrl.viewModel.quotationInfo.discussPersonally}" />
+                </LinearLayout>
+
+                <include
+                    layout="@layout/pure_quotation_info_edit_layout"
+                    app:item="@{viewCtrl.viewModel.quotationInfo}" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            style="@style/Button.Rectangle"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:text="@string/operate_put_on" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

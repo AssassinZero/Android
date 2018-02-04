@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.trade.viewControl.NoteQuotationCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/note_dealing_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_width="wrap_content"
+                android:text="@string/quotation_info_type" />
+
+            <com.rd.views.textView.SingleSelectorView
+                style="@style/BasicTheme.Arrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/text_dark"
+                app:KVPlist="@{viewCtrl.viewModel.typeList}"
+                app:key="@={viewCtrl.viewModel.type}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_width="wrap_content"
+                android:text="@string/quotation_info_property" />
+
+            <com.rd.views.textView.SingleSelectorView
+                style="@style/BasicTheme.Arrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/text_dark"
+                app:KVPlist="@{viewCtrl.viewModel.propertyList}"
+                app:key="@={viewCtrl.viewModel.property}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_width="wrap_content"
+                android:text="@string/quotation_info_mode" />
+
+            <com.rd.views.textView.SingleSelectorView
+                style="@style/BasicTheme.Arrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/text_dark"
+                app:arrayList="@{@stringArray/quotation_info_mode_array}"
+                app:key="@={viewCtrl.viewModel.quotationMethod}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:visibility="@{viewCtrl.viewModel.aprMode ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_weight="3"
+                android:text="@string/quotation_info_edit_apr" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:layout_weight="2"
+                android:gravity="end"
+                android:hint="@string/quotation_info_edit_apr_hint"
+                android:inputType="numberDecimal"
+                android:text="@={viewCtrl.viewModel.apr}"
+                android:textColor="@color/text_dark"
+                app:filterType="@{5}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:visibility="@{viewCtrl.viewModel.discountMode ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_weight="3"
+                android:text="@string/quotation_info_edit_discount" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:layout_weight="2"
+                android:gravity="end"
+                android:hint="@string/quotation_info_edit_discount_hint"
+                android:inputType="numberDecimal"
+                android:text="@={viewCtrl.viewModel.discount}"
+                android:textColor="@color/text_dark"
+                app:filterType="@{0}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:layout_weight="3"
+                android:text="@string/quotation_info_edit_fee" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:layout_weight="2"
+                android:gravity="end"
+                android:hint="@string/quotation_info_edit_fee_hint"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:text="@={viewCtrl.viewModel.fee}"
+                android:textColor="@color/text_dark"
+                app:filterType="@{0}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_gravity="bottom"
+                android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+                android:text="@string/operate_transaction" />
+        </LinearLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

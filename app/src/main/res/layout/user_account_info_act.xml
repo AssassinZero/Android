@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.AccountInfoCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/personal_account_info">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:background="@drawable/underline_both"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_company_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/account_info_company_name_hint"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.companyName}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_company_address"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/account_info_company_address_hint"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.companyAddress}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_contacts"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/account_info_contacts_hint"
+                android:maxLength="10"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.contacts}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_gender"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.textView.SingleSelectorView
+                style="@style/BasicTheme.Arrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/operate_choose"
+                android:padding="@dimen/x20"
+                android:textColor="@color/text_dark"
+                app:arrayList="@{@stringArray/gender_array}"
+                app:key="@={viewCtrl.viewModel.gender}"
+                app:showHint="@{true}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_birthday"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <TextView
+                style="@style/ArrowRight"
+                android:gravity="end"
+                android:hint="@string/operate_choose"
+                android:onClick="@{(View) -> viewCtrl.birthdayClick(View)}"
+                android:padding="@dimen/x20"
+                android:text="@{viewCtrl.viewModel.birthday}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x20"
+                android:text="@string/account_info_email"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <EditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/account_info_email_hint"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/x20"
+                android:singleLine="true"
+                android:text="@={viewCtrl.viewModel.email}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <Button
+            style="@style/Button.Fillet"
+            android:layout_margin="@dimen/x30"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:text="@string/operate_save" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

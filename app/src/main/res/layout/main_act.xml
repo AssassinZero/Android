@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.MainCtrl" />
+    </data>
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshListener="@{viewCtrl.listener}">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/x50">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/home_logo"
+                        android:contentDescription="@string/empty"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/x20"
+                        android:drawableTop="@drawable/home_shopping"
+                        android:gravity="center"
+                        android:onClick="@{(View) -> viewCtrl.mallClick(View)}"
+                        android:text="@string/home_mall"
+                        android:textColor="@color/text_dark" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/x20"
+                        android:drawableTop="@drawable/home_personal"
+                        android:gravity="center"
+                        android:onClick="@{(View) -> viewCtrl.personalClick(View)}"
+                        android:text="@string/home_personal"
+                        android:textColor="@color/text_dark" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginRight="@dimen/x20"
+                android:layout_marginTop="@dimen/x240"
+                android:background="@drawable/home_card"
+                android:orientation="vertical"
+                android:padding="@dimen/x40">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/home_transaction_amount"
+                    android:textColor="@color/text_black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x20"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center"
+                    android:text="@{viewCtrl.viewModel.amount}"
+                    android:textColor="@color/text_purple"
+                    android:textSize="@dimen/text_size_t1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x50"
+                    android:gravity="center"
+                    android:text="@string/home_transaction_time"
+                    android:textColor="@color/text_black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center"
+                    android:text="@{viewCtrl.viewModel.times}"
+                    android:textColor="@color/text_purple"
+                    android:textSize="@dimen/text_size_t2" />
+            </LinearLayout>
+
+            <!-- 弹出页 -->
+            <LinearLayout
+                android:id="@+id/popupView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/home_open_background"
+                android:onClick="@{(View) -> viewCtrl.popupWindowClick(View, moreView)}"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/x100"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginRight="@dimen/x20"
+                    android:layout_marginTop="@dimen/x240"
+                    android:text="@string/home_popup_title"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_t2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/x20"
+                    android:text="@string/home_popup_tips"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size_h3" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x160"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/x20"
+                        android:drawableTop="@drawable/home_note_buy"
+                        android:gravity="center"
+                        android:onClick="@{(View) -> viewCtrl.noteBuyClick(View, moreView, popupView)}"
+                        android:text="@string/home_note_buy"
+                        android:textColor="@color/text_dark" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/x20"
+                        android:drawableTop="@drawable/home_note_sell"
+                        android:gravity="center"
+                        android:onClick="@{(View) -> viewCtrl.noteSellClick(View, moreView, popupView)}"
+                        android:text="@string/home_note_sell"
+                        android:textColor="@color/text_dark" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/moreView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="@dimen/x50"
+                android:background="@drawable/home_open"
+                android:contentDescription="@string/empty"
+                android:onClick="@{(View) -> viewCtrl.moreClick(View, popupView)}"
+                android:tag="@string/tag_on" />
+        </FrameLayout>
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+</layout>

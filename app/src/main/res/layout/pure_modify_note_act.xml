@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.pure.viewControl.ModifyNoteCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/note_modify">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/x110"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorGrey"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_info_tip"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:ultraData="@{viewCtrl.viewModel.noteInfo}"
+                        app:ultraLayout="@{@layout/basic_note_info_layout}" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorGrey"
+                        android:padding="@dimen/x20"
+                        android:text="@string/quotation_info_tip"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/underline_both"
+                        android:orientation="horizontal"
+                        android:paddingEnd="@dimen/x20"
+                        android:paddingLeft="@dimen/x0"
+                        android:paddingRight="@dimen/x20"
+                        android:paddingStart="@dimen/x0">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/x20"
+                            android:text="@string/note_modify_settlement_amount"
+                            android:textColor="@color/text_grey"
+                            android:textSize="@dimen/text_size_h2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:padding="@dimen/x20"
+                            android:text="@{viewCtrl.viewModel.originalMoney}"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/text_size_h2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/underline_both"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/x1">
+
+                        <TextView
+                            style="@style/BasicTheme.TextView.Grey"
+                            android:layout_width="wrap_content"
+                            android:padding="@dimen/x20"
+                            android:text="@string/quotation_info_edit_discuss" />
+
+                        <com.rd.views.textView.SingleSelectorView
+                            style="@style/BasicTheme.Arrow.Padding"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/text_dark"
+                            app:arrayList="@{@stringArray/yes_or_no_array}"
+                            app:key="@={viewCtrl.viewModel.quotationInfo.discussPersonally}" />
+                    </LinearLayout>
+
+                    <include
+                        layout="@layout/pure_quotation_info_edit_layout"
+                        app:item="@{viewCtrl.viewModel.quotationInfo}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/overline_both"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/x20"
+                            android:text="@string/note_info_days"
+                            android:textColor="@color/text_grey"
+                            android:textSize="@dimen/text_size_h2" />
+
+                        <EditText
+                            style="@style/BasicTheme.EditText.Padding"
+                            android:gravity="end"
+                            android:hint="@string/note_days_hint"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberSigned"
+                            android:maxLength="3"
+                            android:padding="@dimen/x20"
+                            android:text="@={viewCtrl.viewModel.noteInfo.get(0).days}"
+                            android:textColor="@color/text_dark" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x100"
+                android:layout_alignParentBottom="true"
+                android:onClick="@{(View) -> viewCtrl.modifyClick(View)}"
+                android:text="@string/operate_modify"
+                android:visibility="@{viewCtrl.viewModel.transactionState ? android.view.View.VISIBLE : android.view.View.GONE}" />
+        </RelativeLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

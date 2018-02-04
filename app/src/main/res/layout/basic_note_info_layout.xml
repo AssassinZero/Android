@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="first"
+            type="Boolean" />
+
+        <variable
+            name="item"
+            type="com.rd.hnlf.module.common.viewModel.bean.NoteInfo" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:onClick="@{(View) -> item.itemClick(View)}"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{first ? @drawable/background_white : @drawable/overline_left}"
+            android:orientation="vertical"
+            android:padding="@dimen/x20">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note_info_note_no"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size_h3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:text="@{item.id}"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note_info_amount"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size_h3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:text="@{item.amount}"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note_info_days"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size_h3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:text="@{item.daysStr}"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/note_info_due_date"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x20"
+                        android:layout_marginStart="@dimen/x20"
+                        android:text="@{item.dueDate}"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="@{item.mode == 0 ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{!android.text.TextUtils.isEmpty(item.apr) ? @string/quotation_info_apr : @string/quotation_info_discount}"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x20"
+                        android:layout_marginStart="@dimen/x20"
+                        android:text="@{!android.text.TextUtils.isEmpty(item.apr) ? item.apr : item.discount}"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h3" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:visibility="@{item.mode == 1 ? android.view.View.GONE : android.view.View.VISIBLE}">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quotation_info_type"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x20"
+                        android:layout_marginStart="@dimen/x20"
+                        android:text="@{item.type}"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quotation_info_property"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x20"
+                        android:layout_marginStart="@dimen/x20"
+                        android:text="@{item.property}"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_h3" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:visibility="@{item.mode == 0 ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note_info_amount_payable"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size_h3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:text="@{item.amountPayableStr}"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h3" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="@dimen/x20"
+            android:layout_marginRight="@dimen/x20"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/icon_arrow_right"
+            android:visibility="@{item.clickable ? android.view.View.VISIBLE : android.view.View.GONE}" />
+    </FrameLayout>
+</layout>

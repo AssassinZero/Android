@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.eCommerce.viewControl.NoteDetailCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:bottomDivider="@color/transparent"
+        app:titleText="@string/note_detail_title">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/x50"
+                    android:paddingTop="@dimen/x50">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewCtrl.viewModel.acceptName}"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewCtrl.viewModel.id}"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_size_h4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bill_status"
+                            android:paddingEnd="@dimen/x20"
+                            android:paddingLeft="@dimen/x10"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingStart="@dimen/x10"
+                            android:text="@{viewCtrl.viewModel.transferCount}"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_size_h7" />
+
+                        <View
+                            android:layout_width="@dimen/x10"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bill_status"
+                            android:paddingEnd="@dimen/x20"
+                            android:paddingLeft="@dimen/x10"
+                            android:paddingRight="@dimen/x20"
+                            android:paddingStart="@dimen/x10"
+                            android:text="@{viewCtrl.viewModel.reendorsment}"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_size_h7" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewCtrl.viewModel.amount}"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_size_h4" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/x10"
+                                android:text="@string/note_info_amount"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_size_h4" />
+                        </LinearLayout>
+
+                        <View
+                            style="@style/BasicTheme.VLine"
+                            android:layout_marginBottom="@dimen/x30"
+                            android:layout_marginTop="@dimen/x30"
+                            android:background="@color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:text="@string/note_info_discuss"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_size_t1"
+                            android:visibility="@{viewCtrl.viewModel.discuss ? android.view.View.VISIBLE : android.view.View.GONE}" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="@{!viewCtrl.viewModel.discuss ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{!android.text.TextUtils.isEmpty(viewCtrl.viewModel.apr) ? viewCtrl.viewModel.aprSpanned : viewCtrl.viewModel.discountSpanned}"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_size_h4" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/x10"
+                                android:text="@{!android.text.TextUtils.isEmpty(viewCtrl.viewModel.apr) ? @string/note_detail_apr : @string/note_detail_discount}"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_size_h4" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/x20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:text="@string/note_info_due_date"
+                            android:textColor="@color/text_grey"
+                            android:textSize="@dimen/text_size_h2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewCtrl.viewModel.dueDate}"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/text_size_h2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:text="@string/note_info_days"
+                            android:textColor="@color/text_grey"
+                            android:textSize="@dimen/text_size_h2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewCtrl.viewModel.days}"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/text_size_h2" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/x20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:text="@string/quotation_info_type"
+                            android:textColor="@color/text_grey"
+                            android:textSize="@dimen/text_size_h2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewCtrl.viewModel.type}"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/text_size_h2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/x20"
+                            android:paddingRight="@dimen/x20"
+                            android:text="@string/quotation_info_property"
+                            android:textColor="@color/text_grey"
+                            android:textSize="@dimen/text_size_h2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewCtrl.viewModel.property}"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/text_size_h2" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/x20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:text="@string/note_detail_holder_enterprise"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewCtrl.viewModel.holderEnterprise}"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_size_h2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/x20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:text="@string/note_detail_accept_name"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewCtrl.viewModel.acceptName}"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_size_h2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/x20"
+                    android:visibility="@{viewCtrl.viewModel.land ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:text="@string/note_detail_phone"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewCtrl.viewModel.phone}"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_size_h2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/x20"
+                    android:paddingTop="@dimen/x20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingRight="@dimen/x20"
+                        android:text="@string/note_detail_put_on_time"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewCtrl.viewModel.putOnTime}"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_size_h2" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/ArrowRight"
+                    android:layout_marginTop="@dimen/x20"
+                    android:background="@drawable/underline"
+                    android:onClick="@{(View) -> viewCtrl.noteClick(View)}"
+                    android:padding="@dimen/x20"
+                    android:text="@string/note_detail_note" />
+
+                <TextView
+                    style="@style/ArrowRight"
+                    android:background="@color/white"
+                    android:onClick="@{(View) -> viewCtrl.promptClick(View)}"
+                    android:padding="@dimen/x20"
+                    android:text="@string/note_detail_prompt" />
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x350"
+                    android:background="@color/white"
+                    android:padding="@dimen/x20"
+                    android:visibility="gone"
+                    app:bannerImages="@{viewCtrl.viewModel.noteImages}" />
+
+                <TextView
+                    style="@style/BasicTheme.TextView.Dark"
+                    android:background="@drawable/underline_left"
+                    android:drawableEnd="@drawable/icon_expand"
+                    android:drawableRight="@drawable/arrow_down"
+                    android:onClick="@{(View) -> viewCtrl.promptClick(View, prompt)}"
+                    android:padding="@dimen/x20"
+                    android:text="@string/note_detail_prompt"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/prompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ellipsize="end"
+                    android:maxLines="5"
+                    android:padding="@dimen/x20"
+                    android:tag="5"
+                    android:text="@{viewCtrl.viewModel.prompt}"
+                    android:textColor="@color/text_grey"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="@{(View) -> viewCtrl.contactWayClick(View)}"
+                android:text="@string/note_detail_contact_way"
+                android:textColor="@color/text_purple"
+                android:visibility="@{!viewCtrl.viewModel.land ? android.view.View.VISIBLE : android.view.View.GONE}" />
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_weight="1"
+                android:enabled="@{viewCtrl.viewModel.enable}"
+                android:onClick="@{(View) -> viewCtrl.buyNowClick(View)}"
+                android:text="@{viewCtrl.viewModel.discuss ? @string/note_detail_enquiry : @string/note_detail_buy_now}" />
+        </LinearLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

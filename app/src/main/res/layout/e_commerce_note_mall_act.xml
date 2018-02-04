@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.eCommerce.viewControl.NoteMallCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:bottomDivider="@color/colorTitleBar"
+        app:titleText="@string/home_mall">
+
+        <com.rd.views.filter.DropDownMenu
+            android:id="@+id/dropDownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/mFilterContentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <in.srain.cube.views.ptr.PtrClassicFrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    app:refreshListener="@{viewCtrl.listener}">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGrey"
+                        android:clipToPadding="@{viewCtrl.clipToPadding}"
+                        android:paddingTop="@dimen/x10"
+                        android:scrollbars="none"
+                        app:addItemDecoration="@{viewCtrl.itemDecorationType}"
+                        app:itemTouchListener="@{viewCtrl.itemTouchListener}"
+                        app:layoutManagerType="@{viewCtrl.layoutManagerType}"
+                        app:loadMoreListener="@{viewCtrl.listener}"
+                        app:placeHolderType="@{viewCtrl.placeHolderType}"
+                        app:recyclerAdapter="@{viewCtrl.recyclerAdapter}"
+                        app:retryListener="@{viewCtrl.retryListener}" />
+                </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x10" />
+
+                <Button
+                    style="@style/Button.Rectangle"
+                    android:background="@color/white"
+                    android:onClick="@{(View) -> viewCtrl.batchOrderClick(View)}"
+                    android:text="@string/mall_batch_order"
+                    android:textColor="@color/text_purple"
+                    android:visibility="@{viewCtrl.mode == 0 ? android.view.View.VISIBLE : android.view.View.GONE}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewCtrl.mode == 1 ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x50"
+                        android:layout_marginStart="@dimen/x50"
+                        android:layout_weight="1"
+                        android:button="@drawable/check_box_shape"
+                        android:onClick="@{(View) -> viewCtrl.selectAllClick(View)}"
+                        android:padding="@dimen/x20"
+                        android:text="@string/operate_select_all"
+                        android:textColor="@color/text_purple"
+                        android:textSize="@dimen/text_size_h1"
+                        android:visibility="gone" />
+
+                    <Button
+                        style="@style/Button.Rectangle"
+                        android:layout_weight="2"
+                        android:onClick="@{(View) -> viewCtrl.confirmOrderClick(View)}"
+                        android:text="@string/mall_confirm_order" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.rd.views.filter.DropDownMenu>
+    </com.rd.views.appbar.ToolBar>
+</layout>

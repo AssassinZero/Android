@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App bar颜色 -->
+    <color name="colorPrimary">#9786EA</color>
+    <!-- 状态栏颜色(Lollipop - API Level 21 以上) -->
+    <color name="colorPrimaryDark">#9786EA</color>
+    <!-- 控件的主色调(光标颜色、checkbox背景色等) -->
+    <color name="colorAccent">#9786EA</color>
+    <!-- 标题栏目 -->
+    <color name="colorTitleBar">#9786EA</color>
+    <!-- 标题颜色 -->
+    <color name="app_bar_title_color">@color/white</color>
+
+    <!-- 紫色 -->
+    <color name="text_purple">#9786EA</color>
+    <color name="text_yellow">#F9C31D</color>
+
+    <!-- button-enable -->
+    <color name="enable_bg">#9786EA</color>
+    <!-- button-disable -->
+    <color name="disable_bg">#DDDDDD</color>
+    <!-- button-pressed -->
+    <color name="press_bg">#999786EA</color>
+</resources>

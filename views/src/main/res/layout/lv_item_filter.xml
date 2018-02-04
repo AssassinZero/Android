@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.rd.views.filter.view.FilterCheckedTextView android:id="@+id/tv_item_filter"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/underline_left"
+    android:enabled="true"
+    android:gravity="center_vertical"
+    android:padding="@dimen/x20"
+    android:textColor="@drawable/filter_text_color_shape" />

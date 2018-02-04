@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.PersonalCenterCtrl" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x400"
+            android:background="@drawable/personal_background">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/empty"
+                android:onClick="@{(View) -> viewCtrl.closeClick(View)}"
+                android:padding="@dimen/x20"
+                android:src="@drawable/app_bar_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/x20"
+                android:text="@string/personal_title"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size_h1" />
+
+            <com.rd.views.AvatarImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/icon_head"
+                app:defaultImage="@{@drawable/icon_head}"
+                app:errorImage="@{@drawable/icon_head}"
+                app:skipCache="@{true}"
+                app:src="@{viewCtrl.viewModel.avatar}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/x30"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/x10"
+                android:text="@{viewCtrl.viewModel.greeting}"
+                android:textColor="@color/text_white" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/PersonalItem"
+            android:layout_marginTop="@dimen/x20"
+            android:drawableLeft="@drawable/icon_buyer"
+            android:drawableStart="@drawable/icon_buyer"
+            android:onClick="@{(View) -> viewCtrl.buyerClick(View)}"
+            android:text="@string/personal_buyer"
+            android:visibility="@{viewCtrl.viewModel.normal || viewCtrl.viewModel.VIP ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:drawableLeft="@drawable/icon_seller"
+            android:drawableStart="@drawable/icon_seller"
+            android:onClick="@{(View) -> viewCtrl.sellerClick(View)}"
+            android:text="@string/personal_seller"
+            android:visibility="@{viewCtrl.viewModel.normal || viewCtrl.viewModel.VIP ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:drawableLeft="@drawable/icon_history_note"
+            android:drawableStart="@drawable/icon_history_note"
+            android:onClick="@{(View) -> viewCtrl.historyNoteClick(View)}"
+            android:text="@string/personal_history_note"
+            android:visibility="@{viewCtrl.viewModel.normal ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:drawableLeft="@drawable/icon_note_dealing"
+            android:drawableStart="@drawable/icon_note_dealing"
+            android:onClick="@{(View) -> viewCtrl.noteDealingClick(View)}"
+            android:text="@string/personal_note_dealing"
+            android:visibility="@{viewCtrl.viewModel.agent ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:drawableLeft="@drawable/icon_e_commerce_order"
+            android:drawableStart="@drawable/icon_e_commerce_order"
+            android:onClick="@{(View) -> viewCtrl.ECommerceOrderClick(View)}"
+            android:text="@string/personal_e_commerce_order"
+            android:visibility="@{viewCtrl.viewModel.VIP ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:drawableLeft="@drawable/icon_pure_note_order"
+            android:drawableStart="@drawable/icon_pure_note_order"
+            android:onClick="@{(View) -> viewCtrl.pureNoteOrderClick(View)}"
+            android:text="@string/personal_pure_order"
+            android:visibility="@{viewCtrl.viewModel.VIP ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:drawableLeft="@drawable/icon_my_note"
+            android:drawableStart="@drawable/icon_my_note"
+            android:onClick="@{(View) -> viewCtrl.myNoteClick(View)}"
+            android:text="@string/personal_my_note"
+            android:visibility="@{viewCtrl.viewModel.VIP ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/icon_account_info"
+            android:drawableStart="@drawable/icon_account_info"
+            android:onClick="@{(View) -> viewCtrl.accountInfoClick(View)}"
+            android:text="@string/personal_account_info" />
+
+        <TextView
+            style="@style/PersonalItem"
+            android:layout_marginTop="@dimen/x20"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/icon_security_center"
+            android:drawableStart="@drawable/icon_security_center"
+            android:onClick="@{(View) -> viewCtrl.securityCenterClick(View)}"
+            android:text="@string/personal_security_center" />
+    </LinearLayout>
+</layout>

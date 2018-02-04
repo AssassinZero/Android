@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.BankChooseCtrl" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_weight="1"
+                android:background="@drawable/fillet_white"
+                android:drawableLeft="@drawable/icon_search"
+                android:drawablePadding="@dimen/x10"
+                android:drawableStart="@drawable/icon_search"
+                android:hint="@string/bankcard_search_hint"
+                android:imeOptions="actionSearch"
+                android:onEditorAction="@{(view, actionId, event) -> viewCtrl.searchAction(view, actionId, event)}"
+                android:paddingBottom="@dimen/x10"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/x10"
+                android:singleLine="true"
+                android:text="@={viewCtrl.content}"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/text_grey"
+                android:textSize="@dimen/text_size_h4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(View) -> viewCtrl.cancelClick(View)}"
+                android:padding="@dimen/x20"
+                android:text="@string/operate_cancel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h4" />
+        </LinearLayout>
+
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:refreshListener="@{viewCtrl.listener}">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrey"
+                android:scrollbars="none"
+                app:addItemDecoration="@{viewCtrl.itemDecorationType}"
+                app:itemTouchListener="@{viewCtrl.itemTouchListener}"
+                app:layoutManagerType="@{viewCtrl.layoutManagerType}"
+                app:loadMoreListener="@{viewCtrl.listener}"
+                app:recyclerAdapter="@{viewCtrl.recyclerAdapter}" />
+        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    </LinearLayout>
+</layout>

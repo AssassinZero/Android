@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.pure.viewControl.PureTransactionCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/note_list_transaction">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrey"
+                    android:padding="@dimen/x20"
+                    android:text="@string/note_info_tip"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:ultraData="@{viewCtrl.viewModel.noteInfo}"
+                    app:ultraLayout="@{@layout/pure_note_info_edit_layout}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrey"
+                    android:padding="@dimen/x20"
+                    android:text="@string/quotation_info_tip"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h1" />
+
+                <include
+                    layout="@layout/pure_quotation_info_edit_layout"
+                    app:item="@{viewCtrl.viewModel.quotationInfo}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@drawable/underline_both" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/quotation_info_edit_fee"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <EditText
+                        style="@style/BasicTheme.EditText.Padding"
+                        android:gravity="end"
+                        android:hint="@string/quotation_info_edit_fee_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/x20"
+                        android:text="@={viewCtrl.viewModel.quotationInfo.originFee}"
+                        android:textColor="@color/text_dark"
+                        app:filterType="@{0}" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrey"
+                    android:padding="@dimen/x20"
+                    android:text="@string/bill_to_party_info_tip"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_h1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_bankcard"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <EditText
+                        style="@style/BasicTheme.EditText"
+                        android:gravity="end"
+                        android:hint="@string/bankcard_bankcard_hint"
+                        android:inputType="number"
+                        android:maxLength="35"
+                        android:padding="@dimen/x20"
+                        android:text="@={viewCtrl.viewModel.billToPartyInfo.bankcard}"
+                        android:textColor="@color/text_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/bankcard_account_name"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <EditText
+                        style="@style/BasicTheme.EditText.Padding"
+                        android:gravity="end"
+                        android:hint="@string/bankcard_account_name_hint"
+                        android:imeOptions="actionDone"
+                        android:padding="@dimen/x20"
+                        android:text="@={viewCtrl.viewModel.billToPartyInfo.accountName}"
+                        android:textColor="@color/text_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/x20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bankcard_bank_name"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/ArrowRight"
+                        android:gravity="end"
+                        android:hint="@string/operate_choose"
+                        android:onClick="@{(View) -> viewCtrl.chooseBankClick(View)}"
+                        android:padding="0dp"
+                        android:text="@{viewCtrl.viewModel.billToPartyInfo.bankName}"
+                        android:textColor="@color/text_dark"
+                        android:textColorHint="@color/hint_grey"
+                        android:textSize="@dimen/text_size_h2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_both"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/x20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bankcard_branch_name"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        style="@style/ArrowRight"
+                        android:gravity="end"
+                        android:hint="@string/operate_choose"
+                        android:onClick="@{(View) -> viewCtrl.chooseBranchBankClick(View)}"
+                        android:padding="0dp"
+                        android:text="@{viewCtrl.viewModel.billToPartyInfo.branchName}"
+                        android:textColor="@color/text_dark"
+                        android:textColorHint="@color/hint_grey"
+                        android:textSize="@dimen/text_size_h2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/x20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bankcard_branch_no"
+                        android:textColor="@color/text_grey"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="@{viewCtrl.viewModel.billToPartyInfo.branchNo}"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_size_h2" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_rectangle_button"
+            android:gravity="center"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:padding="@dimen/x20"
+            android:text="@string/operate_transaction"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_h1" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

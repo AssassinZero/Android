@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rd.hnlf.common.ui.BaseTimeButtonVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:text="@string/verification_code"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_h2" />
+
+        <EditText
+            style="@style/BasicTheme.EditText.Padding"
+            android:layout_weight="13"
+            android:gravity="end"
+            android:hint="@string/verification_code_hint"
+            android:inputType="number"
+            android:maxLength="6"
+            android:text="@={viewModel.code}"
+            android:textColor="@color/text_dark" />
+
+        <View
+            android:layout_width="@dimen/x1"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/x20"
+            android:background="@color/line_grey" />
+
+        <com.rd.views.textView.TimeButton
+            android:id="@+id/timeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="14"
+            android:background="@color/white"
+            android:enabled="@{viewModel.codeEnable}"
+            android:gravity="center"
+            android:text="@string/verification_code_get"
+            android:textColor="@drawable/time_button_color_shape"
+            android:textColorHint="@color/hint_grey"
+            android:textSize="@dimen/text_size_h2" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.rd.hnlf.module.common.viewModel.OrderVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x20"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline"
+            android:orientation="horizontal"
+            android:padding="@dimen/x20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:ellipsize="end"
+                android:maxLength="14"
+                android:text="@{item.accountName}"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_h2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_marginRight="@dimen/x10"
+                android:background="@color/colorGrey"
+                android:padding="@dimen/x5"
+                android:text="@{item.type}"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_h4"
+                android:visibility="@{item.mode == 1 ? android.view.View.VISIBLE : android.view.View.GONE}" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@{item.status}"
+                android:textColor="@color/text_purple"
+                android:textSize="@dimen/text_size_h4" />
+        </LinearLayout>
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:paddingTop="@dimen/x20"
+            app:leftTxt="@string/seller_total_amount"
+            app:leftTxtColor="@color/text_grey"
+            app:leftTxtSize="@dimen/text_size_h3"
+            app:rightTxt="@{item.totalAmount}"
+            app:rightTxtColor="@color/text_dark"
+            app:rightTxtSize="@dimen/text_size_h3" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:paddingTop="@dimen/x10"
+            app:leftTxt="@string/seller_settlement_amount"
+            app:leftTxtColor="@color/text_grey"
+            app:leftTxtSize="@dimen/text_size_h3"
+            app:rightTxt="@{item.settlementAmount}"
+            app:rightTxtColor="@color/text_dark"
+            app:rightTxtSize="@dimen/text_size_h3" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:paddingTop="@dimen/x10"
+            app:leftTxt="@string/seller_note_count"
+            app:leftTxtColor="@color/text_grey"
+            app:leftTxtSize="@dimen/text_size_h3"
+            app:rightTxt="@{item.noteCount}"
+            app:rightTxtSize="@dimen/text_size_h3" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:background="@drawable/underline_left"
+            android:paddingBottom="@dimen/x20"
+            android:paddingTop="@dimen/x10"
+            app:leftTxt="@string/seller_order_time"
+            app:leftTxtColor="@color/text_grey"
+            app:leftTxtSize="@dimen/text_size_h3"
+            app:rightTxt="@{item.orderTime}"
+            app:rightTxtSize="@dimen/text_size_h3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/x20">
+
+            <TextView
+                style="@style/BasicTheme.TextView.Grey"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/x0"
+                android:text="@{item.orderNoString}"
+                android:textSize="@dimen/text_size_h3" />
+
+            <TextView
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/stroke_fillet_white_grey"
+                android:paddingBottom="@dimen/x10"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/x10"
+                android:text="@{item.button2}"
+                android:textSize="@dimen/text_size_h3"
+                android:visibility="@{android.text.TextUtils.isEmpty(item.button2) ? android.view.View.GONE : android.view.View.VISIBLE}" />
+
+            <TextView
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:background="@drawable/stroke_fillet_white_purple"
+                android:paddingBottom="@dimen/x10"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/x10"
+                android:text="@{item.button1}"
+                android:textColor="@color/text_purple"
+                android:textSize="@dimen/text_size_h3"
+                android:visibility="@{android.text.TextUtils.isEmpty(item.button1) ? android.view.View.GONE : android.view.View.VISIBLE}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

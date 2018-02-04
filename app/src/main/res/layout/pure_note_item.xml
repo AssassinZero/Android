@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="visible"
+            type="android.databinding.ObservableBoolean" />
+
+        <variable
+            name="item"
+            type="com.rd.hnlf.module.pure.viewModel.NoteVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x20"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/x1">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginStart="@dimen/x20"
+                android:button="@drawable/check_box_shape"
+                android:checked="@{item.select}"
+                android:clickable="false"
+                android:gravity="center"
+                android:padding="@dimen/x10"
+                android:visibility="@{visible ? android.view.View.VISIBLE : android.view.View.GONE}" />
+
+            <TextView
+                style="@style/BasicTheme.TextView.Black"
+                android:padding="@dimen/x20"
+                android:text="@{item.id}" />
+        </LinearLayout>
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:paddingTop="@dimen/x20"
+            app:leftTxt="@string/note_info_amount"
+            app:leftTxtColor="@color/text_grey"
+            app:rightTxt="@{item.amount}"
+            app:rightTxtColor="@color/text_black" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:paddingTop="@dimen/x10"
+            app:leftTxt="@string/quotation_info_property"
+            app:leftTxtColor="@color/text_grey"
+            app:rightTxt="@{item.property}" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:paddingTop="@dimen/x10"
+            app:leftTxt="@string/quotation_info_type"
+            app:leftTxtColor="@color/text_grey"
+            app:rightTxt="@{item.type}" />
+
+        <com.rd.views.LeftRightLayout
+            style="@style/LeftRight"
+            android:paddingBottom="@dimen/x20"
+            android:paddingTop="@dimen/x10"
+            app:leftTxt="@string/note_info_due_date"
+            app:leftTxtColor="@color/text_grey"
+            app:rightTxt="@{item.dueDate}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/overline"
+            android:orientation="horizontal"
+            android:padding="@dimen/x10"
+            android:visibility="@{item.visible ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/x1"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/notePullOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginRight="@dimen/x10"
+                android:background="@drawable/stroke_fillet_white_grey"
+                android:paddingBottom="@dimen/x10"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/x10"
+                android:text="@string/operate_pull_off" />
+
+            <TextView
+                android:id="@+id/noteModify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_marginStart="@dimen/x10"
+                android:background="@drawable/stroke_fillet_white_purple"
+                android:paddingBottom="@dimen/x10"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/x10"
+                android:text="@string/operate_modify"
+                android:textColor="@color/text_purple" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.RegisterCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        app:barBackground="@color/colorTitleBar"
+        app:titleText="@string/register_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:background="@drawable/underline_both"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_role"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.textView.SingleSelectorView
+                style="@style/BasicTheme.Arrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/text_dark"
+                app:arrayList="@{@stringArray/role_array}"
+                app:key="@={viewCtrl.viewModel.role}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline_both"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_phone"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.editText.ClearEditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/login_phone_hint"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:text="@={viewCtrl.viewModel.phone}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/common_time_button_layout"
+            app:viewModel="@{viewCtrl.viewModel}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:background="@drawable/underline_both" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_password"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.editText.PasswordEditText
+                style="@style/BasicTheme.EditText"
+                android:gravity="end"
+                android:hint="@string/register_password_hint"
+                android:imeOptions="actionDone"
+                android:maxLength="16"
+                android:text="@={viewCtrl.viewModel.password}"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <Button
+            style="@style/Button.Fillet"
+            android:enabled="@{viewCtrl.viewModel.enable}"
+            android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+            android:text="@string/register_submit" />
+
+        <TextView
+            style="@style/BasicTheme.Tips"
+            android:layout_margin="@dimen/x20"
+            android:onClick="@{(View) -> viewCtrl.protocolClick(View)}"
+            android:text="@{android.text.Html.fromHtml(@string/register_protocol)}" />
+    </com.rd.views.appbar.ToolBar>
+</layout>

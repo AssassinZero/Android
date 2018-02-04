@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.pure.viewControl.NoteListCtrl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey"
+        android:orientation="vertical">
+
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:refreshListener="@{viewCtrl.listener}">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrey"
+                android:clipToPadding="@{viewCtrl.clipToPadding}"
+                android:scrollbars="none"
+                app:addItemDecoration="@{viewCtrl.itemDecorationType}"
+                app:itemTouchListener="@{viewCtrl.itemTouchListener}"
+                app:layoutManagerType="@{viewCtrl.layoutManagerType}"
+                app:loadMoreListener="@{viewCtrl.listener}"
+                app:placeHolderType="@{viewCtrl.placeHolderType}"
+                app:recyclerAdapter="@{viewCtrl.recyclerAdapter}"
+                app:retryListener="@{viewCtrl.retryListener}" />
+        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="@{viewCtrl.mode == 1 ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="@{(View) -> viewCtrl.transactionClick(View)}"
+                android:text="@string/note_list_transaction"
+                android:textColor="@color/text_purple" />
+
+            <View
+                android:layout_width="@dimen/x1"
+                android:layout_height="match_parent"
+                android:background="@color/line_grey" />
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="@{(View) -> viewCtrl.putOnClick(View)}"
+                android:text="@string/operate_put_on"
+                android:textColor="@color/text_purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="@{viewCtrl.mode == 2 || viewCtrl.mode == 3 ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x50"
+                android:layout_marginStart="@dimen/x50"
+                android:layout_weight="1"
+                android:button="@drawable/check_box_shape"
+                android:checked="@={viewCtrl.checkable}"
+                android:onClick="@{(View) -> viewCtrl.selectAllClick(View)}"
+                android:padding="@dimen/x20"
+                android:text="@string/operate_select_all"
+                android:textColor="@color/text_purple"
+                android:textSize="@dimen/text_size_h1"
+                android:visibility="gone" />
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_weight="2"
+                android:onClick="@{(View) -> viewCtrl.goTransactionClick(View)}"
+                android:text="@string/operate_transaction"
+                android:visibility="@{viewCtrl.mode == 2 ? android.view.View.VISIBLE : android.view.View.GONE}" />
+
+            <Button
+                style="@style/Button.Rectangle"
+                android:layout_weight="2"
+                android:onClick="@{(View) -> viewCtrl.goPutOnClick(View)}"
+                android:text="@string/operate_put_on"
+                android:visibility="@{viewCtrl.mode == 3 ? android.view.View.VISIBLE : android.view.View.GONE}" />
+        </LinearLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

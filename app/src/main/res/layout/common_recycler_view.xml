@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.common.ui.BaseListControl" />
+    </data>
+
+    <com.rd.views.appbar.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:leftColor="@color/text_white"
+        app:rightColor="@color/text_white">
+
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:refreshListener="@{viewCtrl.listener}">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrey"
+                android:clipToPadding="@{viewCtrl.clipToPadding}"
+                android:scrollbars="none"
+                app:addItemDecoration="@{viewCtrl.itemDecorationType}"
+                app:itemTouchListener="@{viewCtrl.itemTouchListener}"
+                app:layoutManagerType="@{viewCtrl.layoutManagerType}"
+                app:loadMoreListener="@{viewCtrl.listener}"
+                app:placeHolderType="@{viewCtrl.placeHolderType}"
+                app:recyclerAdapter="@{viewCtrl.recyclerAdapter}"
+                app:retryListener="@{viewCtrl.retryListener}" />
+        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    </com.rd.views.appbar.ToolBar>
+</layout>

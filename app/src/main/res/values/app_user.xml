@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_phone_hint">请输入手机号码</string>
+    <string name="login_password_hint">请输入登录密码</string>
+    <string name="login_code_hint">请输入短信验证码</string>
+    <string name="login_submit">登录</string>
+    <string name="login_forgot">忘记密码？</string>
+    <string name="login_code_enter">短信验证码登录</string>
+    <string name="login_password_enter">帐号密码登录</string>
+    <string name="login_to_register">注册新用户</string>
+    <string name="login_out">确定要登出?</string>
+
+    <string name="forgot_title">手机验证</string>
+    <string name="reset_title">设置新密码</string>
+    <string name="reset_password_confirm">确认密码</string>
+    <string name="reset_password_confirm_hint">请输入确认密码</string>
+
+    <string name="register_title">注册</string>
+    <string name="register_role">角色选择</string>
+    <string-array name="role_array">
+        <item>我是用户</item>
+        <item>我是代理商</item>
+    </string-array>
+    <string name="register_phone">手机号码</string>
+    <string name="register_password">登录密码</string>
+    <string name="register_password_hint">8&#8211;16位字符,含字母和数字</string>
+    <string name="register_submit">注册</string>
+    <string name="register_protocol"><Data><![CDATA[点击“注册”按钮，表示你已阅读并同意<font color="#9786EA">《注册协议》</font>]]></Data></string>
+
+    <string name="register_succeed_title">注册成功</string>
+    <string name="register_succeed_prompt">恭喜您注册成功！</string>
+
+    <string name="personal_title">个人中心</string>
+    <string name="personal_greeting"><Data><![CDATA[ <big>%1$s</big><br /><small>欢迎您，%2$s</small>]]></Data></string>
+    <string name="personal_buyer">我是买家</string>
+    <string name="personal_seller">我是卖家</string>
+    <string name="personal_history_note">历史票据</string>
+    <string name="personal_note_dealing">票据交易</string>
+    <string name="personal_e_commerce_order">电商订单</string>
+    <string name="personal_pure_order">纯票订单</string>
+    <string name="personal_my_note">我的票据</string>
+    <string name="personal_account_info">账户信息</string>
+    <string name="personal_security_center">安全中心</string>
+
+    <string name="security_modify_phone">手机绑定</string>
+    <string name="security_modify_password">修改密码</string>
+    <string name="security_my_bank_account">我的银行账户</string>
+    <string name="security_login_out">退出登录</string>
+
+    <string name="modify_phone_old">手机号</string>
+    <string name="modify_phone_password">登录密码</string>
+    <string name="modify_phone_password_hint">请输入密码</string>
+    <string name="modify_phone_new">新手机号</string>
+    <string name="modify_phone_new_hint">请输入新手机号码</string>
+
+    <string name="modify_password_old">旧密码</string>
+    <string name="modify_password_old_hint">请输入旧密码</string>
+    <string name="modify_password_new">新密码</string>
+    <string name="modify_password_new_hint">请输入新密码</string>
+
+    <string name="bankcard_list_title">我的银行卡</string>
+    <string name="bankcard_list_branch_no">行号 %1$s</string>
+    <string name="bankcard_list_delete_bankcard">确定要删除尾号为 %1$s 的银行卡？</string>
+
+    <string name="bankcard_add_title">添加银行卡</string>
+    <string name="bankcard_modify_title">修改银行卡</string>
+    <string name="bankcard_account_type">账户类型</string>
+    <string name="bankcard_bankcard">银行账户</string>
+    <string name="bankcard_bankcard_hint">请输入银行账户</string>
+    <string name="bankcard_bankcard_add_hint">请添加银行卡</string>
+    <string name="bankcard_account_name">账户名称</string>
+    <string name="bankcard_account_name_hint">请输入账户名称</string>
+    <string name="bankcard_bank_name">开户银行</string>
+    <string name="bankcard_branch_name">开户行名称</string>
+    <string name="bankcard_branch_no">开户行行号</string>
+    <string name="bankcard_search_hint">请输入银行名称</string>
+    <string name="bankcard_search_error">很抱歉，没有找到与“%1$s”相关的银行</string>
+    <string name="bankcard_bankcard_type_error">该银行卡非签约卡</string>
+
+    <string name="account_info_company_name">企业名称</string>
+    <string name="account_info_company_name_hint">请输入企业名称</string>
+    <string name="account_info_id_no">证件号码</string>
+    <string name="account_info_id_no_hint">请输入证件号码</string>
+    <string name="account_info_company_address">企业地址</string>
+    <string name="account_info_company_address_hint">请输入企业地址</string>
+    <string name="account_info_office_phone">办公电话</string>
+    <string name="account_info_office_phone_hint">请输入办公电话</string>
+    <string name="account_info_legal_person_name">法人姓名</string>
+    <string name="account_info_legal_person_name_hint">请输入法人姓名</string>
+    <string name="account_info_id_card">法人身份证</string>
+    <string name="account_info_id_card_hint">请输入法人身份证</string>
+    <string name="account_info_contacts">联系人</string>
+    <string name="account_info_contacts_hint">请输入联系人</string>
+    <string name="account_info_gender">性别</string>
+    <string-array name="gender_array">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="key_array">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+    </string-array>
+    <string name="account_info_birthday">生日</string>
+    <string name="account_info_email">邮箱</string>
+    <string name="account_info_email_hint">请输入邮箱</string>
+</resources>

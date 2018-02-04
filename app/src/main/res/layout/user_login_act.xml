@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.rd.hnlf.module.user.viewControl.LoginCtrl" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/x20"
+            android:contentDescription="@string/empty"
+            android:onClick="@{(View) -> viewCtrl.closeClick(View)}"
+            android:src="@drawable/icon_closed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_marginRight="@dimen/x20"
+            android:layout_marginTop="@dimen/x50"
+            android:background="@drawable/fillet_white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x40"
+                android:layout_marginTop="@dimen/x40"
+                android:contentDescription="@string/empty"
+                android:gravity="center"
+                android:src="@drawable/sign_logo" />
+
+            <com.rd.views.editText.ClearEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x30"
+                android:background="@drawable/underline"
+                android:hint="@string/login_phone_hint"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:padding="@dimen/x10"
+                android:text="@={viewCtrl.viewModel.phone}"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/hint_grey"
+                android:textSize="@dimen/text_size_h2" />
+
+            <com.rd.views.editText.PasswordEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x30"
+                android:background="@drawable/underline"
+                android:hint="@string/login_password_hint"
+                android:imeOptions="actionDone"
+                android:maxLength="16"
+                android:padding="@dimen/x10"
+                android:text="@={viewCtrl.viewModel.password}"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/hint_grey"
+                android:textSize="@dimen/text_size_h2"
+                android:visibility="@{viewCtrl.viewModel.mode ? android.view.View.GONE : android.view.View.VISIBLE}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x30"
+                android:background="@drawable/underline"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/x1"
+                android:visibility="@{viewCtrl.viewModel.mode ? android.view.View.VISIBLE : android.view.View.GONE}">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:hint="@string/login_code_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:padding="@dimen/x10"
+                    android:text="@={viewCtrl.viewModel.code}"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/hint_grey"
+                    android:textSize="@dimen/text_size_h2" />
+
+                <View
+                    android:layout_width="@dimen/x1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/x10"
+                    android:background="@color/line_grey" />
+
+                <com.rd.views.textView.TimeButton
+                    android:id="@+id/timeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:enabled="@{viewCtrl.viewModel.codeEnable}"
+                    android:gravity="end"
+                    android:padding="@dimen/x10"
+                    android:text="@string/verification_code_get"
+                    android:textColor="@drawable/time_button_color_shape"
+                    android:textColorHint="@color/hint_grey"
+                    android:textSize="@dimen/text_size_h2" />
+            </LinearLayout>
+
+            <Button
+                style="@style/Button.Fillet"
+                android:layout_margin="@dimen/x30"
+                android:onClick="@{(View) -> viewCtrl.submitClick(View)}"
+                android:text="@string/login_submit" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x30"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:onClick="@{(View) -> viewCtrl.forgotClick(View)}"
+                    android:text="@string/login_forgot"
+                    android:textColor="@color/text_black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:onClick="@{(View) -> viewCtrl.enterClick(View)}"
+                    android:text="@{viewCtrl.viewModel.mode ? @string/login_password_enter : @string/login_code_enter}"
+                    android:textColor="@color/text_yellow" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:onClick="@{(View) -> viewCtrl.toRegisterClick(View)}"
+            android:text="@string/login_to_register"
+            android:textColor="@color/text_purple"
+            android:textSize="@dimen/text_size_h1" />
+    </LinearLayout>
+</layout>
