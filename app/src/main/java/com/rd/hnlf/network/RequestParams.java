@@ -21,7 +21,7 @@ public class RequestParams {
     public static final String COMMENT                 = "comment";
     public static final String COLLECTING_BANK_ACCOUNT = "collectingBankAccount";
     public static final String COLLECTOR_ACCOUNT_ID    = "collectorAccountId";
-    public static final String BILL_NO                 = "billNo";
+    public static final String BILL_NO                 = "billNo";     //票号
     public static final String BILL_NOS                = "billNos";
     public static final String RESULT                  = "result";
     public static final String BANK_NAME               = "bankName";

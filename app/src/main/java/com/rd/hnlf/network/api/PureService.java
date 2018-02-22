@@ -2,6 +2,7 @@ package com.rd.hnlf.network.api;
 
 import com.rd.hnlf.module.common.dataModel.receive.OrderRec;
 import com.rd.hnlf.module.common.dataModel.submit.JsonSub;
+import com.rd.hnlf.module.eCommerce.dataModel.submit.NoteDetailBean;
 import com.rd.hnlf.module.eCommerce.dataModel.submit.NoteDetailRec;
 import com.rd.hnlf.module.pure.dataModel.receive.MyNoteRec;
 import com.rd.hnlf.module.pure.dataModel.receive.NoteModifyRec;
@@ -12,6 +13,7 @@ import com.rd.network.entity.HttpResult;
 import com.rd.network.entity.ListData;
 
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -80,6 +82,10 @@ public interface PureService {
 
     /** 我的票据 - 详情 */
     @FormUrlEncoded
-    @POST("modules/common/action/bizBaseAction/showBillMsg.htm ")
-    Call<HttpResult<NoteDetailRec>> getNoteDetails(@Field(RequestParams.BILL_NO) String billNo);
+//    @POST("modules/common/action/bizBaseAction/showBillMsg.htm ")
+    @POST("modules/billorder/action/bizBillCurrentMsgMarketAction/detailsToApp.htm ")
+    Call<HttpResult<NoteDetailBean>> getNoteDetails(@Field(RequestParams.BILL_NO) String billNo);
+    @FormUrlEncoded
+    @POST("modules/billorder/action/bizBillCurrentMsgMarketAction/detailsToApp.htm ")
+    Call<Response> getStringNoteDetails(@Field(RequestParams.BILL_NO) String billNo);
 }

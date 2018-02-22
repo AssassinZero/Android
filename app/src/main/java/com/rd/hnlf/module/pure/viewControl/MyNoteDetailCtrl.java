@@ -1,5 +1,8 @@
 package com.rd.hnlf.module.pure.viewControl;
 
+import android.util.Log;
+
+import com.rd.hnlf.module.eCommerce.dataModel.submit.NoteDetailBean;
 import com.rd.hnlf.module.eCommerce.dataModel.submit.NoteDetailRec;
 import com.rd.hnlf.module.pure.ui.activity.MyNoteDetailAct;
 import com.rd.hnlf.module.pure.viewModel.MyNoteDetailVM;
@@ -38,66 +41,74 @@ public class MyNoteDetailCtrl {
      * 网络请求
      */
     private void reqData(String orderNo) {
-        Call<HttpResult<NoteDetailRec>> call = RDClient.getService(PureService.class).getNoteDetails(orderNo);
-        call.enqueue(new RequestCallBack<HttpResult<NoteDetailRec>>() {
+        Call<HttpResult<NoteDetailBean>> call = RDClient.getService(PureService.class).getNoteDetails(orderNo);
+        call.enqueue(new RequestCallBack<HttpResult<NoteDetailBean>>() {
             @Override
-            public void onSuccess(Call<HttpResult<NoteDetailRec>> call, Response<HttpResult<NoteDetailRec>> response) {
+            public void onSuccess(Call<HttpResult<NoteDetailBean>> call, Response<HttpResult<NoteDetailBean>> response) {
 
-                NoteDetailRec rec = response.body().getData();
+                NoteDetailBean bean = response.body().getData();
 
-                converter(rec);
+                converter(bean);
             }
         });
+
     }
+
+
 
     /**
      * 数据类型转换
      */
-    private void converter(NoteDetailRec rec) {
+    private void converter(NoteDetailBean rec) {
         // 基本信息
         viewModel.getBasicInfo().setId(rec.getBillNo());
         viewModel.getBasicInfo().setAmount(rec.getBillAmount());
-        long time = System.currentTimeMillis() - new Random().nextInt();
-        viewModel.getBasicInfo().setDate(time + "");
-        viewModel.getBasicInfo().setDueDate(time + new Random().nextInt() + "");
+        viewModel.getBasicInfo().setDate(rec.getBillIssueDate());
+        viewModel.getBasicInfo().setDueDate(rec.getBillDueDate());
         // 出票人信息
-        viewModel.getDrawerInfo().setFullName("杭州市海蓝科技股份有限公司");
-        viewModel.getDrawerInfo().setAccountName("杭州市海蓝科技股份有限公司");
-        viewModel.getDrawerInfo().setBranchName("招商银行湖墅支行");
+        viewModel.getDrawerInfo().setFullName(rec.getIssueName());
+        viewModel.getDrawerInfo().setAccountName(rec.getIssueBankAccount());
+        viewModel.getDrawerInfo().setBranchName(rec.getIssueOpenBank());
         // 收款人信息
-        viewModel.getPayeeInfo().setFullName("杭州市海蓝科技股份有限公司");
-        viewModel.getPayeeInfo().setAccountName("杭州市海蓝科技股份有限公司");
-        viewModel.getPayeeInfo().setBranchName("招商银行湖墅支行");
+        viewModel.getPayeeInfo().setFullName(rec.getPayeeName());
+        viewModel.getPayeeInfo().setAccountName(rec.getPayeeBankAccount());
+        viewModel.getPayeeInfo().setBranchName(rec.getPayeeOpenBank());
         // 承兑人信息
-        viewModel.getAcceptorInfo().setFullName("杭州市海蓝科技股份有限公司");
-        viewModel.getAcceptorInfo().setAccountName("杭州市海蓝科技股份有限公司");
-        viewModel.getAcceptorInfo().setBranchName("招商银行湖墅支行");
+        viewModel.getAcceptorInfo().setFullName(rec.getAcceptorName());
+        viewModel.getAcceptorInfo().setAccountName(rec.getAcceptorBankAccount());
+        viewModel.getAcceptorInfo().setBranchName(rec.getAcceptorBankName());
+        viewModel.getAcceptorInfo().setBranchNo(rec.getAcceptorBankCode());
         // 票据背面信息
         ArrayList<NegativeInfo> negativeInfo = new ArrayList<>();
 
         NegativeInfo info1 = new NegativeInfo();
-        info1.setEndorser("杭州市海蓝科技股份有限公司");
-        info1.setEndorsee("杭州市海蓝科技股份有限公司");
-        info1.setDate(System.currentTimeMillis() - new Random().nextInt() + "");
-        info1.setTransferable("是");
-        info1.setEndorser("信息隐藏");
-        info1.setEndorsee("信息隐藏");
+        info1.setEndorser(rec.getIndorserName());
+        info1.setEndorsee(rec.getEndorseeName());
+        info1.setDate(rec.getEndorsementDate());
+        if ("Y".equals(rec.getNotNegotiable())){
+            info1.setTransferable("是");
+        }else {
+            info1.setTransferable("否");
+        }
 
-        NegativeInfo info2 = new NegativeInfo();
-        info2.setEndorser("杭州市海蓝科技股份有限公司");
-        info2.setEndorsee("杭州市海蓝科技股份有限公司");
-        info2.setDate(System.currentTimeMillis() - new Random().nextInt() + "");
-        info2.setTransferable("否");
-        info2.setEndorser("信息隐藏");
-        info2.setEndorsee("信息隐藏");
+//        info1.setEndorser("信息隐藏");
+//        info1.setEndorsee("信息隐藏");
+
+//        NegativeInfo info2 = new NegativeInfo();
+//        info2.setEndorser(rec.getIndorserName());
+//        info2.setEndorsee(rec.getEndorseeName());
+//        info2.setDate(rec.getEndorsementDate());
+//        info2.setTransferable(rec.getNotNegotiable());
+//        info2.setEndorser("信息隐藏");
+//        info2.setEndorsee("信息隐藏");
 
         negativeInfo.add(info1);
-        negativeInfo.add(info2);
+//        negativeInfo.add(info2);
         viewModel.setNegativeInfo(negativeInfo);
         if (hidden) {
-            viewModel.getDrawerInfo().setFullName("信息隐藏");
-            viewModel.getPayeeInfo().setFullName("信息隐藏");
-            viewModel.getAcceptorInfo().setFullName("信息隐藏");
+//            viewModel.getDrawerInfo().setFullName("信息隐藏");
+//            viewModel.getPayeeInfo().setFullName("信息隐藏");
+//            viewModel.getAcceptorInfo().setFullName("信息隐藏");
         }
     }
 
