@@ -181,6 +181,23 @@ public class StringFormat {
     }
 
     /**
+     * 数值格式化 - 12,345.0000
+     */
+    public static String fourFormat(Object args) {
+        if (args != null && !TextUtil.isEmpty(args.toString())) {
+            String number = args.toString();
+            try {
+                return new DecimalFormat(",##0.0000").format(ConverterUtil.getDouble(number));
+            } catch (Exception e) {
+                e.printStackTrace();
+                return number;
+            }
+        } else {
+            return "0.0000";
+        }
+    }
+
+    /**
      * 不足1万，则常规格式化，否则，以“万”为单位格式化
      *
      * @param args
