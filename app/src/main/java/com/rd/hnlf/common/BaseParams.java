@@ -29,7 +29,8 @@ public class BaseParams {
     /** 正式服务器地址 */
     // private static final String  URI_AUTHORITY_RELEASE = "172.16.90.103:8084";
     //private static final String  URI_AUTHORITY_RELEASE = "172.16.0.103:8080";
-    private static final String  URI_AUTHORITY_RELEASE = "api.tankwang.com:8080";
+//    private static final String  URI_AUTHORITY_RELEASE = "api.tankwang.com:8080";
+    private static final String  URI_AUTHORITY_RELEASE = "192.168.200.108:8080";   //wangruixiang
     // private static final String  URI_AUTHORITY_RELEASE = "202.107.227.242:10384";
     /** 服务器地址 */
     private static final String  URI_AUTHORITY         = IS_DEBUG ? URI_AUTHORITY_BETA : URI_AUTHORITY_RELEASE;

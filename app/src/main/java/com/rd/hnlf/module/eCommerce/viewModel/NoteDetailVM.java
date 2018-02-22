@@ -121,7 +121,7 @@ public class NoteDetailVM extends BaseObservable {
     @Bindable
     public Spanned getAprSpanned() {
         return Html.fromHtml(ContextHolder.getContext().getString(R.string.note_detail_apr_spanned,
-                StringFormat.doubleFormat(ConverterUtil.getDouble(apr) * 100)));
+                StringFormat.fourFormat(ConverterUtil.getDouble(apr) * 100)));
     }
 
     public void setApr(String apr) {

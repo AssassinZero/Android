@@ -92,7 +92,7 @@ public class NoteMallVM {
         if (isDiscuss()) {
             this.mode = ContextHolder.getContext().getString(R.string.mall_discuss);
         } else if ("10".equals(mode)) {
-            this.mode = ContextHolder.getContext().getString(R.string.mall_apr, StringFormat.doubleFormat(ConverterUtil.getDouble(apr) * 100));
+            this.mode = ContextHolder.getContext().getString(R.string.mall_apr, StringFormat.fourFormat(ConverterUtil.getDouble(apr) * 100));
         } else {
             this.mode = ContextHolder.getContext().getString(R.string.mall_discount, StringFormat.doubleFormat(discount));
         }
