@@ -1,6 +1,7 @@
 package com.rd.hnlf;
 
 import android.app.Activity;
+import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
@@ -30,12 +31,14 @@ import okhttp3.OkHttpClient;
  * Description:
  */
 public class MyApplication extends LifecycleApplication {
+    public static Context context;
     @Override
     public void onCreate() {
         super.onCreate();
         basicInit();
         gestureInit();
         dataInit();
+        context = this;
     }
 
     /**
