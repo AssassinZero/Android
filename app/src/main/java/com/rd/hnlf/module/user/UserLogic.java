@@ -5,12 +5,14 @@ import android.content.Intent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.rd.hnlf.MainAct;
+import com.rd.hnlf.MyApplication;
 import com.rd.hnlf.R;
 import com.rd.hnlf.common.BundleKeys;
 import com.rd.hnlf.common.Constant;
 import com.rd.hnlf.module.user.dataModel.receive.OauthTokenRec;
 import com.rd.hnlf.router.RouterUrl;
 import com.rd.hnlf.utils.DialogUtils;
+import com.rd.hnlf.utils.SpUtils;
 import com.rd.logic.GestureLogic;
 import com.rd.logic.info.SharedInfo;
 import com.rd.tools.utils.ContextHolder;
@@ -61,6 +63,8 @@ public class UserLogic {
         GestureLogic.getInstance().clean();
 
         ContextHolder.getContext().sendBroadcast(new Intent(BundleKeys.LOGIN_STATUS_CHANGED));
+        //取消指纹解锁验证
+        SpUtils.putBoolean(MyApplication.context,Constant.IS_FINGERPRINT,false);
 
         ARouter.getInstance().build(RouterUrl.MAIN).navigation();
         if (!(activity instanceof MainAct)) {
