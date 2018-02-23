@@ -86,4 +86,5 @@ public class Constant {
     // SP 字段
     public static final String IS_LAND              = "isLand";
     public static final String IS_FIRST_IN          = "isFirstIn";
+    public static final String IS_FINGERPRINT          = "isFingerprint";
 }

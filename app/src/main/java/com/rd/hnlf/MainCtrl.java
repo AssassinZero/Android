@@ -30,6 +30,7 @@ import com.rd.hnlf.network.api.CommonService;
 import com.rd.hnlf.network.api.UserService;
 import com.rd.hnlf.router.RouterUrl;
 import com.rd.hnlf.utils.FingerprintUtil;
+import com.rd.hnlf.utils.SpUtils;
 import com.rd.logic.info.SharedInfo;
 import com.rd.network.entity.HttpResult;
 import com.rd.tools.utils.ToastUtil;
@@ -72,7 +73,9 @@ public class MainCtrl extends BaseListControl {
             }
         });
         reqData();
-        onFingerprint();
+        if (SpUtils.getBoolean(MyApplication.context,Constant.IS_FINGERPRINT,false)){
+            onFingerprint();
+        }
     }
 
     private void onFingerprint() {

@@ -98,4 +98,8 @@
         <item name="android:textColor">@color/text_black</item>
         <item name="android:textSize">@dimen/text_size_h2</item>
     </style>
+
+    <style name="CustomCheckBoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/check_box_style</item>
+    </style>
 </resources>

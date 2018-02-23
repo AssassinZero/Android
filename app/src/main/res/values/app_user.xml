@@ -91,6 +91,7 @@
     <string name="account_info_id_card_hint">请输入法人身份证</string>
     <string name="account_info_contacts">联系人</string>
     <string name="account_info_contacts_hint">请输入联系人</string>
+    <string name="account_info_fingerprint">开启指纹解锁</string>
     <string name="account_info_gender">性别</string>
     <string-array name="gender_array">
         <item>男</item>
