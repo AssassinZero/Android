@@ -3,6 +3,7 @@ package com.rd.hnlf.module.pure.viewControl;
 import android.databinding.Bindable;
 import android.databinding.ObservableBoolean;
 import android.databinding.ViewDataBinding;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 
@@ -263,6 +264,7 @@ public class NoteListCtrl extends BaseListControl {
         call.enqueue(new RequestCallBack<HttpResult<ListData<MyNoteRec>>>(getListener(), getPlaceHolderType()) {
             @Override
             public void onSuccess(Call<HttpResult<ListData<MyNoteRec>>> call, Response<HttpResult<ListData<MyNoteRec>>> response) {
+
                 converter(response.body().getData().getList());
             }
         });

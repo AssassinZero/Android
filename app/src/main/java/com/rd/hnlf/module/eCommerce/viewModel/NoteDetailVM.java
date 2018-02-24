@@ -61,7 +61,8 @@ public class NoteDetailVM extends BaseObservable {
     private boolean      discuss;
     /** 是否可转让 */
     private boolean      enable;
-
+    /** 是否回头背书 */
+    private boolean      endorsementVisible;
     @Bindable
     public String getId() {
         return id;
@@ -254,6 +255,16 @@ public class NoteDetailVM extends BaseObservable {
     public void setEnable(boolean enable) {
         this.enable = enable;
         notifyPropertyChanged(BR.enable);
+    }
+
+    @Bindable
+    public boolean isEndorsementVisible() {
+        return endorsementVisible;
+    }
+
+    public void setEndorsementVisible(boolean endorsementVisible) {
+        this.endorsementVisible = endorsementVisible;
+        notifyPropertyChanged(BR.endorsementVisible);
     }
 
     @Bindable

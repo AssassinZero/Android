@@ -78,12 +78,16 @@ public class MainCtrl extends BaseListControl {
         }
     }
 
+
+    /**
+     * 指纹解锁验证
+     */
     private void onFingerprint() {
         FingerprintUtil.callFingerPrint(new FingerprintUtil.OnCallBackListenr() {
             AlertDialog dialog;
             @Override
             public void onSupportFailed() {
-                ToastUtil.toast("当前设备不支持指纹");
+                ToastUtil.toast("当前设备不支持指纹解锁");
             }
 
             @Override

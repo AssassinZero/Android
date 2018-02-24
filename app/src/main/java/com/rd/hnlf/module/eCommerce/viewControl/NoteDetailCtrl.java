@@ -1,6 +1,7 @@
 package com.rd.hnlf.module.eCommerce.viewControl;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -53,8 +54,9 @@ public class NoteDetailCtrl {
                 NoteDetailRec rec = response.body().getData();
                 viewModel.setAcceptName(rec.getAcceptorName());
                 viewModel.setId(rec.getBillNo());
-                viewModel.setTransferCount("转让2手");
-                viewModel.setReendorsment("回头背书");
+                viewModel.setTransferCount("转让1手");
+                viewModel.setReendorsment(rec.getBackState());
+                viewModel.setEndorsementVisible("回头背书".equals(rec.getBackState()));
                 viewModel.setAmount(rec.getBillAmount());
                 viewModel.setApr(rec.getYearRate());
                 viewModel.setDiscount(rec.getDiscount());

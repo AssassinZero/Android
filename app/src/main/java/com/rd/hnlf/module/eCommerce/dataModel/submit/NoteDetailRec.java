@@ -38,6 +38,8 @@ public class NoteDetailRec {
     private String transactionState;
     /** 是否显示面议 10 - 是，20 - 否 */
     private String isDiscussPersonally;
+    /** 是否回头背书  "回头背书" - 是，"" - 否 */
+    private String backState;
 
     public String getAcceptorName() {
         return acceptorName;
@@ -97,5 +99,9 @@ public class NoteDetailRec {
 
     public String getIsDiscussPersonally() {
         return isDiscussPersonally;
+    }
+
+    public String getBackState() {
+        return backState;
     }
 }

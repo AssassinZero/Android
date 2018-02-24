@@ -47,6 +47,6 @@
             android:layout_width="20dp"
             android:layout_height="2dp"
             />
-
-    </LinearLayout></RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>
