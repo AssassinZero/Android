@@ -33,5 +33,6 @@ public class NoteQuotationAct extends BaseActivity {
         super.onCreate(savedInstanceState);
         TradeNoteQuotationActBinding binding = DataBindingUtil.setContentView(this, R.layout.trade_note_quotation_act);
         binding.setViewCtrl(new NoteQuotationCtrl(infoSub));
+
     }
 }

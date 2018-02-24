@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/underline_both"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:paddingBottom="@dimen/x1"
             android:paddingLeft="@dimen/x20"
             android:paddingRight="@dimen/x20">
@@ -35,7 +35,6 @@
             <com.rd.views.editText.ClearEditText
                 style="@style/BasicTheme.EditText"
                 android:layout_weight="1"
-                android:gravity="end"
                 android:hint="@string/note_no_hint"
                 android:inputType="number"
                 android:maxLength="30"

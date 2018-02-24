@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.rd.hnlf.R;
@@ -42,7 +43,6 @@ public class NoteQuotationCtrl {
     /** 需要上传的数据内容 */
     private TradeNoteInfoSub infoSub;
     private NoteQuotationVM  viewModel;
-
     public NoteQuotationCtrl(TradeNoteInfoSub infoSub) {
         this.infoSub = infoSub;
         viewModel = new NoteQuotationVM();
@@ -53,6 +53,8 @@ public class NoteQuotationCtrl {
             viewModel.setApr(infoSub.getYearRate());
             viewModel.setDiscount(infoSub.getDiscount());
             viewModel.setFee(infoSub.getServiceFee());
+            infoSub.getId().subSequence(0,1);
+
         }
         reqData();
     }
@@ -68,6 +70,7 @@ public class NoteQuotationCtrl {
                 DictionaryRec rec = response.body().getData();
                 viewModel.setTypeList(rec.getBILL_TYPE());
                 viewModel.setPropertyList(rec.getBILL_ATTRIBUTE());
+
             }
         });
     }
@@ -92,7 +95,9 @@ public class NoteQuotationCtrl {
 
     private void getTotalSettleAmount(final View view) {
         infoSub.setBillsType(viewModel.getType());
+        Log.e("viewModel.getType()",viewModel.getType());
         infoSub.setBillsAttribute(viewModel.getProperty());
+        Log.e("viewModel.getProperty()",viewModel.getProperty());
         // 10 - 年利率, 20 - 每十万
         infoSub.setQuotationMethod(viewModel.getQuotationMethod());
         infoSub.setYearRate(viewModel.getApr());

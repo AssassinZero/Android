@@ -34,6 +34,7 @@
                 android:text="@string/quotation_info_type" />
 
             <com.rd.views.textView.SingleSelectorView
+                android:id="@+id/note_quotation_ssv_type"
                 style="@style/BasicTheme.Arrow"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -58,6 +59,7 @@
                 android:text="@string/quotation_info_property" />
 
             <com.rd.views.textView.SingleSelectorView
+                android:id="@+id/note_quotation_ssv_property"
                 style="@style/BasicTheme.Arrow"
                 android:layout_width="0dp"
                 android:layout_weight="1"

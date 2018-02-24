@@ -75,6 +75,7 @@
     <string name="quotation_info_edit_apr_hint">请输入年利率</string>
     <string name="quotation_info_edit_fee">手续费(元)</string>
     <string name="quotation_info_edit_fee_hint">请输入手续费</string>
+    <string name="quotation_info_edit_business_ticket">商票类型只有其他类型</string>
 
     <string name="bill_to_party_info_tip">收票方信息</string>
     <string name="bearer_info_tip">持票方信息</string>
