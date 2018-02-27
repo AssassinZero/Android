@@ -1,5 +1,10 @@
 package com.rd.hnlf.module.eCommerce.viewControl;
 
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +26,7 @@ import com.rd.hnlf.router.RouterUrl;
 import com.rd.logic.info.SharedInfo;
 import com.rd.network.entity.HttpResult;
 import com.rd.tools.utils.AndroidUtil;
+import com.rd.tools.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +43,11 @@ import retrofit2.Response;
  */
 public class NoteDetailCtrl {
     private NoteDetailVM viewModel;
-
-    public NoteDetailCtrl(String id) {
+    private Activity activity;
+    private String officePhone = "tel:";
+    public NoteDetailCtrl(String id,Activity activity) {
         viewModel = new NoteDetailVM();
+        this.activity = activity;
         reqData(id);
     }
 
@@ -68,7 +76,7 @@ public class NoteDetailCtrl {
                 viewModel.setPhone(rec.getOfficePhone());
                 viewModel.setPutOnTime(rec.getShelvesTime());
                 viewModel.setDiscuss(rec.getIsDiscussPersonally());
-
+                officePhone = "tel:" + rec.getOfficePhone();
                 OauthTokenRec oauthTokenRec = SharedInfo.getInstance().getEntity(OauthTokenRec.class);
                 if (null != oauthTokenRec && oauthTokenRec.isAgent()) {
                     // 代理商不可下单
@@ -140,6 +148,39 @@ public class NoteDetailCtrl {
         if (!UserLogic.isLand()) {
             ARouter.getInstance().build(RouterUrl.USER_LOGIN).navigation();
         }
+    }
+
+    /**
+     * 拨打联系人电话
+     */
+    public void makingCallClick(View view) {
+        if (!officePhone.equals("tel:")){
+            startDialog();
+        }else {
+            ToastUtil.toast("获取联系方式失败");
+        }
+    }
+    private void startDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("霍尼莱夫");
+        builder.setMessage("是否拨联系人电话?");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(officePhone));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    activity.startActivity(intent);
+                    dialog.dismiss();
+                }
+        });
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
     }
 
     /**

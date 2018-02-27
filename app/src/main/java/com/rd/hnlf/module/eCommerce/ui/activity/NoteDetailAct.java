@@ -44,7 +44,7 @@ public class NoteDetailAct extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.e_commerce_note_detail_act);
-        binding.setViewCtrl(new NoteDetailCtrl(id));
+        binding.setViewCtrl(new NoteDetailCtrl(id,this));
         binding.banner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {

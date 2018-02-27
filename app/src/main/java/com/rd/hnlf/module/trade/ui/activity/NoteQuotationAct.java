@@ -3,6 +3,7 @@ package com.rd.hnlf.module.trade.ui.activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -14,6 +15,7 @@ import com.rd.hnlf.module.eCommerce.dataModel.submit.TradeNoteInfoSub;
 import com.rd.hnlf.module.trade.viewControl.NoteQuotationCtrl;
 import com.rd.hnlf.router.RouterExtras;
 import com.rd.hnlf.router.RouterUrl;
+import com.rd.views.textView.SingleSelectorView;
 
 /**
  * Author: TinhoXu
@@ -32,7 +34,9 @@ public class NoteQuotationAct extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TradeNoteQuotationActBinding binding = DataBindingUtil.setContentView(this, R.layout.trade_note_quotation_act);
-        binding.setViewCtrl(new NoteQuotationCtrl(infoSub));
+        binding.setViewCtrl(new NoteQuotationCtrl(infoSub,this));
 
     }
+
+
 }

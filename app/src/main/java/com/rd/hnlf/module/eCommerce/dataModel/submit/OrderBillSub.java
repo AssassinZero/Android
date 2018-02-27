@@ -31,6 +31,10 @@ public class OrderBillSub {
         this.billNo = billNo;
     }
 
+    public String getBillNo() {
+        return billNo;
+    }
+
     public void setDueDateStr(String dueDateStr) {
         this.dueDateStr = dueDateStr;
     }

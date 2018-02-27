@@ -20,7 +20,7 @@ public class MainAct extends BaseActivity {
         isNeedTranslucent = false;
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.main_act);
-        binding.setViewCtrl(new MainCtrl(this,this));
+        binding.setViewCtrl(new MainCtrl(this,MainAct.this));
     }
 
     @Override

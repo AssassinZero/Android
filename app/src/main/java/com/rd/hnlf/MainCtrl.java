@@ -1,6 +1,5 @@
 package com.rd.hnlf;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Handler;
@@ -53,8 +52,8 @@ public class MainCtrl extends BaseListControl {
     // 逆时针旋转
     private Animation CCWAnimation;
     private Context context;
-    private Activity activity;
-    public MainCtrl(Context context,Activity activity) {
+    private MainAct activity;
+    public MainCtrl(Context context,MainAct activity) {
         this.context = context;
         this.activity = activity;
         viewModel = new MainVM();
@@ -121,11 +120,16 @@ public class MainCtrl extends BaseListControl {
 
             @Override
             public void onAuthenticationError(int errMsgId, CharSequence errString) {
-                ToastUtil.toast(errString.toString());
+//                ToastUtil.toast("指纹识别安全保护中，请重新登录账户！");
+                FingerprintUtil.cancel();
                 if (dialog != null  &&dialog.isShowing()){
                     dialog.dismiss();
                     handler.removeMessages(0);
                 }
+                //退出登录
+                UserLogic.signOut(activity);
+                //进入登陆界面
+                ARouter.getInstance().build(RouterUrl.USER_LOGIN).navigation();
             }
 
             @Override
@@ -135,7 +139,7 @@ public class MainCtrl extends BaseListControl {
 
             @Override
             public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
-                ToastUtil.toast(helpString.toString());
+//                ToastUtil.toast(helpString.toString());
             }
 
             @Override

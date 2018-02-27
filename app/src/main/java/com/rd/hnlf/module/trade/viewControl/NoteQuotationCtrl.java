@@ -26,6 +26,7 @@ import com.rd.network.entity.HttpResult;
 import com.rd.tools.utils.AndroidUtil;
 import com.rd.tools.utils.StringFormat;
 import com.rd.tools.utils.ToastUtil;
+import com.rd.views.textView.SingleSelectorView;
 
 import cn.pedant.SweetAlert.OnSweetClickListener;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -43,9 +44,14 @@ public class NoteQuotationCtrl {
     /** 需要上传的数据内容 */
     private TradeNoteInfoSub infoSub;
     private NoteQuotationVM  viewModel;
-    public NoteQuotationCtrl(TradeNoteInfoSub infoSub) {
+    private Activity activity;
+    private SingleSelectorView ssv_type;  //票据类型
+    private SingleSelectorView ssv_property;  //票据属性
+    public NoteQuotationCtrl(TradeNoteInfoSub infoSub,Activity activity) {
         this.infoSub = infoSub;
+        this.activity = activity;
         viewModel = new NoteQuotationVM();
+        initView();
         if (!TextUtils.isEmpty(infoSub.getId())) {
             viewModel.setType(infoSub.getBillsType());
             viewModel.setProperty(infoSub.getBillsAttribute());
@@ -53,10 +59,14 @@ public class NoteQuotationCtrl {
             viewModel.setApr(infoSub.getYearRate());
             viewModel.setDiscount(infoSub.getDiscount());
             viewModel.setFee(infoSub.getServiceFee());
-            infoSub.getId().subSequence(0,1);
-
         }
         reqData();
+    }
+
+    private void initView() {
+        ssv_type = (SingleSelectorView) activity.findViewById(R.id.note_quotation_ssv_type);
+        ssv_property = (SingleSelectorView) activity.findViewById(R.id.note_quotation_ssv_property);
+
     }
 
     /**
@@ -70,7 +80,41 @@ public class NoteQuotationCtrl {
                 DictionaryRec rec = response.body().getData();
                 viewModel.setTypeList(rec.getBILL_TYPE());
                 viewModel.setPropertyList(rec.getBILL_ATTRIBUTE());
-
+                initSsvClick();
+            }
+        });
+    }
+    /**
+     * 控制选择框是否可以弹出
+     */
+    private void initSsvClick() {
+        String substring = infoSub.getOrderBills().get(0).getBillNo().substring(0, 1);
+        if (substring.equals("1")){
+            ssv_type.setClick(false);
+            ssv_property.setClick(true);
+            ssv_type.setKey("10");
+        }else if (substring.equals("2")){
+            ssv_type.setKey("11");
+            ssv_type.setClick(false);
+            ssv_property.setKey("16");
+            ssv_property.setClick(false);
+        }else {
+            initListener();
+        }
+    }
+    /**
+     * 商票不可选择票据属性
+     */
+    private void initListener() {
+        ssv_type.setOnValChanged(new SingleSelectorView.OnValueChanged() {
+            @Override
+            public void onValChanged(SingleSelectorView view, String key) {
+                if (view.getKey().equals("11")){
+                    ssv_property.setKey("16");
+                    ssv_property.setClick(false);
+                }else {
+                    ssv_property.setClick(true);
+                }
             }
         });
     }

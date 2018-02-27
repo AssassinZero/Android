@@ -21,6 +21,7 @@
     <string name="drawer_info_tip">出票人信息</string>
     <string name="payee_info_tip">收款人信息</string>
     <string name="acceptor_info_tip">承兑人信息</string>
+    <string name="making_calls">拨打电话</string>
 
     <string name="trader_full_name">全&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;称</string>
     <string name="trader_account_name">帐&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;号</string>

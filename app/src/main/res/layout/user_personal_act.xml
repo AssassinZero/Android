@@ -65,6 +65,9 @@
         <TextView
             style="@style/PersonalItem"
             android:layout_marginTop="@dimen/x20"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:drawableLeft="@drawable/icon_buyer"
             android:drawableStart="@drawable/icon_buyer"
             android:onClick="@{(View) -> viewCtrl.buyerClick(View)}"
@@ -73,6 +76,9 @@
 
         <TextView
             style="@style/PersonalItem"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:drawableLeft="@drawable/icon_seller"
             android:drawableStart="@drawable/icon_seller"
             android:onClick="@{(View) -> viewCtrl.sellerClick(View)}"
@@ -81,6 +87,9 @@
 
         <TextView
             style="@style/PersonalItem"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:drawableLeft="@drawable/icon_history_note"
             android:drawableStart="@drawable/icon_history_note"
             android:onClick="@{(View) -> viewCtrl.historyNoteClick(View)}"
@@ -89,6 +98,9 @@
 
         <TextView
             style="@style/PersonalItem"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:drawableLeft="@drawable/icon_note_dealing"
             android:drawableStart="@drawable/icon_note_dealing"
             android:onClick="@{(View) -> viewCtrl.noteDealingClick(View)}"
@@ -97,6 +109,9 @@
 
         <TextView
             style="@style/PersonalItem"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:drawableLeft="@drawable/icon_e_commerce_order"
             android:drawableStart="@drawable/icon_e_commerce_order"
             android:onClick="@{(View) -> viewCtrl.ECommerceOrderClick(View)}"
@@ -105,6 +120,9 @@
 
         <TextView
             style="@style/PersonalItem"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:drawableLeft="@drawable/icon_pure_note_order"
             android:drawableStart="@drawable/icon_pure_note_order"
             android:onClick="@{(View) -> viewCtrl.pureNoteOrderClick(View)}"
@@ -113,6 +131,9 @@
 
         <TextView
             style="@style/PersonalItem"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:drawableLeft="@drawable/icon_my_note"
             android:drawableStart="@drawable/icon_my_note"
             android:onClick="@{(View) -> viewCtrl.myNoteClick(View)}"
@@ -121,6 +142,9 @@
 
         <TextView
             style="@style/PersonalItem"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:background="@color/white"
             android:drawableLeft="@drawable/icon_account_info"
             android:drawableStart="@drawable/icon_account_info"
@@ -130,6 +154,9 @@
         <TextView
             style="@style/PersonalItem"
             android:layout_marginTop="@dimen/x20"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
             android:background="@color/white"
             android:drawableLeft="@drawable/icon_security_center"
             android:drawableStart="@drawable/icon_security_center"

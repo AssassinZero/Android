@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.bigkoo.pickerview.OptionsPickerView;
@@ -43,7 +44,8 @@ public class SingleSelectorView extends AppCompatEditText {
     private boolean        isNeedRebuild;
     /** 初始化是否完成 */
     private boolean        initCompleted;
-
+    /** 初始化是否可触发选择框*/
+    private boolean       isClick = true;
     public SingleSelectorView(Context context) {
         super(context);
         init(context);
@@ -58,6 +60,12 @@ public class SingleSelectorView extends AppCompatEditText {
         super(context, attrs, defStyleAttr);
         init(context);
     }
+    /**
+     * 设置控件是否可以弹出选择框  true可弹出  false不可弹出
+     */
+    public void setClick(boolean click) {
+        isClick = click;
+    }
 
     /**
      * 初始化
@@ -71,30 +79,32 @@ public class SingleSelectorView extends AppCompatEditText {
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (null == valueList || null == keyList || valueList.isEmpty() || keyList.size() < valueList.size()) {
-                    return;
+                if (isClick){
+                    if (null == valueList || null == keyList || valueList.isEmpty() || keyList.size() < valueList.size()) {
+                        return;
+                    }
+                    // 关闭输入法弹出窗
+                    AndroidUtil.closedInputMethod();
+                    // 选择框
+                    OptionsPickerView pickerView = (OptionsPickerView) view.getTag();
+                    if (null == pickerView || isNeedRebuild) {
+                        Context context = AndroidUtil.getActivity(view);
+                        pickerView = new OptionsPickerView.Builder(context, new OptionsPickerView.OnOptionsSelectListener() {
+                            @Override
+                            public void onOptionsSelect(int options1, int options2, int options3, View view) {
+                                selected = options1;
+                                setValue(options1);
+                            }
+                        })
+                                .setSubmitColor(buttonColor)
+                                .setCancelColor(buttonColor)
+                                .setSelectOptions(getPosition())
+                                .build();
+                        pickerView.setPicker(valueList);
+                        view.setTag(pickerView);
+                    }
+                    pickerView.show();
                 }
-                // 关闭输入法弹出窗
-                AndroidUtil.closedInputMethod();
-                // 选择框
-                OptionsPickerView pickerView = (OptionsPickerView) view.getTag();
-                if (null == pickerView || isNeedRebuild) {
-                    Context context = AndroidUtil.getActivity(view);
-                    pickerView = new OptionsPickerView.Builder(context, new OptionsPickerView.OnOptionsSelectListener() {
-                        @Override
-                        public void onOptionsSelect(int options1, int options2, int options3, View view) {
-                            selected = options1;
-                            setValue(options1);
-                        }
-                    })
-                            .setSubmitColor(buttonColor)
-                            .setCancelColor(buttonColor)
-                            .setSelectOptions(getPosition())
-                            .build();
-                    pickerView.setPicker(valueList);
-                    view.setTag(pickerView);
-                }
-                pickerView.show();
             }
         });
     }
@@ -134,6 +144,7 @@ public class SingleSelectorView extends AppCompatEditText {
         }
     }
 
+
     /**
      * 获取当前 key 的 position
      */
@@ -169,6 +180,7 @@ public class SingleSelectorView extends AppCompatEditText {
     public void setKey(String key) {
         if (!TextUtils.isEmpty(key) && (!key.equals(this.key) || !initCompleted)) {
             this.key = key;
+            Log.e("setKey",key);
             // 设置显示文字，如果 selected == -1 则表示是外部代码调用此方法
             //               如果 selected != -1 则表示是本类代码调用此方法
             int position = selected == -1 ? getPosition() : selected;
