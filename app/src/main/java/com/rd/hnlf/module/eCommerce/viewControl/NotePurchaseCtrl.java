@@ -2,6 +2,7 @@ package com.rd.hnlf.module.eCommerce.viewControl;
 
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -172,6 +173,7 @@ public class NotePurchaseCtrl {
         sub.setOpeningBankOwn(viewModel.getEndorseeInfo().getBranchName());
         sub.setBankNumberOwn(viewModel.getEndorseeInfo().getBranchNo());
 
+
         List<BillSurfaceSub> billSurfaceList = new ArrayList<>();
         for (NoteInfo info : viewModel.getNoteInfo()) {
             BillSurfaceSub surfaceSub = new BillSurfaceSub();
@@ -191,6 +193,11 @@ public class NotePurchaseCtrl {
         call.enqueue(new RequestCallBack<HttpResult>() {
             @Override
             public void onSuccess(Call<HttpResult> call, Response<HttpResult> response) {
+                Log.e("onSuccess",response.body().getMsg());
+                //跳转至交易成功界面
+                ARouter.getInstance().build(RouterUrl.TRADE_SUCCESSFULLY)
+                        .navigation();
+
                 ToastUtil.toast(response.body().getMsg());
                 ContextHolder.getContext().sendBroadcast(new Intent(BundleKeys.REFRESH_LIST));
                 ActivityManage.finish();

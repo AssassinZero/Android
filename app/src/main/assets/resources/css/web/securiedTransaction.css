@@ -1,0 +1,167 @@
+*{
+	padding:0;
+	margin:0;
+	font-family:"Microsoft YaHei","arial";
+}
+ul,li{
+    list-style:none;
+    }
+.securiedTransaction{
+    width:100%;
+    height: 1190px;
+    background: url(/resources/img/sec/img1-2.jpg)  no-repeat center 0;
+    
+}
+
+.securiedTransaction .securiedTransaction_main{
+    width:1200px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+
+    
+}
+
+.sec_main_word1{
+    
+    width: 600px;
+    color:#fff;
+    position: absolute;
+    left:7%;
+    top:9%;
+    font-family: 微软雅黑;
+}
+.sec_main_word1 h1{
+    font-size:38px;
+    padding-bottom: 10px;
+}
+.sec_main_word1 h1 span{
+    
+    padding-right:20px;
+}
+.sec_main_word1 p{
+    font-size: 16px;
+    padding-top:13px;
+}
+.sec_main_word2{
+    text-align: center;
+    margin: 0 auto;   
+    color:#333;
+    font-family: '微软雅黑';
+    position: absolute;
+    bottom: 0px;
+    left: 1.4%;
+
+}
+.sec_main_word2 h2{
+    padding-bottom: 44px;
+    font-size:34px;
+}
+/*交割担保*/
+/*模式安全*/
+.patternSafe_out{
+     padding-top:74px;
+     width: 100%
+}
+.patternSafe{
+    
+    width: 100%;
+    height: 305px;
+    font-family: 微软雅黑;
+    background: url(../../img/sec/02.jpg)  no-repeat center 0;
+    text-align: center;
+}
+.patternSafe h1{
+    padding-top: 93px;
+    font-size: 34px;
+ 
+}
+.patternSafe p{
+    padding-top: 26px;
+    font-size: 18px;
+
+}
+/*模式安全*/
+
+/*资金安全*/
+.fundSecurity{
+    width: 100%;
+    height: 484px;
+    background: url(../../img/sec/img2.jpg)  no-repeat center 0;
+}
+
+.fundSecurity .fundSecurity_main{
+    width:1200px;
+    margin:0 auto;
+    height: 100%;
+    color:#fff;
+    text-align: center;
+    font-family:'微软雅黑';
+
+}
+
+.fundSecurity_main h1 {
+    font-size:34px;
+    padding-top:72px;
+    padding-bottom:10px;
+}
+
+.fundSecurity_main>p{
+    font-size:18px;
+    padding-top:10px
+}
+
+.fundSecurity_main ul {
+    margin:0 auto;
+    padding-top:75px;
+    overflow:hidden;
+    
+    width:77.5%;
+    font-size:18px
+}
+.fundSecurity_main ul li{
+    float:left;
+    width:33%;
+    height: 120px;
+    position: relative;
+}
+.fundSecurity_main ul li p{
+    padding-top:10px;
+}
+.fundSecurity_main ul li .jt{
+	position:absolute;
+	top:40px;
+	left:310px;
+}
+
+/*资金安全*/
+
+/*系统安全*/
+.systemSafe{
+    width:100%;
+    background:url(../../img/sec/img3.png)  no-repeat center 0;
+    height: 826px;
+}
+.systemSafe .systemSafe_main{
+    width:1200px;
+    height: 100%;
+    margin: 0 auto;
+    color: #333;
+    text-align: center;
+    font-family:'微软雅黑';
+    
+}
+.systemSafe_main p{
+    font-size:18px;
+    color: #666;
+    padding-top:10px
+    
+    
+}
+.systemSafe_main h2{
+    padding-top:115px;
+    padding-bottom:13px;
+    font-size:34px
+}
+
+/*系统安全*/

@@ -1,0 +1,361 @@
+*{
+	padding:0;
+	margin:0; 
+	font-family:"Microsoft YaHei","arial";
+}
+ul,li{
+	list-style:none;
+} 
+.nowarp .header_con_wrapper{ 
+    background: none;
+    height: auto;
+} 
+.main{
+	height:auto; 
+}
+.Navigation{
+	width: 100%;
+    height: 320px;
+    padding-top: 120px; 
+	background:url(/resources/img/billlist/billlistbg.jpg) no-repeat center 0px;  
+}
+.Navigation .Nav{
+	width: 1120px; 
+	margin: 0 auto;
+	padding-top: 120px;
+	background: #ffffff; 
+    padding: 17px 30px;
+    position: relative;
+	box-shadow: 0px 2px 7px rgba(240,240,240,1);
+} 
+.Navigation .NavWhite{
+	width: 1120px;
+    height: 230px;
+	margin: 0 auto;
+	display: none;
+}
+.Navigation .Nav .active{
+    border-bottom: 1px solid #cd1424;
+	color: #cd1424;
+}
+.Navigation .Nav .company span{
+	width: 80px;
+    display: inline-block;
+    text-align: right;
+    color: #999999;
+    font-size: 14px;
+    line-height: 52px; 
+    margin-right: 30px;
+}
+.Navigation .Nav .company .more{
+	width: 80px;
+    display: inline-block;
+    text-align: right;
+    color: #999999;
+    float: right;
+    font-size: 14px;
+    line-height: 52px; 
+    margin-right: 0px;
+}
+.Navigation .Nav .company .warplist{
+	width: 970px;
+    height: 288px;
+    position: absolute;
+    background: #ffffff;
+	top: 0px;
+	left: 110px;
+}
+.Navigation .Nav .company .overflow{ 
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.companyhidden{
+	overflow: hidden;
+}
+.Navigation .Nav .company a{ 
+    font-size: 14px; 
+    display: inline-block;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	border-radius: 3px;     
+} 
+.Navigation .Nav .company dd{ 
+	 margin-right: 18px;  
+}
+.Navigation .Nav .company dd.more{ 
+	float: right;
+	color: #999999;
+	font-size: 12px;
+	cursor: pointer;
+}  
+.select .select-list{
+	border-bottom:#eee 1px dashed
+}
+.select dl{  
+    height: 52px;
+    line-height: 52px;;
+}
+.select dl:after{
+	content:" ";
+	display:block;
+	clear:both;
+	height:0;
+	overflow:hidden
+}
+.select dt{
+	width: 80px;
+    display: inline-block;  
+    text-align: right;
+	color: #999999;
+	font-size: 14px; 
+    line-height:52px;
+    float: left;
+    margin-right: 30px;
+}
+.select dd{
+	float:left;
+	display:inline; 
+	margin-right: 20px;
+}
+.select a{
+	display:inline-block;
+	white-space:nowrap;
+	height: 20px;
+    line-height: 20px;
+	padding:0 10px;
+	text-decoration:none;
+	color:#666666;
+	font-size:14px; 
+	border-radius:2px;
+    font-weight: normal;
+}
+.select a:hover{
+	color:#9786ea;  
+	border-radius:3px;
+}
+.select .selected a{
+	color:#9786ea; 
+	border:1px solid #9786ea;
+	border-radius:3px;
+}
+.selected a{
+	color:#9786ea; 
+	border:1px solid #9786ea;
+	border-radius:3px;
+} 
+.companyList{  
+	background: #ffffff;
+    padding-left: 140px; 
+}
+.companyList dd{  
+	display:inline; 
+	margin-right: 20px;
+}
+.companyList .OtherList{
+	display: none;
+}
+.shoplist{
+	width: 1180px;
+	background: #ffffff;
+	margin: 30px auto 50px;
+    overflow: hidden;
+}
+.shopmian{
+	background: #f5f5f6;
+    overflow: hidden;
+}
+.batchOrder{ 
+    width: 1180px; 
+    margin: 0 auto;
+    margin-top: 30px;
+}
+#batchOrder{
+	width: 130px;
+    height: 40px;
+    border: 0 none;
+    background: #9786ea;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+	font-weight: 500;
+}
+.shoplist .shoplistTitle{
+	height: 50px;
+	background: #fafafd;
+	line-height: 50px;
+	border-bottom:1px solid #f0f0f0;
+}
+.shoplist .shoplistTitle li{
+	float: left;
+	color: #666666;
+	font-size: 14px;
+}
+.list-uli {
+    text-overflow: ellipsis;
+    overflow: hidden;
+	white-space: nowrap;  
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.list-uli label{
+	display: none;
+}
+/*.list-uli label.active{
+	display: inline-block;
+}*/
+.cashItem .list-uli{
+	width: 14px;
+	height: 80px;
+}
+.list-uli0 {
+    width: 113px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	white-space: nowrap;
+	/* margin-left: 50px; */
+}
+.list-uli1 {
+    width: 217px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	white-space: nowrap; 
+}
+.list-uli1 .billTypeIco{
+	background: #fff8df;
+	font-size: 12px;
+	color: #daa517;
+	padding: 6px;
+	border: 1px solid #f2df9b;
+	font-style: normal;
+	display: inline-block;
+	line-height: 12px;
+	height: 12px;
+	border-radius: 3px;
+}
+.list-uli2 {
+    width: 169px;
+}
+.list-uli3 {
+    width: 180px;
+}
+.list-uli4 {
+    width: 138px;
+}
+.list-uli5 {
+    width: 132px;
+}
+.list-uli6 {
+    width: 180px;
+}
+
+.shoplist .listBoxs ul{
+	height: 89px;
+	line-height: 84px;
+	border-bottom:1px solid  #f0f0f0;
+}
+.shoplist .listBoxs li{
+	float: left;
+	color: #666666;
+	font-size: 14px;
+}
+.listBoxs li .top{
+	display: block;
+	margin-top: 14px;
+	line-height: 30px;
+}
+.listBoxs li .btm{
+	display: block;
+	line-height: 30px;
+}
+
+.shoplist .listBoxs li.bordercolor{
+	color: #9786ea;
+	font-size: 24px;
+}
+.shoplist .listBoxs li.bordercolor em{
+	color: #9786ea;
+	font-size: 14px;
+	font-style: normal;
+}
+.shoplist .listBoxs .cashItem .list-img{
+	vertical-align: middle;
+}
+.shoplist .listBoxs .cashItem a{
+	width: 130px;
+	height: 40px;
+	border: 0 none;
+	background: #9786ea;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	border-radius: 3px;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px; 
+} 
+.shoplist .listBoxs .cashItem a.listInfor2{  
+	background: #cccccc; 
+	border: 1px solid #cccccc;
+    color: #ffffff;  
+	font-weight: 500;
+} 
+.labelCheck{
+	width: 14px;
+	height: 14px;
+	display: inline-block; 
+	background: url(../../img/test/unchecked.png) no-repeat center;
+}
+.labelCheck.onActive{
+	background: url(../../img/test/checked.png) no-repeat center;
+}
+.hideCheck{
+	display: none;
+}
+#checkAll {
+    display: none;
+}
+.listBoxs .labelCheck{
+	margin: 0;
+}
+
+#confirmOrder{
+	display: none;
+	position: static;
+}  
+.OrderBox .topMsg{  
+    margin-top: 40px;
+    margin-left: 50px;
+}
+.OrderBox .topMsg img{
+	vertical-align: middle;
+}
+.OrderBox .topMsg span{
+	vertical-align: middle;
+	color: #333333;
+	font-size: 20px;
+	margin-left: 15px;
+}
+.OrderBox .tipsMsg{
+	margin-top: 40px;
+    color: #999999;
+    font-size: 14px;
+    float: right;
+    margin-right: -130px;
+} 
+.OrderBox .tipsMsg a{ 
+    width: 90px;
+    height: 30px;
+    border: 1px solid #9786ea;
+    background: #9786ea;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+}

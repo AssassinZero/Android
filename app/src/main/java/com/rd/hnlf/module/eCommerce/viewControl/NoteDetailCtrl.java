@@ -154,15 +154,20 @@ public class NoteDetailCtrl {
      * 拨打联系人电话
      */
     public void makingCallClick(View view) {
-        if (!officePhone.equals("tel:")){
-            startDialog();
+        if (UserLogic.isLand()){
+            if (!officePhone.equals("tel:")){
+                startDialog();
+            }else {
+                ToastUtil.toast("获取联系方式失败");
+            }
         }else {
-            ToastUtil.toast("获取联系方式失败");
+            ARouter.getInstance().build(RouterUrl.USER_LOGIN).navigation();
         }
+
     }
     private void startDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setTitle("霍尼莱夫");
+        builder.setTitle("票付安");
         builder.setMessage("是否拨联系人电话?");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                 @Override

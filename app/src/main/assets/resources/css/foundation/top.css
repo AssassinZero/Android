@@ -1,0 +1,312 @@
+html{min-width: 1190px;}
+#header_info {
+  min-width: 1190px;
+  background: #ffffff;
+  color: #999999;
+  border-bottom: 1px solid #eaeaea;
+}
+.header_top {
+  margin: 0 auto;
+  width: 1024px;
+  font-size: 12px;
+}
+.header_top .float_left, .header_top .float_right {
+  line-height: 40px;
+}
+.float_left {
+  float: left;
+}
+
+
+@font-face {font-family: "iconfont";
+  src: url('../iconfont/iconfont.eot?t=1474609638'); /* IE9*/
+  src: url('../iconfont/iconfont.eot?t=1474609638#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../iconfont/iconfont.woff?t=1474609638') format('woff'), /* chrome, firefox */
+  url('../iconfont/iconfont.ttf?t=1474609638') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../iconfont/iconfont.svg?t=1474609638#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:19px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-toubiaojine:before { content: "\e611"; }
+.icon-data:before { content: "\e614"; }
+.icon-shijian:before { content: "\e613"; }
+.icon-zhifujine:before { content: "\e618"; }
+.icon-jiekuan:before { content: "\e628"; }
+.icon-audit-not-pass2:before { content: "\e615"; }
+.icon-iconfontfanxiantongqian:before { content: "\e623"; }
+.icon-dingwei:before { content: "\e603"; }
+.icon-huankuan:before { content: "\e612"; }
+.icon-huankuanfangshi:before { content: "\e615"; }
+.icon-31:before { content: "\e604"; }
+.icon-zhengque:before { content: "\e60b"; }
+.icon-cuowu:before { content: "\e61f"; }
+.icon-jiantou:before { content: "\e60d"; }
+.icon-yuecaifu:before { content: "\e613"; }
+.icon-shuaxin:before { content: "\e617"; }
+.icon-iconfontrenzhengyonghu:before { content: "\e606"; }
+.icon-tishi:before { content: "\e61c"; }
+.icon-icon01:before { content: "\e60e"; }
+.icon-jikediancanicon16:before { content: "\e600"; }
+.icon-shenpiliuchengmorentubiao107:before { content: "\e614"; }
+.icon-shoujizhuomian:before { content: "\e601"; }
+.icon-icon:before { content: "\e609"; }
+.icon-shezhi:before { content: "\e60a"; }
+.icon-shizhong:before { content: "\e60d"; }
+.icon-shouji:before { content: "\e61b"; }
+.icon-yijian-copy:before { content: "\e619"; }
+.icon-qiaheqian:before { content: "\e60f"; }
+.icon-wodeqianbaoweidaozhang:before { content: "\e61d"; }
+.icon-jiedai:before { content: "\e608"; }
+.icon-youxiang:before { content: "\e61c"; }
+.icon-shangchuan:before { content: "\e618"; }
+.icon-shuju:before { content: "\e61a"; }
+.icon-xiangxiajiantoufenlei:before { content: "\e602"; }
+.icon-rili:before { content: "\e610"; }
+.icon-shouji1:before { content: "\e61e"; }
+.icon-shanchu:before { content: "\e60b"; }
+.icon-xiugaimima:before { content: "\e61d"; }
+.icon-xiao42:before { content: "\e603"; }
+.icon-toubiaojine:before { content: "\e611"; }
+.icon-zidongkoukuan:before { content: "\e627"; }
+.icon-tishi1:before { content: "\e62a"; }
+
+
+
+
+.address{
+  margin-left: 26px;
+  position: absolute;
+  float: right;
+}
+.address .changeCity{
+  padding-left: 6px;
+}
+.address .part{
+  border-right:1px solid #ededed; 
+  padding-right: 6px;
+}
+.address em{
+  padding-left: 4px;
+  border-left: 1px solid #a9a9a9;
+  margin-left: 4px;
+}
+.header_top .iconfont{
+  font-size:20px
+}
+.header_top i{
+  margin-right: 5px;
+}
+.phone{
+  margin-left: 30px;
+}
+
+.header_top a{
+  color: #999999;
+  cursor: pointer;
+}
+.header_top a:hover{
+  color: #cd1424;
+}
+.badge{
+  display: inline-block;
+  min-width: 10px;
+  padding: 2px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #cd1424;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+.message{margin-right:10px;}
+.line-y{
+  padding:  0 4px;
+}
+.attention em {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  padding-left: 6px;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 19px;
+  color: #fff;
+}
+.attention em a{
+  color: #fff;
+  text-decoration: none;
+}
+.attention em a:hover{
+  color: #fff;
+}
+.attention .i_weibo{
+  font-size: 18px;
+}
+.attention .topTipsWrap {
+  display: none;
+  position: absolute;
+  line-height: normal;
+  z-index: 4;
+  width: 120px;
+  top: 18px;
+  padding-top: 20px;
+  left: -14px;
+  font-family: "Microsoft YaHei","arial";
+  text-indent: 0;
+}
+ .topTipsWrap i {
+  position: absolute;
+  top: 7px;
+  left: 20px;
+  display: inline-block;
+  height: 7px;
+  width: 11px;
+  background: url(/themes/theme_default/image/icon/hoveTips.png) no-repeat;
+  z-index: 10;
+}
+.topTips {
+  position: absolute;
+  top: 13px;
+  width: 98px;
+  padding: 14px 10px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  border: 1px solid #e6e6e6;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.loginStatus a{ 
+  display: inline-block;
+}
+.
+.topTips h2 {
+  padding-bottom: 12px;
+  color: #333;
+}
+.topTips a {
+  color: #4971b6;
+}
+.topTips a:hover{
+  color: #4971b6;
+}
+.i_weixin .topTips{
+  width: 126px;
+  height: 126px;
+}
+.i_weixin img{
+  width: 126px;
+  height: 126px;
+}
+.attention em:hover .topTipsWrap{ display:block; }
+ a.log_out,  a.log_out:hover{
+  color: #0f85d5;
+}
+.tel .iconfont_ryt{
+  font-size: 20px;
+  padding-right: 4px;
+}
+.i_qq{
+  padding-left: 10px;
+}
+.i_qq .iconfont_ryt{
+  font-size: 18px;
+  padding-right: 4px;
+}
+.i_weixin{
+  padding-left: 10px;
+}
+.i_weixin .iconfont_ryt{
+  font-size: 20px;
+  padding-right: 4px;
+}
+
+.city{
+  width: 380px;
+
+  position: relative;
+  z-index: 9;
+  left: 62px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  display: none;
+}
+
+.city .city_top{
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 30px;
+}
+.city .city_top img{
+  width: 9px;
+  height: 9px;
+  float: right;
+  display: block;
+  margin-top: 17px;
+  cursor: pointer;
+}
+.city_choose ul{
+  border-bottom: 1px solid #eaeaea;
+  line-height: 28px;
+  height: 28px;
+}
+.city .city_choose ul li{
+  float: left;
+  margin-left: 19px;
+  font-size: 12px;
+  color: #ff825c;
+}
+
+.city .city_choose ul li a{
+    color: #ff825c;
+}
+
+.J-tab li a.active {
+  border-bottom: none;
+}
+
+.city dl {
+  height: 70px;
+  margin: 10px auto 0 20px;
+}
+
+.city dl dd{
+  width: 70px;
+  height: 12px;
+  float: left;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 12px;
+  color: #999999;
+  font-size: 12px;
+}
+
+.loginStatus .guide{
+  line-height: 20px;
+  padding-left: 25px;
+}
+
+.loginStatus .bor{
+  border-right: 1px solid #ededed;
+  border-left: 1px solid #ededed;
+  padding-right: 25px;
+}
+.loginStatus .mag-10{
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.loginStatus .exit{
+  margin-left: 5px;
+} 

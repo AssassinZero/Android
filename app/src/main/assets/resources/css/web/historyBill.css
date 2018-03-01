@@ -1,0 +1,158 @@
+
+.proDocuList .labelCheck{
+	margin: 0;
+}
+
+.tradeClose .tabs1{
+	width: 110px;
+}
+.tradeClose .tabs2{
+	width: 110px;
+}
+.tradeClose .tabs3{
+	width: 150px;
+}
+.tradeClose .tabs4{
+	width: 180px;
+}
+.tradeClose .tabs5{
+	width: 100px;
+}
+.tradeClose .tabs6{
+	width: 150px;
+}
+.tradeClose .tabs8{
+	width: 100px;
+}
+
+.theShelvesTopWarp{
+	display: none;
+	background: #fff;
+    min-height: 830px;
+    float: left;
+    width: 950px;
+    padding-bottom: 20px;
+}
+.theShelvesTop{
+	height: 70px;
+	line-height: 70px;
+	border-bottom: 1px solid #eaeaea;
+	padding: 0 40px;
+}
+.theShelvesTop p{
+	float: left;
+	font-size: 18px;
+	color: #333333;
+}
+.theShelvesTop span{
+	cursor: pointer;
+	float: right;
+	font-size: 14px;
+	color: #9786ea;
+}
+.theShelvesMain{
+	padding: 0 40px;
+}
+.theShelvesNav{
+	color: #333333;
+	font-size: 16px;
+	line-height: 40px;
+	border-left: 4px solid #9786ea;
+	text-indent: 30px;
+	margin-top: 20px;
+}
+.theShelvesTable{
+	width: 100%;
+	display: table;
+	border-collapse: collapse;
+}
+.theShelvesTable th{
+	background: #fafafd;
+	color: #999999;
+	font-size: 14px;
+	line-height: 38px;
+	text-align: center;
+	border: 1px solid #eaeaea;
+}
+.theShelvesTable td{
+	color: #333333;
+	font-size: 14px;
+	line-height: 38px;
+	text-align: center;
+	border: 1px solid #eaeaea;
+}
+
+.userInfoForm h4{padding: 0 15px; background: #fafafa; height: 34px; line-height: 34px; font-size: 16px; color: #666;}
+.userInfoForm li{float: left; width: 400px; height: 40px; line-height: 40px; padding-right: 10px;}
+.userInfoForm li label.labelText{display: inline-block; width: 130px; font-size: 14px; color: #999999; margin-right: 15px; text-align: right;}
+
+
+.userInfoForm{position: relative; padding-top: 30px;}
+.userInfoForm li{margin-bottom: 25px;}
+.userInfoForm li i{color: #ea544a; margin-right: 5px;}
+.userInfoForm input[type='text']{width: 220px; padding-left: 8px; height: 38px; border: 1px solid #eaeaea; border-radius: 5px;}
+.userInfoForm li .errorText{height: 20px; line-height: 20px; padding-left: 150px; color: #db2b1d; position: relative; font-size: 12px;}
+.userInfoForm #submitLi input{
+	width: 100px;
+	height: 40px;
+	border: none;
+	text-align: center;
+	background: #9786ea;
+	border-radius: 5px;
+	float: right;
+	font-size: 14px;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+	margin-top: 20px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+.userInfoForm #submitLi input.cancelBtn{
+	background: #fafafa;
+	border: 1px solid #e6e6e6;
+	color: #666666;
+}
+.userInfoForm input[type='radio']{
+	width: 16px;
+	height: 16px;
+    cursor: pointer;
+}
+label.radio{
+    cursor: pointer; 
+}
+
+.pay_list_c1 {
+	width: 16px;
+	height: 16px;
+	margin-left: 20px;
+	margin-right: 5px;
+	display: inline-block;
+	line-height: normal;
+	cursor: pointer;
+	text-align: center;
+	background-image: url(../../img/test/radio2.png);
+	background-repeat: no-repeat;
+}
+.radioclass {
+	opacity: 0;
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+.on {
+    background-image: url(../../img/test/radio1.png);
+}
+
+.tableScroll{
+	max-height: 235px;
+	overflow-y: auto;
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+a.lookNote{
+	font-size: 16px;
+	color: #9786ea;
+	font-weight: normal;
+	text-indent: 30px;
+}

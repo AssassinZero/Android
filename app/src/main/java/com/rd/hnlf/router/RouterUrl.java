@@ -77,8 +77,10 @@ public class RouterUrl {
     public static final  String TRADE_SELLER             = SCHEME + "/trade/seller";
     /** 代理商 - 票据交易 */
     public static final  String TRADE_NOTE_TRANSACTION   = SCHEME + "/trade/noteTransaction";
-    /** 交易订单详情 */
+    /** 订单交易详情 */
     public static final  String TRADE_DETAIL             = SCHEME + "/trade/detail";
+    /** 订单交易成功 */
+    public static final  String TRADE_SUCCESSFULLY             = SCHEME + "/trade/successfully";
 
     ///////////////////////////////////////////////////////////////////////////
     // 电商订单
@@ -95,6 +97,7 @@ public class RouterUrl {
     public static final  String E_COMMERCE_ORDER         = SCHEME + "/eCommerce/order";
     /** 电商订单详情 */
     public static final  String E_COMMERCE_DETAIL        = SCHEME + "/eCommerce/detail";
+
 
     ///////////////////////////////////////////////////////////////////////////
     // 纯票订单

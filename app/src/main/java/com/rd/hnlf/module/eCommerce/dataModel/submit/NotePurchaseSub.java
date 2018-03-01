@@ -41,8 +41,16 @@ public class NotePurchaseSub {
         this.bankAccount = bankAccount;
     }
 
+    public String getBankAccount() {
+        return bankAccount;
+    }
+
     public void setAccountNameOwn(String accountNameOwn) {
         this.accountNameOwn = accountNameOwn;
+    }
+
+    public String getAccountNameOwn() {
+        return accountNameOwn;
     }
 
     public void setBankCode(String bankCode) {
@@ -53,8 +61,16 @@ public class NotePurchaseSub {
         this.openingBankOwn = openingBankOwn;
     }
 
+    public String getOpeningBankOwn() {
+        return openingBankOwn;
+    }
+
     public void setBankNumberOwn(String bankNumberOwn) {
         this.bankNumberOwn = bankNumberOwn;
+    }
+
+    public String getBankNumberOwn() {
+        return bankNumberOwn;
     }
 
     public void setBillSurfaceList(List<BillSurfaceSub> billSurfaceList) {

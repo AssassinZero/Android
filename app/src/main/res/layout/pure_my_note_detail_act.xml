@@ -8,81 +8,100 @@
             name="viewCtrl"
             type="com.rd.hnlf.module.pure.viewControl.MyNoteDetailCtrl" />
     </data>
-
-    <com.rd.views.appbar.ToolBar
-        android:id="@+id/toolBar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorGrey"
-        android:orientation="vertical"
-        app:barBackground="@color/colorTitleBar"
-        app:titleText="@string/note_detail_title">
-
-        <ScrollView
+        android:layout_height="match_parent">
+        <WebView
+            android:id="@+id/my_dote_detail_web_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scrollbars="none">
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+        <com.rd.views.AvatarImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:onClick="back"
+            android:background="@color/transparentGrey"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_round_back" />
+        <com.rd.views.appbar.ToolBar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGrey"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:barBackground="@color/colorTitleBar"
+            app:titleText="@string/note_detail_title">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/x20"
-                    android:text="@string/note_positive_info"
-                    android:textColor="@color/text_purple"
-                    android:textSize="@dimen/text_size_h2" />
-
-                <include
-                    layout="@layout/pure_basic_info_layout"
-                    app:item="@{viewCtrl.viewModel.basicInfo}" />
-
-                <include
-                    layout="@layout/pure_trader_info_layout"
-                    app:item="@{viewCtrl.viewModel.drawerInfo}"
-                    app:tip="@{@string/drawer_info_tip}" />
-
-                <include
-                    layout="@layout/pure_trader_info_layout"
-                    app:item="@{viewCtrl.viewModel.payeeInfo}"
-                    app:tip="@{@string/payee_info_tip}" />
-
-                <include
-                    layout="@layout/pure_trader_info_layout"
-                    app:item="@{viewCtrl.viewModel.acceptorInfo}"
-                    app:tip="@{@string/acceptor_info_tip}" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/x20"
-                    android:text="@string/note_negative_info"
-                    android:textColor="@color/text_purple"
-                    android:textSize="@dimen/text_size_h2" />
+                android:layout_weight="1"
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:ultraData="@{viewCtrl.viewModel.negativeInfo}"
-                    app:ultraLayout="@{@layout/pure_negative_info_layout}" />
-            </LinearLayout>
-        </ScrollView>
+                    android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/x10"
-            android:background="@color/white"
-            android:gravity="center"
-            android:padding="@dimen/x20"
-            android:text="@{viewCtrl.viewModel.settlementAmount}"
-            android:textColor="@color/text_yellow"
-            android:textSize="@dimen/text_size_h1"
-            android:visibility="gone" />
-    </com.rd.views.appbar.ToolBar>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_positive_info"
+                        android:textColor="@color/text_purple"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <include
+                        layout="@layout/pure_basic_info_layout"
+                        app:item="@{viewCtrl.viewModel.basicInfo}" />
+
+                    <include
+                        layout="@layout/pure_trader_info_layout"
+                        app:item="@{viewCtrl.viewModel.drawerInfo}"
+                        app:tip="@{@string/drawer_info_tip}" />
+
+                    <include
+                        layout="@layout/pure_trader_info_layout"
+                        app:item="@{viewCtrl.viewModel.payeeInfo}"
+                        app:tip="@{@string/payee_info_tip}" />
+
+                    <include
+                        layout="@layout/pure_trader_info_layout"
+                        app:item="@{viewCtrl.viewModel.acceptorInfo}"
+                        app:tip="@{@string/acceptor_info_tip}" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/x20"
+                        android:text="@string/note_negative_info"
+                        android:textColor="@color/text_purple"
+                        android:textSize="@dimen/text_size_h2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:ultraData="@{viewCtrl.viewModel.negativeInfo}"
+                        app:ultraLayout="@{@layout/pure_negative_info_layout}" />
+                </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x10"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="@dimen/x20"
+                android:text="@{viewCtrl.viewModel.settlementAmount}"
+                android:textColor="@color/text_yellow"
+                android:textSize="@dimen/text_size_h1"
+                android:visibility="gone" />
+        </com.rd.views.appbar.ToolBar>
+
+    </RelativeLayout>
+
 </layout>

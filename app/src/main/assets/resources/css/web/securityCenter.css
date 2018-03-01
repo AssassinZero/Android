@@ -1,0 +1,231 @@
+
+.userContent{
+	padding: 0!important;
+	min-height: 850px!important;
+	width: 950px!important;
+}
+.buttons{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+.buttons .buttons1{
+	color: #fff;
+	font-size: 14px;
+	background: #9786ea;
+	padding: 8px 35px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.buttons .buttons2{
+	margin-left: 20px;
+	color: #666666;
+	font-size: 14px;
+	background: #fafafa;
+	padding: 8px 35px;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.myBank{
+	height: 65px;
+	line-height: 65px;
+	font-size: 22px;
+	color: #333333;
+	margin-top: 10px;
+	padding: 0 30px;
+	border-bottom: 1px solid #eeeeee;
+}
+.myBankList li{
+	height: 100px;
+	border-bottom: 1px solid #eeeeee;
+}
+.myBankList{
+	padding: 0 20px;
+}
+.myBankList div.myBankDiv{
+	padding: 30px 0;
+    float: left; 
+    margin-left: 20px;
+}
+.myBankDiv.first1{
+	width: 46px;
+	height: 38px;
+    background: url(../../img/userCenterMember/securityCenter1.png) no-repeat left;
+}
+.myBankDiv.first2{
+	width: 46px;
+	height: 38px;
+    background: url(../../img/userCenterMember/securityCenter2.png) no-repeat left;
+}
+.myBankDiv.first3{
+	width: 46px;
+	height: 38px;
+    background: url(../../img/userCenterMember/securityCenter3.png) no-repeat left;
+}
+.myBankDiv-p1{
+	color: #666666;
+	font-size: 16px;
+	font-weight: bold;
+}
+.myBankDiv-p2{
+    color: #bdbdbd;
+	font-size: 12px;
+}
+.myBankList div.myBankDiv.second{
+	padding: 25px 0;
+	padding-left: 30px;
+	line-height: 25px;
+}
+.myBankList div.myBankDiv.third{
+	float: right;
+	padding-right: 20px;
+	color: #333333;
+	font-size: 14px;
+	margin: 0;
+}
+.myBankList .third a{
+	color: #9786ea;
+	font-size: 14px;
+	font-weight: normal;
+	cursor: pointer;
+}
+#userPhone{
+	color: #333333
+}
+.theShelvesTop{
+	height: 70px;
+	line-height: 70px;
+	border-bottom: 1px solid #eaeaea;
+	padding: 0 40px;
+}
+.theShelvesTop p{
+	float: left;
+	font-size: 22px;
+	color: #333333;
+}
+.theShelvesTop span{
+	cursor: pointer;
+	float: right;
+	font-size: 14px;
+	color: #9786ea;
+}
+.securityCenterFrist{
+	display: none;
+}
+.securityCenterSecond{
+	display: none;
+}
+.securityCenterThird{
+	display: none;
+}
+.securityCenterList{
+	display: none;
+}
+.bankListWarp{
+	padding-top: 40px;
+}
+.bankList{
+	overflow: hidden;
+}
+.bankList li{
+	float: left;
+	margin-left: 40px;
+	margin-bottom: 40px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 7px rgba(70, 63, 107, 0.3);
+}
+.bankList div.type1{
+	position: relative;
+	width: 315px;
+	height: 180px;
+	overflow: hidden;
+	background: url(../../img/userCenterMember/bankOrdinaryBg.png) no-repeat center;
+}
+.bankList div.type2{
+	position: relative;
+	width: 315px;
+	height: 180px;
+	overflow: hidden;
+	background: url(../../img/userCenterMember/bankSignBg.png) no-repeat center;
+}
+.addButton{
+	width: 313px;
+	height: 100px;
+	line-height: 100px;
+	color: #999999;
+	font-size: 18px;
+	margin-left: 40px;
+	text-align: center;
+	box-shadow: 2px 2px 7px rgba(70, 63, 107, 0.3);
+	border-radius: 5px;
+	margin-bottom: 40px;
+	cursor: pointer;
+	background: url(../../img/userCenterMember/xgzhBg.png) repeat-x;
+}
+.bankList p.operation{
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #9786ea;
+	background: #fff;
+	text-align: right;
+	bottom: -40px;
+}
+.bankList p span{
+	cursor: pointer;
+	margin-right: 10px;
+}
+.bankList img{
+	width: 38px;
+	height: 38px;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+.content{
+	overflow: hidden;
+}
+.content img{
+	float: left;
+}
+.content div{
+	color: #fff;
+	float: left;
+}
+.content div{
+	margin-top: 15px;
+	margin-left: 10px;
+}
+.content p{
+	font-size: 14px;
+	width: 275px;
+}
+.content p i{
+	font-size: 12px;
+}
+.content p span{
+	color: #fffaae;
+	font-size: 12px;
+}
+.content2{
+	width: 100%;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 15px;
+}
+.securityFrom .selectList ul {
+	width: 277px;
+}
+.securityFrom .selectList ul li{
+	width: auto;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.securityFrom .errorText{
+	clear: both;
+}

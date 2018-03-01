@@ -1,7 +1,14 @@
 package com.rd.hnlf.module.pure.viewControl;
 
+import android.app.Activity;
 import android.util.Log;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
+import com.rd.hnlf.R;
 import com.rd.hnlf.module.eCommerce.dataModel.submit.NoteDetailBean;
 import com.rd.hnlf.module.eCommerce.dataModel.submit.NoteDetailRec;
 import com.rd.hnlf.module.pure.ui.activity.MyNoteDetailAct;
@@ -30,11 +37,44 @@ public class MyNoteDetailCtrl {
     private MyNoteDetailVM viewModel;
     /** 是否信息隐藏显示 */
     private boolean        hidden;
+    private Activity activity;
+    private WebView web_view;
 
-    public MyNoteDetailCtrl(String orderNo, boolean hidden) {
+    public MyNoteDetailCtrl(String orderNo, boolean hidden,Activity activity) {
         this.hidden = hidden;
+        this.activity = activity;
         viewModel = new MyNoteDetailVM();
+        initView();
         reqData(orderNo);
+    }
+
+    private void initView() {
+        web_view = (WebView) activity.findViewById(R.id.my_dote_detail_web_view);
+        WebSettings ws = web_view.getSettings();
+        ws.setSupportZoom(true);
+        ws.setJavaScriptEnabled(true);
+        ws.setJavaScriptCanOpenWindowsAutomatically(true);
+        ws.setBuiltInZoomControls(true);//support zoom
+        //webSettings.setPluginsEnabled(true);//support flash
+        ws.setUseWideViewPort(true);// 这个很关键
+        ws.setLoadWithOverviewMode(true);
+
+        web_view.setWebViewClient(new WebViewClient());
+        web_view.setWebChromeClient(new WebChromeClient());
+        web_view.addJavascriptInterface(new AndroidtoJs(),"test");
+        web_view.loadUrl("file:///android_asset/index.html");
+
+
+    }
+    // 继承自Object类
+    public class AndroidtoJs extends Object {
+
+        // 定义JS需要调用的方法
+        // 被JS调用的方法必须加入@JavascriptInterface注解
+        @JavascriptInterface
+        public String dateToHtml() {
+           return "AndroidDateToHtml";
+        }
     }
 
     /**
@@ -53,7 +93,6 @@ public class MyNoteDetailCtrl {
         });
 
     }
-
 
 
     /**

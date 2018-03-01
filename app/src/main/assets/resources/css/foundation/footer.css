@@ -1,0 +1,12 @@
+.btnav{width: 100%;background:#fff;height: 75px;min-width: 1190px;}
+.btnav ul{width: 303px;margin: 0px auto;/* margin-top: 25px; */}
+.btnav ul li{width: 100px;border-right: 1px solid #d7d6d6;float: left;margin-top: 28px;text-align: center;}
+.btnav ul li a{color: #333;font-size: 16px;}
+.btnav ul li a:hover{color: #4982c5;text-decoration: underline;}
+.opinion,.protocol{border-right: none !important}
+.protocol{border-left: 1px solid #d7d6d6;}
+.footer{text-align:center;background:#666666;color:#61636c;min-width: 1190px;}
+.footer .links{padding-top: 33px;padding-bottom: 25px;color:#61636c;}
+.footer .links a{margin:0 10px;}
+.footer .links a:hover{text-decoration:underline;color: #ffffff;}
+.footer .footer_bottom{background: #666666;color: #fff;font-size: 12px;width: 100%;padding-top: 16px;padding-bottom: 16px;}

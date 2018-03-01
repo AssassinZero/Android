@@ -213,6 +213,11 @@
             android:name=".module.eCommerce.ui.activity.ECommerceDetailAct"
             android:screenOrientation="portrait" />
 
+        <!-- 交易成功/失败 -->
+        <activity
+            android:name=".module.eCommerce.ui.activity.TradeSuccessfullyAct"
+            android:screenOrientation="portrait" />
+
         <!-- ******************************* 纯票订单 ********************************* -->
         <!-- 纯票订单详情 -->
         <activity
@@ -237,7 +242,7 @@
         <!-- 票据详情 -->
         <activity
             android:name=".module.pure.ui.activity.MyNoteDetailAct"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="landscape" />
 
         <!-- 纯票交易 -->
         <activity

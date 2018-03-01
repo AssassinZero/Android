@@ -1,0 +1,281 @@
+body{
+    background:#ffffff;
+}
+#logintop{
+    background:#FFF;;
+}
+.Wrap{
+    height: 80px;
+    background: #0b0624;
+}
+.main{
+    width:100%;
+    min-weight:1200px;
+    height:660px;
+    background:#ffffff;
+    border-bottom:1px solid #EAEAEA;
+}
+.main .change{
+    width:1180px;
+    height:600px;
+    background: #fff;
+    margin:30px auto;
+}
+.change ul {
+    height:80px;
+    width:1180px;
+    border-bottom:2px solid #EAEAEA; 
+}
+.change ul li{
+    float: left;
+    height: 80px;
+    font-size: 16px;
+    line-height: 80px; 
+    width: 290px;
+    margin-left: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+.change ul li.hover{
+    height: 80px;
+    line-height: 80px;
+    font-weight:bold; 
+    border-bottom:5px solid #9786ea;
+}
+.change ul li b{
+    display:inline-block;
+    line-height:20px;
+    text-align: center;
+    font-size:14px;
+    font-weight: normal;
+    margin-right:5px;
+    color:#ccc;
+    width:20px;
+    height:20px;
+    border:1px solid #EDEDED;
+    border-radius: 50%;
+}
+.changRed{
+    color: red!important;
+}
+.changeRed{
+    display:inline-block;
+    line-height:20px;
+    text-align: center;
+    font-size:14px;
+    font-weight: normal;
+    margin-right:5px;
+    color:#ffffff!important;
+    width:20px;
+    height:20px;
+    border:1px solid #EDEDED;
+    border-radius: 50%;
+    background: #9786ea;
+}
+.changeLine{
+    height:77px!important;
+    line-height:77px!important;
+    border-bottom:5px solid #9786ea;
+}
+.change ul li.hover b{
+    color:#fff;
+    background:#9786ea;
+}
+.change>div{
+    display:none;
+}
+.change ul li.changesuccess{
+    background: url(/resources/img/register/one.png) 70px center no-repeat; 
+}
+.change .tab1{
+    display: block;
+}
+.change .tab1,.change .tab3{
+    padding-top:80px;
+    padding-left: 400px;
+}
+.change .tab1 div{ 
+   margin-bottom:10px; 
+}
+.change .tab1 div span{
+    display: inline-block;
+    width:100px;
+    font-size: 14px;
+    color:#666;
+    text-align: right;
+    margin-right:10px;
+}
+.change .tab1 div>input{
+    width:280px;
+    height:40px;
+    border:1px solid #EAEAEA;
+    padding-left:5px;
+    border-radius: 5px;
+}
+.change .tab1 div.yz input{
+    width: 170px; 
+}
+.change .tab1 div.yz img{
+    position:relative;
+    top:10px;
+   width:80px;
+   margin-top:10px;
+}
+.change .tab1 div.yz div{
+   display: inline-block;
+    text-align: left;
+    width: 285px;
+    height: 44px;
+}
+.change .tab1 div.yz a{ 
+    width: 90px;
+    font-size: 10px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #999;
+    background: #FAFAFA;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 14px;
+}
+.change .tab1 form>input{
+   width:275px;
+   height:40px;
+   border-radius: 3px;
+   border:1px solid #9786ea;
+   background: #9786ea;
+   color:#fff;
+   font-size:16px;
+   line-height: 40px;
+    margin-left: 115px;
+   margin-top:15px;
+} 
+
+
+.change .tab2{
+    padding-top:80px;
+}
+.change .tab2 div{
+   text-align: center;
+   margin-bottom:10px; 
+}
+.change .tab2 div span{
+    display: inline-block;
+    width:100px;
+    font-size: 14px;
+    color:#666;
+    text-align: right;
+    margin-right:10px;
+}
+.change .tab2 div>input{
+    width:280px;
+    height:40px;
+    border:1px solid #EAEAEA;
+    padding-left:5px;
+    border-radius: 5px;
+}
+.change .tab2 form>input{
+   width:275px;
+   height:40px;
+   border-radius: 3px;
+   border:1px solid #9786ea;
+   background: #9786ea;
+   color:#fff;
+   font-size:16px;
+   line-height: 40px;
+   margin-left:505px;
+   margin-top:15px;
+} 
+.change .tab3 div{ 
+   margin-bottom:10px; 
+}
+.change .tab3 div span{
+    display: inline-block;
+    width:100px;
+    font-size: 14px;
+    color:#666;
+    text-align: right;
+    margin-right:10px;
+}
+.change .tab3 div>input{
+    width:280px;
+    height:40px;
+    border:1px solid #EAEAEA;
+    padding-left:5px;
+    border-radius: 5px;
+}
+.change .tab3 form>input{
+   width:275px;
+   height:40px;
+   border-radius: 3px;
+   border:1px solid #9786ea;
+   background: #9786ea;
+   color:#fff;
+   font-size:16px;
+   line-height: 40px; 
+    margin-left: 115px;
+   margin-top:15px;
+}
+.change .tab4 h2{
+   font-size:24px;
+   color:#666;
+   height:40px;
+   line-height: 40px;
+}
+.change .tab4 p{
+   font-size:13px;
+   color:#999;
+   height:40px;
+   line-height: 40px;
+   margin-top:10px;
+}
+.change .tab4 p b{
+  color:#9786ea;
+  font-size:20px;
+}
+.change .tab4 p a{
+  color:#9786ea;
+  font-size:20px;
+}
+.change .tab4{
+    text-align: center;
+    margin:30px auto;
+    padding-top:100px; 
+}
+.msg_tip{
+  display: inline-block;
+  color: #cad3df;
+  font-size: 12px;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+label.error {
+    background:url(/resources/img/error_icon.png) no-repeat;
+    border-radius: 4px;
+    color: red;
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: middle;
+      margin-top: -5px;
+      line-height:17px;
+  }
+  @font-face {font-family: "iconfont";
+  src: url('../iconfont/iconfont.eot?t=1474609638'); /* IE9*/
+  src: url('../iconfont/iconfont.eot?t=1474609638#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../iconfont/iconfont.woff?t=1474609638') format('woff'), /* chrome, firefox */
+  url('../iconfont/iconfont.ttf?t=1474609638') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../iconfont/iconfont.svg?t=1474609638#iconfont') format('svg'); /* iOS 4.1- */
+}
+  .iconfont {
+  font-family:"iconfont" !important;
+  font-size:19px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.gre{
+    color: #37c393
+}

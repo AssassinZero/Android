@@ -271,4 +271,5 @@ public class NoteDetailVM extends BaseObservable {
     public boolean isLand() {
         return UserLogic.isLand();
     }
+
 }

@@ -1,0 +1,153 @@
+*{
+	padding:0;
+	margin:0;
+	font-family:"Microsoft YaHei","arial";
+}
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    zoom: 1;
+}
+ul,li{
+    list-style:none;
+}
+.aboutUsBanner{
+    width: 100%;
+    min-width: 1180px;
+    height: 280px;
+    background: url(/resources/img/aboutus/aboutUsBanner.jpg) no-repeat 100% 100%;
+}
+.main{
+    width:100%;
+    min-width: 1180px;
+    background:#fff;
+    padding-bottom:30px;
+}
+.main .aboutus{
+    width:1180px;
+    margin:0 auto;
+    height:100%;
+    background:#fff;
+    position: relative;
+}
+.tabs{
+    width:230px;
+    float:left;
+    background: url(/resources/img/aboutus/tabsBg.png) no-repeat;
+    padding-top: 150px;
+    height: 300px;
+    position: relative;
+    top: -75px;
+}
+.tabs a{
+    display:block;
+    width:230px;
+    height:50px;
+    font-size:14px;
+    font-weight: bold;
+    line-height:50px;
+    color:#fff;
+    text-indent: 52px;
+}
+.tabs a i{
+    margin-right: 15px;
+}
+.tabs a:hover,.tabs a.hover{
+    background:#a298d3;
+    color:#fff;
+}
+.main #tabmain{
+    width:900px;
+    float:right;
+    background: #fff;
+}
+#tabmain h1{
+    font-size:22px;
+    color:#333;
+    font-weight: 500;
+    height: 97px;
+    line-height: 97px;
+}
+.problemList li{
+    margin-bottom: 40px;
+}
+.problemList .problemTop{
+    background: #fafafd;
+    height: 40px;
+    width: 896px;
+    border-left: 4px solid #9786ea;
+    position: relative;
+    cursor: pointer;
+}
+.problemList .problemTop h3{
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    text-indent: 15px;
+    line-height: 40px;
+}
+.problemList .problemTop .problemIco{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(/resources/img/aboutus/problemIco.png) no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.problemList li.active .problemTop .problemIco{
+    background: url(/resources/img/aboutus/problemIco2.png) no-repeat;
+}
+.problemList .problemBtm{
+    padding: 22px 40px 0px 15px;
+    display: none;
+}
+.problemList li.active .problemBtm{
+    display: block;
+}
+.problemList .problemBtm p{
+    font-size: 14px;
+    color: #999;
+    line-height: 28px;
+}
+
+
+.aboutus a i.tipsNavIcon{
+    display: inline-block;
+    color: #fff;
+    margin-right: 15px;
+    margin-bottom: -3px;
+    font-weight: normal;
+}
+.aboutus a i.icon1{
+    width: 16px;
+    height: 17px;
+    background: url(../../img/test/aboutIcon1.png) no-repeat center;
+}
+.aboutus a i.icon2{
+    width: 16px;
+    height: 17px;
+    background: url(../../img/test/aboutIcon2.png) no-repeat center;
+}
+.aboutus a i.icon3{
+    width: 18px;
+    height: 19px;
+    background: url(../../img/test/aboutIcon3.png) no-repeat center;
+}
+.aboutus a i.icon4{
+    width: 17px;
+    height: 16px;
+    background: url(../../img/test/aboutIcon4.png) no-repeat center;
+}
+.aboutus a i.icon5{
+    width: 16px;
+    height: 16px;
+    background: url(../../img/test/aboutIcon5.png) no-repeat center;
+}
+
+
+

@@ -24,6 +24,6 @@
             android:padding="10dp"
             android:selected="@{item.flag}"
             android:text="@{item.value}"
-            android:textColor="@drawable/filter_text_color_shape" />
+            android:textColor="@drawable/filter_text_select_bg" />
     </LinearLayout>
 </layout>

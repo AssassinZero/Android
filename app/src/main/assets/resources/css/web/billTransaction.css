@@ -1,0 +1,445 @@
+*{
+	padding:0;
+	margin:0; 
+	font-family:"Microsoft YaHei","arial";
+}
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    zoom: 1;
+}
+input,select{
+	outline: none;
+}
+ul,li{
+	list-style:none;
+} 
+.billTransactionBanner{
+	width: 100%;
+	min-width: 1180px;
+	height: 499px;
+	background: #f5f5f6 url(/resources/img/userCenterMember/billTransactionBanner.png) center top no-repeat;
+}
+.main{
+	height:auto;
+	background: #f5f5f6;
+	overflow: hidden;
+}
+
+.Order li label.labelText {
+    display: inline-block;
+    width: 130px;
+    font-size: 14px;
+    color: #999999;
+    margin-right: 15px;
+    text-align: right;
+}
+.Order  .selectList{
+    width: 220px;
+    float: left;
+    color: #666; 
+}
+.Order  .selectList input {
+    border: 1px solid #e3e3e3;  
+    width: 345px;;
+    height: 46px;
+    border-radius: 5px;
+}
+.Order .selectList ul {
+    display: none;
+    max-height: 150px;
+    overflow-y: scroll;
+    border: 1px solid #e3e3e3;
+    background: #fff;
+    z-index: 9999; 
+    width: 370px;
+    position: relative;
+}
+.Order .selectList ul li {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    float: none;
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 0;
+    z-index: 12;
+    cursor: pointer;
+}
+.Order{  
+	width: 1180px;
+	margin: 0 auto 35px;
+	background: #fff;
+}
+.Order .tit{
+	height: 50px;
+	line-height: 50px;
+	border-left: 4px solid #9786ea;
+	background: #fafafd;
+	font-size: 18px;
+	color: #333;
+	font-weight: 500;
+	text-indent: 45px;
+}
+.Order .tit em{
+    margin-left: 5px;
+	font-size: 18px;
+	color: #9786ea;
+	font-style: normal;
+}
+/* #new{
+	display: none;
+} */
+.Order .basie1{
+	padding: 20px 0 15px;
+}
+.Order .basie1 p.Account{
+	padding: 20px 62px 35px;
+}
+.Order .basie1 p .billAccount{
+	width: 80px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 3px;
+    background: #9786ea;
+    color: #fff;
+    font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.Order .basie1 li{
+	margin-bottom: 25px; 
+    width: 590px;
+    float: left;
+    height: 45px;
+    line-height: 45px;
+}
+.Order .basie1 li label.labelText{
+	width: 130px;
+	text-align: right;
+	padding-right: 20px;
+	line-height: 46px;
+	font-size: 14px;
+	color: #999;
+	float: left;
+}
+.Order .basie1 li input[type=text]{ 
+	width: 378px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #eaeaea;
+	text-indent: 12px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.pay_list_c1 {
+	width: 16px;
+	height: 16px;
+	margin-left: 20px;
+	margin-right: 5px;
+	display: inline-block;
+	line-height: normal;
+	cursor: pointer;
+	text-align: center;
+	background-image: url(../../img/test/radio2.png);
+	background-repeat: no-repeat;
+}
+input[type='radio'] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+label.radio {
+    cursor: pointer;
+}
+.radioclass {
+	opacity: 0;
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+.on {
+    background-image: url(../../img/test/radio1.png);
+}
+.Order .basie1 li .radioDiv{
+	font-size: 14px;
+    color: #333;
+    padding-top: 12px;
+}
+.Order .basie1 li .radioDiv input{
+	cursor: pointer;
+	margin-left: 20px;
+}
+.Order .basie1 li .radioDiv label{
+	cursor: pointer;
+}
+.Order .basie1 li.pos label{
+	width: 255px;
+}
+.Order .basie2{
+	padding: 40px 0 15px;
+}
+.Order .basie2 li{
+	margin-bottom: 25px;
+    width: 590px;
+    float: left;
+	height: 45px;
+    line-height: 45px;
+	
+}
+.Order .basie2 li label.labelText{
+	width: 130px;
+	text-align: right;
+	padding-right: 20px;
+	line-height: 46px;
+	font-size: 14px;
+	color: #999;
+	float: left;
+}
+.Order .basie2 li input[type=text]{ 
+	width: 378px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #eaeaea;
+	text-indent: 12px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+
+.Order li .errorText{
+	height: 20px; 
+	line-height: 20px; 
+	padding-left: 150px; 
+	color: #db2b1d; 
+	position: relative; 
+	font-size: 12px;
+	clear: both;
+    left: 20px;
+}
+
+.Order .basie2 li .unitIco{
+	font-size: 14px;
+	color: #ccc;
+	font-style: normal;
+	position: relative;
+	left: -25px;
+	top: 0px;
+}
+.Order .basie2 li .CheckBalance{
+	width: 80px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 3px;
+    background: #9786ea;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;  
+}
+.Order .basie2 li select{ 
+	width: 378px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #eaeaea;
+	text-indent: 12px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.Order .basie3{
+	padding: 40px 50px 30px;
+}
+.theShelvesTable{
+	width: 100%;
+	display: table;
+	border-collapse: collapse;
+}
+.theShelvesTable th{
+	background: #fafafd;
+	color: #999999;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 38px;
+	text-align: center;
+	border: 1px solid #eaeaea;
+}
+.theShelvesTable td{
+	color: #333333;
+	font-size: 14px;
+	line-height: 48px;
+	text-align: center;
+	border: 1px solid #eaeaea;
+}
+.theShelvesTable td input{  
+    height: 45px;
+    border: none;
+    text-align: center;
+    width: 252px;
+}
+.subtractBtn i{
+	width: 20px;
+	height: 20px;
+	font-size: 18px;
+    display: block;
+	color: #f52f3e;
+}
+.subtractBtn .jianqu{ 
+	background: url(../../img/userCenterMember/jianqu.jpg); 
+}
+.addBtn .zengjia{ 
+	width: 20px;
+	height: 20px; 
+    display: block;
+	background: url(../../img/userCenterMember/zengjia.jpg);
+}
+.addBtn{
+	margin: 12px 24px 0px;
+}
+.addBtn i{
+	font-size: 18px;
+	color: #9786ea;
+}
+.basie5{
+	padding: 47px 0 48px;
+	border-top: 1px solid #eaeaea;
+}
+.basie5 .fqjyBtn{
+	width: 380px;
+	height: 52px;
+	line-height: 52px;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	border-radius: 3px;
+	background: #9786ea;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+    border: none;
+}
+.basie4{
+	padding: 40px 0 15px;
+}
+.basie4 ul li{
+	margin-bottom: 25px;
+	width: 590px;
+	float: left;
+	height: 45px;
+    line-height: 45px;
+}
+.basie4 ul li.discount{
+	display: none;
+}
+.basie4 ul li label.labelText{
+	width: 130px;
+	text-align: right;
+	padding-right: 20px;
+	line-height: 46px;
+	font-size: 14px;
+	color: #999;
+	float: left;
+}
+.basie4 ul li input[type=text]{ 
+	width: 378px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #eaeaea;
+	text-indent: 12px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.basie4 ul li.jsSty input[type=text]{
+	width: 278px;
+}
+.basie4 ul li.jsSty .jsBtn{
+	width: 80px;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	border-radius: 3px;
+	background: #9786ea;
+	color: #fff;
+	font-size: 14px; 
+	font-weight: 500; 
+}
+.basie4 ul li .unitIco{
+	font-size: 14px;
+    color: #ccc;
+    font-style: normal; 
+    position: relative;
+    left: -25px; 
+}
+.basie4 ul li .radioDiv{
+	font-size: 14px;
+    color: #333;
+    padding-top: 12px;
+	float: left;
+}
+.basie4 ul li .radioDiv input{
+	margin-left: 20px;
+	cursor: pointer;
+}
+.basie4 ul li .radioDiv label{
+	cursor: pointer;
+}
+.basie4 ul li .tips{ 
+    display: inline-block;
+	width: 200px;
+	height: 26px;
+	line-height: 26px;
+	text-indent: 30px;
+	font-size: 12px;
+	color: #98aed5;
+	background: url(/resources/img/userCenterMember/tipBg.png) no-repeat;
+	margin: 9px 0px 0px 40px;
+}
+
+
+#Orders-success{
+	display: none;
+	position: static;
+} 
+#Orders-fail{
+	display: none;
+	position: static;
+}  
+.Orders-success{
+	margin: 40px 50px 12px;
+	color: #333333;
+	font-size: 20px;
+}
+.Orders-success .img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.OrderBox p{
+	color: #999999;
+	font-size:14px;  
+    margin-left: 85px;
+}
+.Orders-button input{
+	width: 100px;
+	height: 40px;
+	border: none;
+	text-align: center;
+	background: #9786ea;
+	border-radius: 5px;
+	float: right;
+	font-size: 14px;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.Orders-button{
+	width: 500px;
+	padding-right: 30px;
+}
+#template{
+	/* display: none; */
+}

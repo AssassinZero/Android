@@ -181,7 +181,7 @@ public class StringFormat {
     }
 
     /**
-     * 数值格式化 - 12,345.0000
+     * 数值格式化 - 12,345.0000  小数点后四位
      */
     public static String fourFormat(Object args) {
         if (args != null && !TextUtil.isEmpty(args.toString())) {

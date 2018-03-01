@@ -102,6 +102,13 @@ public class PersonalCenterCtrl {
         ARouter.getInstance().build(RouterUrl.USER_SECURITY_CENTER).navigation();
     }
 
+    /**
+     * 交易成功测试
+     */
+    public void testClick(View view) {
+        ARouter.getInstance().build(RouterUrl.TRADE_SUCCESSFULLY).navigation();
+    }
+
     public PersonalCenterVM getViewModel() {
         return viewModel;
     }

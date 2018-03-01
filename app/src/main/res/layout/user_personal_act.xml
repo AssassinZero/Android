@@ -162,5 +162,16 @@
             android:drawableStart="@drawable/icon_security_center"
             android:onClick="@{(View) -> viewCtrl.securityCenterClick(View)}"
             android:text="@string/personal_security_center" />
+        <TextView
+            style="@style/PersonalItem"
+            android:layout_marginTop="@dimen/x20"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginBottom="@dimen/x5"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/icon_security_center"
+            android:drawableStart="@drawable/icon_security_center"
+            android:onClick="@{(View) -> viewCtrl.testClick(View)}"
+            android:text="交易成功测试" />
     </LinearLayout>
 </layout>

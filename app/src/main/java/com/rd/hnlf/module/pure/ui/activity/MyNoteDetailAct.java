@@ -3,6 +3,8 @@ package com.rd.hnlf.module.pure.ui.activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.webkit.WebView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -32,6 +34,10 @@ public class MyNoteDetailAct extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PureMyNoteDetailActBinding binding = DataBindingUtil.setContentView(this, R.layout.pure_my_note_detail_act);
-        binding.setViewCtrl(new MyNoteDetailCtrl(orderNo, hidden));
+        binding.setViewCtrl(new MyNoteDetailCtrl(orderNo, hidden,this));
+
+    }
+    public void back(View view){
+        finish();
     }
 }

@@ -1,0 +1,258 @@
+html{
+	height: 100%;
+}
+.companywarp{
+	height: auto;
+	background-color: #f4f4f4;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+.company{
+	width: 1024px;
+	margin:0 auto;
+	background-color: #fff;
+	padding-bottom: 150px;
+}
+.team{
+	width: 1024px;
+	margin:0 auto;
+	padding-bottom: 50px;
+    padding-top: 30px;
+}
+.companytop{
+	height: 90px;
+	font-size: 18px;
+	color: #999999;
+	float: left;
+}
+.comp-dw a{
+	display: inline-block;
+	width: 240px;
+	color: #333;
+	font-size:24px;
+	cursor:text;
+}
+
+.comp-dw{
+	text-align: left;
+	width: 240px;
+	margin: 0 auto 30px;
+	padding-top: 30px;
+	padding-bottom:20px;
+	border-bottom: 1px solid #ddd;
+}
+.comp-dw h1{
+    color: #666;
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 12px;
+}
+.comp-dw span{
+    color: #bba370;
+    font-size: 14px;
+}
+.companytop button{
+    width: 160px;
+    height: 36px;
+    background: #4982c5;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    position:relative;
+    cursor:pointer;
+}
+.companytop button span{
+    position: absolute;
+    left: 123px;
+    top: 13px;
+    display: block;
+    overflow: hidden;
+    height: 0px;
+    width: 0px;
+    border-top: 5px dashed transparent;
+    border-left: 5px dashed #fff;
+    border-bottom: 5px dashed transparent;
+    border-right: 5px dashed transparent;
+}
+.comp-dw .cpyt-tips{
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+}
+.contactus{
+	float:right;
+	border: 1px solid #eaeaea;
+    padding: 30px 43px 20px;
+    background: #fff;
+}
+.contactus h3{
+	color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 204px;
+}
+.contactus div.titleDiv span{
+	display: inline-block;
+    width: 230px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+.bottomList{
+	margin:30px 0px;
+}
+.left_phone,.right_address{
+	border: 1px solid #eaeaea;
+    float: left;
+    padding: 15px 20px 10px;
+    width: 270px;
+}
+.left_phone{
+	margin-right:30px;
+}
+.left_phone p,.right_address p{
+	color:#999;
+	line-height: 30px;
+}
+.left_phone span.big_size{
+	color: #4982c5;
+    font-size: 24px;
+}
+.right_address span.small_size{
+	color: #4982c5;
+	font-size: 16px;
+}
+.left_phone i.iconSign{
+	margin-top: 4px;
+}
+.iconSign{
+	float: left;
+    font-size: 50px;
+    color: #4982c5;
+    margin-right: 20px;
+}
+.companybanner{
+	width: 100%;
+	height: 360px;
+	background: #cd1424 url(/resources/img/aboutus/aoutusbanner.jpg) no-repeat center;
+}
+.teambanner{
+	width: 100%;
+	height: 360px;
+	background: url(/resources/img/aboutus/team-banner.jpg) no-repeat center;
+}
+.companymian{
+	overflow: hidden;
+	padding: 0 100px;
+	margin-top: 100px;
+	padding-bottom: 40px;
+}
+.contotle{
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 35px;
+}
+.compym-left{
+	font-size: 64px;
+    color: #cd1424;
+    float: left;
+    width: 81px;
+    line-height: 72px;
+    margin-left: 35px;
+}
+.compym-right{
+	width: 840px;
+	float: right;
+}
+.compym-right h4{
+	font-size: 24px;
+	color: #333333;
+	margin-bottom: 30px;
+	border-left:2px solid #cd1424;
+	text-indent: 1em;
+	line-height: 25px;
+}
+.compym-right div{
+	font-size: 14px;
+	color: #999999;
+	line-height: 30px;
+}
+
+.teammian{
+	padding: 0 100px;
+}
+.teammian ul{
+	margin-top: 100px;
+}
+.teammian ul li{
+	overflow: hidden;
+	margin-bottom: 100px;
+}
+.teammian ul li img{
+	width: 130px;
+	height: 130px;
+	float: left;
+}
+.teammian ul li div{
+	width: 780px;
+	float: right;
+}
+.teammian ul li div h4{
+	font-size: 24px;
+	color: #333333;
+	margin-bottom: 25px;
+}
+.teammian ul li div p{
+	line-height: 25px;
+	color: #999999;
+	font-size: 14px;
+}
+.teammian ul li div h4 em{
+	font-size: 18px;
+	color: #666666;
+	margin-left: 15px;
+}
+.contactmian{
+	overflow: hidden;
+	width: 1060px;
+	margin: 0 auto;
+	margin-top: 90px;
+}
+.cotatm-left{
+	width: 500px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 30px;
+	min-height: 150px;
+	height: 230px;
+}
+.cotatm-left img{
+	width: 92px;
+	height: 88px
+	float: left;
+}
+.cotatm-left div{
+	width: 380px;
+	float: right;
+}
+.cotatm-left div h4{
+	font-size: 18px;
+	color: #333333;
+	line-height: 50px;
+	border-bottom:1px solid #efefef;
+}
+.cotatm-left div p{
+	font-size: 14px;
+	color: #999999;
+	line-height: 25px;
+	margin-top: 5px;
+}
+.btnav{
+  position:absolute;
+  bottom:48px;
+}
+.footer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+}

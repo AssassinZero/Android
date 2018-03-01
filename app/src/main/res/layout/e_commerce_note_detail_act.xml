@@ -326,8 +326,7 @@
                     android:background="@color/white"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:paddingTop="@dimen/x20"
-                    android:visibility="@{viewCtrl.viewModel.land ? android.view.View.VISIBLE : android.view.View.GONE}">
+                    android:paddingTop="@dimen/x20">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -342,21 +341,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@{viewCtrl.viewModel.phone}"
+                        android:text="@{viewCtrl.viewModel.land ? viewCtrl.viewModel.phone : @string/note_detail_phone_hide}"
                         android:textColor="@color/text_dark"
                         android:textSize="@dimen/text_size_h2" />
-                    <TextView
+                    android:textSize="@dimen/text_size_h2" />
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/dp_4"
-                        android:paddingLeft="@dimen/dp_10"
-                        android:paddingRight="@dimen/dp_10"
-                        android:paddingTop="@dimen/dp_4"
-                        android:paddingBottom="@dimen/dp_4"
-                        android:textColor="@color/white"
+                        android:src="@mipmap/icon_call_phone"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
                         android:onClick="@{(View) -> viewCtrl.makingCallClick(View)}"
-                        android:background="@drawable/rounded_rectangle_bg_small"
-                        android:text="@string/making_calls"/>
+                        />
                 </LinearLayout>
 
                 <LinearLayout

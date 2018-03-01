@@ -1,0 +1,330 @@
+*{
+	padding:0;
+	margin:0; 
+	font-family:"Microsoft YaHei","arial";
+}
+ul,li{
+	list-style:none;
+} 
+input,select{
+	outline: none;
+}
+.main{
+	height:auto;
+	background: #f5f5f6;
+	overflow: hidden;
+}
+.nowarp .header_con_wrapper{ 
+    background: none;
+    height: auto;
+} 
+.Navigation{
+	width: 100%;
+	height: 80px;
+	background: #0b0624;
+}
+.Order{  
+	width: 1180px;
+	margin: 0 auto;
+} 
+.Order .errorText {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 115px;
+    color: #db2b1d;
+    position: relative;
+    font-size: 12px;
+    clear: both;
+    left: 20px;
+}
+.Order .billAccount {
+    width: 80px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 3px;
+    background: #9786ea;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.Order .Order-box h1{  
+	color: #333333;
+	font-size: 22px;
+	line-height: 70px;
+	border-bottom: 1px solid #eaeaea;
+	padding-left: 50px;
+}
+.Order .Order-box h1 em{  
+	font-style: normal;
+	color: #666666;
+	font-size: 14px;
+	margin-left: 25px;
+}  
+.Order .Order-box{
+	margin-top: 30px;
+	background: #ffffff;
+}
+.Order .Order-content{
+	padding: 20px 50px 40px;
+}
+ 
+.theShelvesTable{
+	width: 100%;
+	display: table;
+	border-collapse: collapse;
+}
+.theShelvesTable th{
+	background: #fafafd;
+	color: #999999;
+	font-size: 14px;
+	line-height: 38px;
+	text-align: center;
+	border: 1px solid #eaeaea;
+	font-weight: 500;
+}
+.theShelvesTable td{
+	color: #333333;
+	font-size: 14px;
+	line-height: 38px;
+	text-align: center;
+	border: 1px solid #eaeaea;
+}
+#isAdd{
+	width: 100px;
+    height: 40px;
+    border: none;
+    text-align: center;
+    background: #9786ea;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.EndorsedAccount{
+	width: 100%;
+}
+.EndorsedAccount li.eali{ 
+    width: 500px;
+    float: left;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+    margin-top: 24px;
+} 
+.EndorsedAccount li.khBank{
+	display: none;
+}
+.EndorsedAccount li.eali .content{ 
+	width: 345px;
+    padding-left: 8px;
+    height: 38px;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+} 
+.selectList{
+    display: inline-block;
+	margin-left: 0px;
+}
+.selectList input {
+    width: 345px; 
+	padding-left: 8px; 
+	height: 38px; 
+	border: 1px solid #eaeaea; 
+	border-radius: 3px;
+	cursor: pointer;
+}
+.selectList ul {
+    display: none;
+    max-height: 150px;
+    overflow-y: scroll;
+    border: 1px solid #e3e3e3;
+    background: #fff;
+    z-index: 9999; 
+    width: 352px;
+    position: relative;
+}
+.selectList ul li {
+    width: 315px;
+    height: 30px;
+    line-height: 30px;
+    float: none;
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 0;
+    z-index: 12;
+    cursor: pointer;
+}
+.EndorsedAccount li label.labelText{
+	float: left;
+	width: 120px; 
+	font-size: 14px; 
+	line-height: 40px;
+	color: #999999; 
+	margin-right: 15px; 
+	text-align: right;
+}
+
+.userInfoForm{
+	position: relative; 
+	padding-top: 40px;
+}
+.userInfoForm li{ width: 500px; height: 40px; line-height: 40px;}
+.userInfoForm li label.labelText{float: left; width: 120px; font-size: 14px; color: #999999; margin-right: 15px; text-align: right;}
+.userInfoForm li{
+	margin-bottom: 30px;
+    float: left;
+} 
+.userInfoForm input[type='text']{
+	width: 345px; 
+	padding-left: 8px; 
+	height: 38px; 
+	border: 1px solid #eaeaea; 
+	border-radius: 3px;
+}
+.Settlement{
+	margin-bottom: 50px;
+}
+.Settlement p{
+	color: #9786ea;
+	font-size: 36px;
+    display: inline-block;
+	padding-left: 55px;
+}
+.Settlement p span{
+	color: #999999;
+	font-size: 14px;
+	margin-right: 10px;
+}
+.Settlement p em{
+	color: #333333;
+	font-size: 14px;
+	font-style: normal;
+}
+.Settlement .tishi{
+	width: 410px;
+    padding-left: 20px;
+    height: 38px;
+    line-height: 38px;
+    color: #999999;
+    font-size: 12px;
+    display: inline-block;
+    background: #f7fcff;
+    border: 1px solid #e3f0f8;
+    border-radius: 3px;
+    float: right;
+	margin-top: 10px;
+}
+.Settlement .tishi img{
+	vertical-align: -2px;
+	width: 14px;
+	height: 14px;
+}
+.Settlement .tishi span{
+	color: #666;
+}
+.Settlement input{
+	width: 130px;
+	height: 38px;
+	line-height: 38px;
+	border: 0 none;
+	text-align: center;
+	background: #9786ea;
+	border-radius: 3px;
+	float: right;
+	font-size: 16px;
+	color: #fff;
+	padding: 0;
+    margin: 10px 0px 0px 20px;
+	cursor: pointer;
+} 
+.Orders-success{
+	margin: 40px 50px 12px;
+	color: #333333;
+	font-size: 20px;
+}
+.Orders-success .img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.OrderBox p{
+	color: #999999;
+	font-size:14px;  
+    margin-left: 85px;
+}
+.Orders-Details{
+	width: 404px;
+	height: 244px;
+	margin: 30px 50px;
+	border: 1px solid #ebebeb;
+	background: #fafafa;
+	padding: 30px 38px; 
+	border-radius: 15px;
+}
+.Orders-Details dt{
+	color: #666666;
+	font-size: 16px;
+    margin-bottom: 5px;
+}
+.Orders-Details dd{ 
+	color: #333333;
+	font-size: 16px;
+    line-height: 30px;
+}
+.Orders-Details dd label{
+	color: #999999;
+	font-size: 14px;
+}
+.Orders-Details dd.bor{
+	border-bottom: 1px solid #eaeaea;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.Orders-button a{
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	text-align: center;
+	background: #9786ea;
+	border-radius: 5px;
+	float: right;
+	font-size: 14px;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+	margin-right: 20px;
+	cursor: pointer;
+	font-weight: 500;
+}
+.Orders-button{
+	padding-right: 30px;
+}
+.Orders-button .cancelBtn{
+	background: #fafafa;
+	border: 1px solid #e6e6e6;
+	color: #666666;
+}
+ /* .userInfoForm .box{
+	    width: 230px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #eaeaea;
+    text-indent: 0.5em;
+} 
+
+.divselect{width:186px; display:inline-block; position:relative; cursor:pointer}
+ .divselect [data-toggle]>span{width:100%; display:inline-block;
+  text-indent: 10px; }  
+.divselect {background:url(/resources/img/billlist/tb-j.png) no-repeat right  -36px;} 
+.divselect.active2{background:url(/resources/img/billlist/tb-j.png) no-repeat right  19px;}
+.divselect ul{width:100%;border:1px solid #e3e3e3; background-color:#ffffff; position:absolute; z-index:20000; margin-top:-1px; display:none;}
+.divselect ul li{height:28px; line-height:28px;width:100%}
+.divselect ul li a{display:block; height:28px; color:#333333; text-decoration:none; }
+.divselect ul li a:hover{background-color:#CCC;}
+.divselect .gray{color: #b5b5b5;}  */

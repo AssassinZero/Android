@@ -1,0 +1,166 @@
+
+.userContent{
+	padding: 0!important;
+	min-height: 850px!important;
+	width: 950px!important;
+}
+.accountContent{
+    padding: 0 20px;
+}
+.notesInfo{
+	width: 840px;
+	height: 130px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	-webkit-box-shadow: 0 0 10px #ededed;
+	-moz-box-shadow: 0 0 10px #ededed;
+	box-shadow: 0 0 10px #ededed;
+	padding: 25px 30px;
+}
+.notesInfo.frist{
+	background: url(../../img/userCenterMember/accountBg1.png) no-repeat right;
+}
+.notesInfo li{
+	height: 110px;
+	width: 380px;
+	float: left;
+}
+.notesInfo-li1{
+	border-right: 1px dotted #eaeaea;
+}
+.notesInfo-li2{
+	padding-left: 40px;
+}
+.notesInfo.second .notesInfo-li2{
+	border-right: 1px dotted #eaeaea;
+	padding-left: 30px;
+}
+.notesInfo-li3{
+	padding-left: 30px;
+}
+.notesInfo p{
+    font-size: 14px;
+    color: #999999;
+    line-height: 40px;
+}
+.notesInfo p span{
+	padding-left: 20px;
+	color: #333333;
+}
+.notesInfo p span i{
+	font-size: 28px;
+}
+.notesInfo p.notesInfo-h1{
+	color: #333333;
+	font-size: 18px;
+	margin-bottom: 10px;
+	line-height: 30px;
+}
+.buttons{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.buttons .buttons2{
+	margin-left: 20px;
+	color: #666666;
+	font-size: 14px;
+	background: #fafafa;
+	padding: 8px 35px;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.notesInfo.second{
+	height: 110px;
+	padding: 20px 30px;
+	background: url(../../img/userCenterMember/accountBg2.png) no-repeat right;
+}
+.notesInfo.second p span{
+	padding-left: 0;
+}
+.notesInfo.second li{
+	width: 250px;
+}
+.notesInfo.second p{
+	line-height: 30px;
+}
+.notesInfo.second p.notesInfo-h1{
+	margin-bottom: 10px;
+}
+.myBank{
+	height: 65px;
+	line-height: 65px;
+	font-size: 22px;
+	color: #333333;
+	margin-top: 10px;
+	padding: 0 30px;
+	border-bottom: 1px solid #eeeeee;
+}
+.myBankList li{
+	height: 100px;
+	border-bottom: 1px solid #eeeeee;
+}
+.myBankList{
+	padding: 0 20px;
+}
+.myBankList div.myBankDiv{
+	padding: 30px 0;
+    float: left; 
+    padding-left: 20px;
+}
+.myBankDiv.first2{
+	width: 46px;
+	height: 38px;
+    background: url(../../img/userCenterMember/accountUnsign.png) no-repeat right;
+}
+
+.myBankDiv.first3{
+	width: 46px;
+	height: 38px;
+}
+
+.myBankDiv.first1{
+	width: 46px;
+	height: 38px;
+	background: url(../../img/userCenterMember/accountSign.png) no-repeat right;
+}
+.myBankDiv-p1{
+	color: #666666;
+	font-size: 16px;
+	font-weight: bold;
+}
+.myBankDiv-p2{
+    color: #bdbdbd;
+	font-size: 12px;
+}
+.myBankList div.myBankDiv.second{
+	padding: 25px 0;
+	padding-left: 30px;
+	line-height: 25px;
+}
+.myBankList div.myBankDiv.third{
+	float: right;
+	padding-right: 20px;
+	padding-top: 35px;
+	color: #333333;
+	font-size: 14px;
+}
+
+.myBankList .third a{
+	color: #9786ea;
+	font-size: 14px;
+	padding: 8px 35px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+button.accign{
+	color: #fff;
+	font-size: 14px;
+	background: #9786ea;
+	padding: 8px 35px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}

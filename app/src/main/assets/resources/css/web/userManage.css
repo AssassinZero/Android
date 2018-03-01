@@ -1,0 +1,126 @@
+
+.buttons{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+.buttons .buttons1{
+	color: #fff;
+	font-size: 14px;
+	background: #9786ea;
+	padding: 8px 35px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-left: 30px;
+}
+.buttons .buttons2{
+	margin-left: 20px;
+	color: #666666;
+	font-size: 14px;
+	background: #fafafa;
+	padding: 8px 35px;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.trading .tabs1{
+	width: 180px;
+}
+.trading .tabs2{
+	width: 180px;
+}
+.trading .tabs3{
+	width: 150px;
+}
+.trading .tabs4{
+	width: 150px;
+}
+.trading .tabs5{
+	width: 200px;
+}
+.cashList .listBoxs li a{
+	margin-right: 5px;
+}
+
+.pay_list_c1 input[type='radio']{
+	width: 16px;
+	height: 16px;
+    cursor: pointer;
+}
+label.radio{
+    cursor: pointer; 
+}
+.pay_list_c1 {
+	width: 16px;
+	height: 16px;
+	margin-left: 20px;
+	margin-right: 5px;
+	display: inline-block;
+	line-height: normal;
+	cursor: pointer;
+	text-align: center;
+	background-image: url(../../img/test/radio2.png);
+	background-repeat: no-repeat;
+}
+.radioclass {
+	opacity: 0;
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+.on {
+    background-image: url(../../img/test/radio1.png);
+}
+
+.tableScroll{
+	max-height: 235px;
+	overflow-y: auto;
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+a.lookNote{
+	font-size: 16px;
+	color: #9786ea;
+	font-weight: normal;
+	text-indent: 30px;
+}
+.permissionWin{
+	display: none;
+}
+
+.userInfoForm h4{padding: 0 15px; background: #fafafa; height: 34px; line-height: 34px; font-size: 16px; color: #666;}
+.userInfoForm li{float: left; width: 400px; height: 40px; line-height: 40px; padding-right: 10px;}
+.userInfoForm li label.labelText{display: inline-block; width: 100px; font-size: 14px; color: #999999; margin-right: 15px; text-align: right;}
+
+
+.userInfoForm{position: relative; padding-top: 30px;}
+.userInfoForm li{margin-bottom: 25px;}
+.userInfoForm li i{color: #ea544a; margin-right: 5px;}
+.userInfoForm input[type='text']{width: 220px; padding-left: 8px; height: 38px; border: 1px solid #eaeaea; border-radius: 5px;}
+.userInfoForm li .errorText{height: 25px; line-height: 25px; padding-left: 120px; color: #db2b1d; font-size: 12px;clear: both;}
+.userInfoForm #submitLi input{
+	width: 100px;
+	height: 40px;
+	border: none;
+	text-align: center;
+	background: #9786ea;
+	border-radius: 5px;
+	float: right;
+	font-size: 14px;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+	margin-top: 20px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+.userInfoForm #submitLi input.cancelBtn{
+	background: #fafafa;
+	border: 1px solid #e6e6e6;
+	color: #666666;
+}
+.theShelvesMain{
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 20px;
+}

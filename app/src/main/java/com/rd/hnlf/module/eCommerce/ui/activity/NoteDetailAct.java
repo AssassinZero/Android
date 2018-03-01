@@ -52,6 +52,7 @@ public class NoteDetailAct extends BaseActivity {
             }
         });
         registerReceiver(receiver, new IntentFilter(BundleKeys.LOGIN_STATUS_CHANGED));
+
     }
 
     @Override

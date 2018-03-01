@@ -1,0 +1,292 @@
+*{
+	padding:0;
+	margin:0;
+	font-family:"Microsoft YaHei","arial";
+}
+ul,li{
+    list-style:none;}
+
+.process{
+	width:100%;
+	height:485px;
+	background: url(../../img/guide/processbg.jpg)  no-repeat center 0;
+    /*background-size: 100%;*/
+}
+.process .process_main{
+	width:1200px;
+	margin:0 auto;
+	height:100%;
+	text-align: center;
+    padding-top:40px;
+	font-family: "微软雅黑";
+}
+.process_main h1{
+	font-size:28px;
+	color:#fff;
+	font-weight: normal
+}
+.process_main ul{
+	overflow:hidden;
+	width:100%;
+	font-size: 18px;
+}
+.process_main ul li{
+	float:left;
+	width:25%;
+	height:135px;
+	margin-top:50px;
+	position: relative;
+}
+.process_main ul li p{
+	margin-top:10px;
+	color:#fff;
+	margin-bottom:5px;
+}
+.process_main ul li .jt{
+	position:absolute;
+	top:30px;
+	left:290px;
+}
+
+/*交易流程*/
+
+/*我是卖家*/
+.seller{
+	width:1200px;
+	margin:0 auto;
+    text-align: center;
+}
+.seller_title{
+	padding-top:48px;
+	text-align: center;
+	margin:0 auto;
+	padding-bottom:40px;
+
+}
+.seller_title p{
+	padding-top:5px;
+	font-size: 28px;
+	font-family: '微软雅黑';
+	color:#333;
+}
+.seller ul{
+	overflow: hidden;
+	width:780px;
+	margin:0 auto;
+	font-size: 20px;
+	font-family: '微软雅黑';
+	color:#999;
+}
+.seller ul li{
+	float: left;
+	position:relative;
+}
+.seller_li{
+	padding-right:120px;
+	
+	}
+.seller_img{
+	position:absolute;
+    right: 60px;
+	top:10px;
+	
+}
+.seller ul li span {
+	position:absolute;
+	left: 65px;
+	top:14px
+}
+.seller_banner{
+	margin-top:35px;
+	position:relative;
+	height: 450px;
+
+}
+.seller_banner_img1{
+     position:absolute;
+	 left: 10px;
+	 top:220px;
+	 cursor: pointer;
+}
+.seller_banner_img2{
+     position:absolute;
+	 left: 210px;
+	 top:0px;
+}
+.seller_banner_img3{
+     position:absolute;
+	 right: 10px;
+	 top:220px;
+	 cursor: pointer;
+}
+.seller>p{
+	font-size: 16px;
+	padding-top:20px;
+	padding-bottom:40px;
+	font-family: 微软雅黑;
+	color:#999;
+
+}
+/*我是卖家*/
+
+/*我是买家*/
+.buyer{
+	width:1200px;
+	margin:0 auto;
+    text-align: center;
+}
+.buyer_title{
+	padding-top:20px;
+	text-align: center;
+	margin:0 auto;
+	padding-bottom:45px;
+
+}
+.buyer_title p{
+	padding-top:5px;
+	font-size: 28px;
+	font-family: 微软雅黑;
+	color:#333;
+}
+.buyer ul{
+	overflow: hidden;
+	width:780px;
+	margin:0 auto;
+	font-size: 20px;
+	font-family: 微软雅黑;
+	color:#999;
+}
+.buyer ul li{
+	float: left;
+	position:relative;
+}
+.buyer_li{
+	padding-right:90px;
+	}
+.buyer_img{
+	position:absolute;
+    right: 35px;
+	top:10px;
+	
+}
+.buyer ul li span {
+	position:absolute;
+	left:70px;
+	top:14px
+}
+.buyer_banner{
+	margin-top:35px;
+	position:relative;
+	height: 450px;
+
+}
+.buyer_banner_img1{
+     position:absolute;
+	 left:10px;
+	 top:220px;
+	 cursor: pointer;
+}
+
+
+
+.buyer_banner_img2{
+     position:absolute;
+	 left: 210px;
+	 top:0px;
+}
+.buyer_banner_img3{
+     position:absolute;
+	 right: 10px;
+	 top:220px;
+	 cursor: pointer;
+}
+.buyer>p{
+	font-size: 16px;
+	padding-top:22px;
+	font-family: '微软雅黑';
+	color:#999;
+}
+/*我是买家*/
+/*代理商*/
+.agent{
+	width:1200px;
+	margin:0 auto;
+    text-align: center;
+	padding-bottom: 80px;
+}
+.agent_title{
+	text-align: center;
+	margin:0 auto;
+	padding-top:60px;
+	text-align: center;
+	padding-bottom:40px;
+
+}
+.agent_title p{
+	padding-top:5px;
+	font-size: 28px;
+	font-family: '微软雅黑';
+	color:#333;
+}
+.agent ul{
+	overflow: hidden;
+	width:780px;
+	margin:0 auto;
+	font-size: 20px;
+	font-family: '微软雅黑';
+	color:#ccc;
+	padding-bottom: 40px;
+}
+.agent ul li{
+	float: left;
+	position:relative;
+}
+.agent_li{
+	padding-right:98px;
+	
+	}
+.agent_img{
+	position:absolute;
+    right:30px;
+	top:10px;
+	
+}
+.agent ul li span {
+	position:absolute;
+	left: 70px;
+	top:14px
+}
+
+.agent_banner{
+	position:relative;
+	height: 450px;
+	margin:0px auto;
+}
+.agent_banner_img1{
+     position:absolute;
+	 left:10px;
+	 top:220px;
+	 cursor: pointer;
+}
+
+
+
+.agent_banner_img2{
+     position:absolute;
+	 left: 210px;
+	 top:0px;
+}
+.agent_banner_img3{
+     position:absolute;
+	 right: 10px;
+	 top:220px;
+	 cursor: pointer;
+}
+
+.agent>p{
+	font-size: 16px;
+	padding-top:22px;
+	font-family: '微软雅黑';
+	color:#999;
+}
+/*代理商*/
